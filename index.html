@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="The Making of a Physician Innovator — a model for developing human-owned competence in an AI-enabled era. An imprint of drvoz.com.">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<title>The Physician Innovator Model</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,900;1,9..144,400;1,9..144,500&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<style>
+  :root{
+    --ground:#F4EDE1; --panel:#FBF6EC; --panel-2:#EFE6D6;
+    --ink:#241610; --ink-soft:#5C4A3E; --ink-faint:#948E80;
+    --hair:#DCCEBA; --hair-soft:#E7DBC9;
+    --cognac:#7A3A2A; --cognac-lo:#5E2A1E; --walnut:#3B2416;
+    --orange:#EE6A2C; --orange-lo:#D2541A;
+    --slate:#3E4A63; --slate-mist:#8797A6;
+    --brand:var(--cognac);
+    --shadow:rgba(59,36,22,.16);
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --ground:#241610; --panel:#2E1D12; --panel-2:#3B2416;
+      --ink:#F1E7D8; --ink-soft:#C3AF9C; --ink-faint:#8E887A;
+      --hair:#4A3222; --hair-soft:#3A2718;
+      --cognac:#B4573E; --cognac-lo:#8a4130; --brand:#C06749;
+      --orange:#F2894E; --orange-lo:#EE6A2C;
+      --slate:#8FA0C4; --slate-mist:#9BA9B8;
+      --shadow:rgba(0,0,0,.45);
+    }
+  }
+  :root[data-theme="dark"]{
+    --ground:#241610; --panel:#2E1D12; --panel-2:#3B2416;
+    --ink:#F1E7D8; --ink-soft:#C3AF9C; --ink-faint:#8E887A;
+    --hair:#4A3222; --hair-soft:#3A2718;
+    --cognac:#B4573E; --cognac-lo:#8a4130; --brand:#C06749;
+    --orange:#F2894E; --orange-lo:#EE6A2C;
+    --slate:#8FA0C4; --slate-mist:#9BA9B8;
+    --shadow:rgba(0,0,0,.45);
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0; background:var(--ground); color:var(--ink);
+    font-family:"Archivo",system-ui,-apple-system,sans-serif;
+    line-height:1.6; -webkit-font-smoothing:antialiased;
+  }
+  .mono{font-family:"JetBrains Mono",ui-monospace,monospace;}
+
+  /* Top bar */
+  .topbar{
+    position:sticky; top:0; z-index:20; display:flex; align-items:center; justify-content:space-between;
+    padding:13px clamp(20px,4vw,44px); background:color-mix(in srgb,var(--ground) 90%, transparent);
+    backdrop-filter:blur(8px); border-bottom:1px solid var(--hair);
+  }
+  .brandmark{font-family:"JetBrains Mono",monospace; font-weight:700; font-size:17px; letter-spacing:-.02em; color:var(--ink);}
+  .brandmark .two{color:var(--orange);}
+  .toggle{
+    font-family:"JetBrains Mono",monospace; font-size:11px; letter-spacing:.12em; text-transform:uppercase;
+    cursor:pointer; background:transparent; color:var(--ink-soft); border:1px solid var(--hair);
+    border-radius:999px; padding:6px 13px; transition:.2s;
+  }
+  .toggle:hover{border-color:var(--brand); color:var(--brand);}
+  .toggle:focus-visible{outline:2px solid var(--orange); outline-offset:2px;}
+
+  .wrap{max-width:1080px; margin:0 auto; padding:clamp(30px,5vw,60px) clamp(20px,4vw,44px) 70px;}
+
+  .eyebrow{
+    font-family:"JetBrains Mono",monospace; font-size:12px; font-weight:500;
+    letter-spacing:.22em; text-transform:uppercase; color:var(--ink-faint);
+  }
+  h1{
+    font-family:"Fraunces",Georgia,serif; font-weight:600; font-optical-sizing:auto;
+    font-size:clamp(34px,6vw,62px); line-height:1.03; letter-spacing:-.015em;
+    margin:.32em 0 0; text-wrap:balance; color:var(--ink); max-width:16ch;
+  }
+  .lede{
+    font-family:"Fraunces",Georgia,serif; font-size:clamp(18px,2.4vw,23px);
+    font-style:italic; color:var(--ink-soft); line-height:1.42; max-width:46ch; margin:22px 0 0;
+  }
+  .lede b{font-style:normal; font-weight:600; color:var(--ink);}
+  .defn{
+    margin-top:26px; padding-left:16px; border-left:3px solid var(--cognac);
+    font-size:15px; color:var(--ink-soft); max-width:54ch;
+  }
+  .defn b{color:var(--ink); font-weight:600;}
+
+  .section-label{display:flex; align-items:baseline; gap:14px; margin:56px 0 20px;}
+  .section-label .n{font-family:"JetBrains Mono",monospace; font-size:13px; font-weight:700; color:var(--orange); letter-spacing:.04em;}
+  .section-label h2{
+    font-family:"Fraunces",Georgia,serif; font-weight:600; font-size:clamp(22px,3vw,30px);
+    margin:0; color:var(--ink); letter-spacing:-.015em;
+  }
+  .section-label .hint{margin-left:auto; font-size:13px; color:var(--ink-faint); text-align:right; max-width:32ch; line-height:1.35;}
+
+  /* Progression track */
+  .track{display:grid; grid-template-columns:repeat(4,1fr); gap:12px;}
+  .stage{
+    position:relative; background:var(--panel); border:1px solid var(--hair);
+    border-radius:12px; padding:16px 15px 17px; box-shadow:0 10px 26px -20px var(--shadow);
+    display:flex; flex-direction:column; min-height:152px;
+  }
+  .stage .code{
+    font-family:"JetBrains Mono",monospace; font-weight:700; font-size:12.5px;
+    letter-spacing:.02em; color:var(--cognac); display:flex; align-items:center; gap:8px;
+  }
+  .stage .code .idx{font-size:11px; color:var(--ink-faint); font-weight:500;}
+  .stage .comp{
+    font-family:"Fraunces",Georgia,serif; font-size:18px; font-weight:600;
+    color:var(--ink); margin:9px 0 6px; line-height:1.12;
+  }
+  .stage .desc{font-size:13px; color:var(--ink-soft); line-height:1.42;}
+  .cycle-note{
+    margin-top:14px; font-size:13.5px; color:var(--ink-soft); font-style:italic;
+    font-family:"Fraunces",Georgia,serif; display:flex; align-items:center; gap:9px;
+  }
+  .cycle-note svg{flex:none; color:var(--cognac);}
+
+  /* Constraint rail — the +2σ deviation, in orange */
+  .constraint{
+    margin-top:18px; background:var(--panel); border:1px solid var(--hair);
+    border-radius:12px; padding:22px clamp(16px,3vw,26px); position:relative; overflow:hidden;
+  }
+  .constraint::before{content:""; position:absolute; left:0; top:0; bottom:0; width:4px; background:var(--orange);}
+  .constraint .ctop{display:flex; align-items:baseline; gap:12px; flex-wrap:wrap; margin-bottom:17px; padding-left:6px;}
+  .constraint .ctop .tag{
+    font-family:"JetBrains Mono",monospace; font-size:11px; font-weight:700;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--orange-lo);
+  }
+  .constraint .ctop .cdesc{font-size:13.5px; color:var(--ink-soft); max-width:56ch;}
+  .ccols{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; padding-left:6px;}
+  .ccol .cname{
+    font-family:"JetBrains Mono",monospace; font-weight:700; font-size:13px;
+    letter-spacing:.03em; color:var(--ink); display:flex; align-items:center; gap:8px;
+  }
+  .ccol .cname .dot{width:7px; height:7px; border-radius:2px; background:var(--orange); flex:none; transform:rotate(45deg);}
+  .ccol .cq{font-size:13px; color:var(--ink-soft); margin-top:6px; line-height:1.42; font-family:"Fraunces",Georgia,serif; font-style:italic;}
+  .loop{
+    margin-top:17px; margin-left:6px; padding-top:15px; border-top:1px dashed var(--hair);
+    font-family:"JetBrains Mono",monospace; font-size:12px; color:var(--ink-soft); line-height:1.95;
+  }
+  .loop b{color:var(--orange-lo); font-weight:700;}
+
+  /* Proposition — leather panel */
+  .prop{
+    margin-top:20px; border-radius:14px; padding:clamp(30px,5vw,48px) clamp(24px,5vw,54px);
+    color:#EDE4D6; position:relative; overflow:hidden; isolation:isolate;
+    background:
+      radial-gradient(120% 150% at 12% 0%, #92493690 0%, transparent 55%),
+      radial-gradient(130% 160% at 92% 100%, #4a1f14 0%, transparent 60%),
+      linear-gradient(135deg,#8a4130 0%,#6f3222 48%,#5a2818 100%);
+    box-shadow:0 30px 70px -34px var(--shadow), inset 0 0 0 1px rgba(255,255,255,.05);
+  }
+  .prop::after{content:""; position:absolute; inset:14px; border-radius:8px; border:1.5px dashed rgba(238,106,44,.30); pointer-events:none;}
+  .prop::before{content:""; position:absolute; inset:0; opacity:.5; pointer-events:none;
+    background-image:radial-gradient(rgba(0,0,0,.16) 1px,transparent 1.4px); background-size:4px 4px; mix-blend-mode:multiply;}
+  .prop .pl{
+    position:relative; z-index:1; font-family:"Fraunces",Georgia,serif;
+    font-size:clamp(19px,2.9vw,27px); font-weight:400; line-height:1.32; color:#DED8CB;
+    text-shadow:0 1px 0 rgba(0,0,0,.35);
+  }
+  .prop .pl + .pl{margin-top:10px;}
+  .prop .pl.key{
+    font-weight:600; font-style:italic; color:#F3B48F; margin-top:16px;
+    padding-top:16px; border-top:1px solid rgba(238,106,44,.28);
+  }
+
+  /* Five questions */
+  .qtest{
+    margin-top:18px; background:var(--panel); border:1px solid var(--hair);
+    border-radius:14px; padding:clamp(22px,4vw,32px) clamp(20px,4vw,34px); box-shadow:0 10px 26px -20px var(--shadow);
+  }
+  .qtest .intro{font-size:14.5px; color:var(--ink-soft); max-width:64ch; margin:0 0 20px;}
+  .qtest .intro b{color:var(--ink); font-weight:600;}
+  ol.q{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:0;}
+  ol.q li{display:flex; gap:16px; padding:13px 0; border-top:1px solid var(--hair-soft); align-items:baseline;}
+  ol.q li:first-child{border-top:none;}
+  ol.q li .qn{font-family:"JetBrains Mono",monospace; font-size:13px; font-weight:700; color:var(--cognac); flex:none; width:20px;}
+  ol.q li .qt{font-size:15.5px; color:var(--ink); line-height:1.4;}
+  ol.q li.emph{background:var(--panel-2); margin:0 -14px; padding:15px 14px; border-radius:9px; border-top:none;}
+  ol.q li.emph + li{border-top:none;}
+  ol.q li.emph .qn{color:var(--orange-lo);}
+  ol.q li.emph .qt{font-weight:500;}
+  ol.q li.emph .qt em{
+    font-style:normal; display:block; font-size:11.5px; color:var(--orange-lo);
+    font-family:"JetBrains Mono",monospace; letter-spacing:.06em; margin-top:4px; text-transform:uppercase; font-weight:700;
+  }
+
+  /* Owned story specimen */
+  .owned{margin-top:22px; padding-top:20px; border-top:1px solid var(--hair-soft);}
+  .owned-label{
+    font-family:"JetBrains Mono",monospace; font-size:11px; font-weight:700;
+    letter-spacing:.16em; text-transform:uppercase; color:var(--cognac); margin-bottom:13px;
+  }
+  .owned-story{
+    font-family:"Fraunces",Georgia,serif; font-style:italic;
+    font-size:clamp(16px,2.1vw,19.5px); line-height:1.5; color:var(--ink); margin:0;
+  }
+  .owned-story span{display:block;}
+  .owned-story span + span{margin-top:5px;}
+  .owned-story b{font-style:normal; font-weight:600; color:var(--cognac);}
+  .owned-foot{margin:15px 0 0; font-size:13px; color:var(--ink-faint); line-height:1.5; max-width:62ch;}
+
+  footer{
+    margin-top:54px; padding-top:22px; border-top:1px solid var(--hair);
+    display:flex; justify-content:space-between; gap:16px 24px; flex-wrap:wrap; align-items:baseline;
+    font-size:12.5px; color:var(--ink-faint); font-family:"JetBrains Mono",monospace; letter-spacing:.02em;
+  }
+  footer .fq{font-family:"Fraunces",Georgia,serif; font-style:italic; font-size:15px; color:var(--ink-soft); max-width:44ch; letter-spacing:0;}
+  footer .src .two{color:var(--orange);}
+  footer .src b{color:var(--ink-soft); font-weight:700;}
+
+  @media (max-width:820px){
+    .track{grid-template-columns:repeat(2,1fr);}
+    .section-label .hint{display:none;}
+  }
+  @media (max-width:520px){
+    .track{grid-template-columns:1fr;}
+    .ccols{grid-template-columns:1fr;}
+    .section-label{flex-wrap:wrap;}
+  }
+  @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;}}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <a class="brandmark" href="index.html" style="text-decoration:none;color:inherit">mu<span class="two">2</span>sd</a>
+  <button class="toggle" id="tgl" aria-label="Toggle light or dark theme">Theme</button>
+</div>
+
+<div class="wrap">
+
+  <header>
+    <div class="eyebrow">A mu2sd project · sourced at drvoz.com</div>
+    <h1>The Making of a Physician Innovator</h1>
+    <p class="lede">The project, the environment, and the artifact are only the vehicle. <b>The change in the learner is the most important product</b> — and AI makes that distinction urgent.</p>
+    <p class="defn"><b>Innovation</b> is creativity in action, validated through human experience. Competence is not the polish of an artifact; it is what the learner can now perceive, judge, decide, and do that they could not reliably do before.</p>
+  </header>
+
+  <div class="section-label">
+    <span class="n">01</span>
+    <h2>The progression</h2>
+    <span class="hint">A cycle, not a checklist. Each pass returns with greater judgment.</span>
+  </div>
+
+  <div class="track">
+    <div class="stage">
+      <div class="code"><span class="idx">01</span>SEE</div>
+      <div class="comp">Observation</div>
+      <div class="desc">Recognize meaningful opportunities in human experience — before interpreting or solving.</div>
+    </div>
+    <div class="stage">
+      <div class="code"><span class="idx">02</span>UNDERSTAND</div>
+      <div class="comp">Human understanding</div>
+      <div class="desc">Grasp the experience and needs of the people affected; separate wants from needs.</div>
+    </div>
+    <div class="stage">
+      <div class="code"><span class="idx">03</span>FRAME</div>
+      <div class="comp">Problem definition</div>
+      <div class="desc">Turn observation into a meaningful, evidence-supported problem worth solving.</div>
+    </div>
+    <div class="stage">
+      <div class="code"><span class="idx">04</span>CREATE</div>
+      <div class="comp">Possibility</div>
+      <div class="desc">Generate grounded alternatives; resist fixating on the first plausible solution.</div>
+    </div>
+    <div class="stage">
+      <div class="code"><span class="idx">05</span>TEST</div>
+      <div class="comp">Experimentation</div>
+      <div class="desc">Put an imperfect idea into contact with reality to reduce uncertainty.</div>
+    </div>
+    <div class="stage">
+      <div class="code"><span class="idx">06</span>LEARN</div>
+      <div class="comp">Interpretation</div>
+      <div class="desc">Read what human experience reveals; seek the evidence that disconfirms.</div>
+    </div>
+    <div class="stage">
+      <div class="code"><span class="idx">07</span>ADAPT</div>
+      <div class="comp">Iteration</div>
+      <div class="desc">Pivot, persist, or stop on evidence — not attachment to the idea.</div>
+    </div>
+    <div class="stage">
+      <div class="code"><span class="idx">08</span>IMPLEMENT</div>
+      <div class="comp">Value creation</div>
+      <div class="desc">Move a validated solution responsibly toward real-world use.</div>
+    </div>
+  </div>
+
+  <div class="cycle-note">
+    <svg width="20" height="14" viewBox="0 0 20 14" fill="none"><path d="M14 2a6 6 0 1 0 4 5.6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M13.4 6.2 14.2 1.4 18.6 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span>Through repeated cycles, the project becomes the vehicle through which the learner changes.</span>
+  </div>
+
+  <div class="section-label">
+    <span class="n">02</span>
+    <h2>What the austere environment magnifies</h2>
+    <span class="hint">The +2σ of the model — the rare few that constraint forces into the open.</span>
+  </div>
+
+  <div class="constraint">
+    <div class="ctop">
+      <span class="tag">Constraint-activated · μ+2σ</span>
+      <span class="cdesc">When not everything can be done, the consequential few become visible. Constraint is a magnifier — it surfaces what matters most.</span>
+    </div>
+    <div class="ccols">
+      <div class="ccol">
+        <div class="cname"><span class="dot"></span>DISCERN</div>
+        <div class="cq">Of everything I can observe, what matters?</div>
+      </div>
+      <div class="ccol">
+        <div class="cname"><span class="dot"></span>PRIORITIZE</div>
+        <div class="cq">Of everything that matters, what warrants action?</div>
+      </div>
+      <div class="ccol">
+        <div class="cname"><span class="dot"></span>RESOURCE</div>
+        <div class="cq">Given what actually exists here, what can we responsibly do?</div>
+      </div>
+    </div>
+    <div class="loop">
+      I noticed &nbsp;→&nbsp; I <b>discerned</b> significance &nbsp;→&nbsp; I <b>prioritized</b> &nbsp;→&nbsp; I acted with what was <b>available</b> &nbsp;→&nbsp; I observed the consequence &nbsp;→&nbsp; I adapted.
+    </div>
+  </div>
+
+  <div class="section-label">
+    <span class="n">03</span>
+    <h2>The proposition</h2>
+  </div>
+
+  <div class="prop">
+    <div class="pl">The project provides the vehicle.</div>
+    <div class="pl">The austere environment magnifies what matters.</div>
+    <div class="pl">Human experience provides the validation.</div>
+    <div class="pl">AI provides augmentation.</div>
+    <div class="pl">The change in the learner is the most important product.</div>
+    <div class="pl key">Competence must remain with the learner.</div>
+  </div>
+
+  <div class="section-label">
+    <span class="n">04</span>
+    <h2>Put the artifact away</h2>
+    <span class="hint">Don't make the curriculum AI-proof — make the evidence AI-resistant.</span>
+  </div>
+
+  <div class="qtest">
+    <p class="intro">A sophisticated AI-enabled output proves something sophisticated was produced — not that the learner developed. After substantial AI-supported work, set the artifacts aside and ask the learner to <b>reconstruct the journey</b>. Five questions test whether the learning belongs to them:</p>
+    <ol class="q">
+      <li><span class="qn">1</span><span class="qt">What did you personally experience?</span></li>
+      <li><span class="qn">2</span><span class="qt">What did you personally notice or understand because of that experience?</span></li>
+      <li><span class="qn">3</span><span class="qt">What did AI contribute?</span></li>
+      <li><span class="qn">4</span><span class="qt">What judgment or decision remained yours?</span></li>
+      <li class="emph"><span class="qn">5</span><span class="qt">How are you different now because you went through this?<em>The most important question</em></span></li>
+    </ol>
+    <div class="owned">
+      <div class="owned-label">What an owned answer sounds like</div>
+      <p class="owned-story">
+        <span>I thought this. Then I <b>saw</b> this. I talked to this person — that made me <b>question my assumption</b>.</span>
+        <span>I considered these alternatives. I <b>chose</b> this because of these constraints. We tried it. This happened.</span>
+        <span>That <b>surprised</b> me, so I <b>changed</b> this. I am still <b>uncertain</b> about that. Therefore, this is what I would do <b>next</b>.</span>
+      </p>
+      <p class="owned-foot">Unpolished by nature — the false starts and changed minds are the evidence. If the reasoning disappears once the artifact is gone, the competence may be borrowed.</p>
+    </div>
+  </div>
+
+  <footer>
+    <span class="fq">“The competence should travel with the learner.”</span>
+    <span class="src"><b>mu<span class="two">2</span>sd</b> · The Making of a Physician Innovator &nbsp;·&nbsp; Narratives &amp; rubrics: drvoz.com — a mu2sd studio</span>
+  </footer>
+
+</div>
+
+<script>
+  (function(){
+    var root=document.documentElement, btn=document.getElementById('tgl');
+    function cur(){var t=root.getAttribute('data-theme'); if(t) return t; return matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';}
+    try{var s=localStorage.getItem('mu2sd-theme'); if(s) root.setAttribute('data-theme',s);}catch(e){}
+    if(btn) btn.addEventListener('click',function(){var next=cur()==='dark'?'light':'dark'; root.setAttribute('data-theme',next); try{localStorage.setItem('mu2sd-theme',next)}catch(e){}});
+  })();
+</script>
+</body>
+</html>
