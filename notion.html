@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<!--
+  Set Up Your Notion Workspace — Physician Innovator Track
+  UICOMP Graduate Medical Education · Peoria, IL
+  A mu2sd project. © 2026 mu2sd LLC.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Set up your Notion workspace — Physician Innovator Track</title>
+<meta name="description" content="Create a Notion account, build the six work areas, and share privately with faculty. Setup guide for Physician Innovator Track residents.">
+<meta name="author" content="mu2sd LLC">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,900;1,9..144,400;1,9..144,500&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="site.css">
+<style>
+  .wrap{max-width:1080px;margin:0 auto;padding:0 clamp(20px,4vw,44px);}
+
+  nav.site a:focus-visible,a:focus-visible{outline:2px solid var(--cognac);outline-offset:2px;}
+
+  header.mast{padding:52px 0 10px;}
+  .kicker{font-size:.82rem;color:var(--ink-faint);margin:0 0 12px;}
+  h1{font-size:clamp(1.9rem,4.8vw,2.5rem);font-weight:normal;line-height:1.14;margin:0 0 16px;max-width:20ch;}
+  .lede{max-width:64ch;color:var(--ink-soft);margin:0 0 6px;}
+  .mast-rule{height:2px;background:var(--cognac);width:78px;margin:26px 0 0;}
+
+  .flag{
+    background:var(--panel);border-left:3px solid var(--cognac);
+    padding:16px 20px;margin:30px 0 0;max-width:70ch;
+  }
+  .flag strong{display:block;font-size:.8rem;color:var(--cognac);margin-bottom:5px;}
+  .flag p{margin:0;font-size:.93rem;color:var(--ink-soft);}
+
+  section.stage{padding:52px 0 0;}
+  .stage-head{border-top:1px solid var(--hair);padding-top:24px;margin-bottom:6px;}
+  .stage-head .num{font-size:.8rem;color:var(--cognac);margin:0 0 6px;}
+  h2{font-size:1.44rem;font-weight:normal;margin:0 0 8px;}
+  .stage-head p{max-width:64ch;color:var(--ink-soft);margin:0;font-size:.96rem;}
+
+  ol.steps{list-style:none;counter-reset:s;padding:0;margin:30px 0 0;}
+  ol.steps > li{
+    counter-increment:s;position:relative;
+    padding:0 0 24px 52px;margin:0 0 24px;
+    border-bottom:1px solid var(--hair);max-width:70ch;
+  }
+  ol.steps > li:last-child{border-bottom:none;padding-bottom:4px;margin-bottom:0;}
+  ol.steps > li::before{
+    content:counter(s,decimal-leading-zero);
+    position:absolute;left:0;top:1px;
+    font-size:.9rem;color:var(--cognac);
+  }
+  ol.steps h3{font-size:1.06rem;font-weight:bold;margin:0 0 8px;}
+  ol.steps p{margin:0 0 10px;font-size:.95rem;color:var(--ink-soft);}
+  ol.steps ul{margin:0;padding-left:19px;font-size:.94rem;color:var(--ink-soft);}
+  ol.steps li li{margin:0 0 7px;}
+  .path{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:.85em;
+    background:var(--panel-2);padding:1px 6px;white-space:nowrap;}
+
+  table.areas{border-collapse:collapse;width:100%;margin:26px 0 0;font-size:.94rem;}
+  table.areas th{text-align:left;border-bottom:2px solid var(--ink-soft);
+    padding:9px 14px 9px 0;font-weight:bold;}
+  table.areas td{border-bottom:1px solid var(--hair);padding:11px 14px 11px 0;
+    vertical-align:top;color:var(--ink-soft);}
+  table.areas td:first-child{color:var(--ink);white-space:nowrap;}
+  table.areas th:first-child,table.areas td:first-child{padding-left:0;}
+
+  .use{background:var(--panel-2);padding:24px 26px 26px;margin:44px 0 0;}
+  .use h3{margin:0 0 12px;font-size:1.05rem;font-weight:bold;}
+  .use ul{margin:0;padding-left:20px;font-size:.95rem;color:var(--ink-soft);max-width:66ch;}
+  .use li{margin:0 0 9px;}
+
+
+  a{color:var(--cognac);}
+  h1,h2,h3,.stage-head h2,.beat h3,.item h4,.era-head h3{
+    font-family:"Fraunces",Georgia,serif; font-weight:600; letter-spacing:-.012em;
+  }
+  .kicker,.meta,.when,.num,.lane-title,.rl,.gn,.legend,.head .cell,.gl span{
+    font-family:"JetBrains Mono",ui-monospace,monospace;
+    letter-spacing:.08em; text-transform:uppercase; font-size:11px;
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a class="brandmark" href="index.html">mu<span class="two">2</span>sd</a>
+  <button class="toggle" id="tgl" aria-label="Toggle light or dark theme">Theme</button>
+</div>
+<nav class="subnav" aria-label="Track sections">
+  <ul>
+    <li><a href="index.html">The way</a></li>
+    <li><a href="notion.html" aria-current="page">Set up</a></li>
+    <li><a href="trainee-guide.html">Trainee guide</a></li>
+    <li><a href="faculty-guide.html">Faculty guide</a></li>
+    <li><a href="fieldnotes.html">Field notes</a></li>
+    <li><a href="gantt.html">Schedule</a></li>
+  </ul>
+</nav>
+
+<header class="mast">
+  <div class="wrap">
+    <p class="kicker">Physician Innovator Track · Trainee setup</p>
+    <h1>Set up your Notion workspace</h1>
+    <p class="lede">A private, chronological record of your thinking, shared only with the faculty who review your work. This is the first thing you do, and it takes about half an hour.</p>
+    <p class="lede">You own the workspace. Faculty are guests in it. That arrangement is deliberate — the record is yours, and it stays yours after you graduate.</p>
+
+    <div class="flag">
+      <strong>Before you write anything clinical</strong>
+      <p>Nothing that could identify a patient, a family member, or a named colleague goes into Notion — not in a title, not in a photo, not in a passing detail that would let someone recognise the person. Raw field notes stay here and never reach a public repository, but the rule applies on both surfaces.</p>
+    </div>
+    <div class="mast-rule"></div>
+  </div>
+</header>
+
+<section class="stage">
+  <div class="wrap">
+    <div class="stage-head">
+      <p class="num">Step one</p>
+      <h2>Get Notion</h2>
+      <p>Use your institutional email if you have one. Eligible students and educators at accredited colleges and universities can activate the Education Plan at no cost.</p>
+    </div>
+
+    <ol class="steps">
+      <li>
+        <h3>Create your account</h3>
+        <p>Go to <a href="https://notion.com">notion.com</a> and choose Sign up.</p>
+        <ul>
+          <li>Use your institutional email where possible, and keep it as the main email on the account.</li>
+          <li>Create a personal, one-member workspace. Do not add faculty as workspace members — they come in later as guests on a single page.</li>
+        </ul>
+      </li>
+      <li>
+        <h3>Activate the Education Plan if you are eligible</h3>
+        <ul>
+          <li>On desktop or web: <span class="path">Settings → Upgrade plan → Get free Education plan</span></li>
+          <li>Status is re-verified yearly.</li>
+          <li>If you are not eligible, the regular Free Plan is sufficient for this track.</li>
+        </ul>
+      </li>
+      <li>
+        <h3>Install on your computer</h3>
+        <p>Download the macOS or Windows app from <a href="https://notion.com/desktop">notion.com/desktop</a>, then sign in with the account you just created.</p>
+      </li>
+      <li>
+        <h3>Install on your phone</h3>
+        <p>Search for Notion in the App Store or Google Play and sign in with the same account.</p>
+        <p>This one matters more than it looks. Observation does not keep business hours, and the phone is how a three-in-the-morning entry actually gets written instead of remembered badly a week later.</p>
+      </li>
+      <li>
+        <h3>Confirm you can share privately</h3>
+        <ul>
+          <li>You can invite faculty to a specific page as a guest without adding them to your workspace.</li>
+          <li>Free Plan allows up to 10 external guests; the individual Education Plan allows up to 100.</li>
+          <li>You will need one or two. Either plan is enough.</li>
+        </ul>
+      </li>
+    </ol>
+
+    <div class="flag">
+      <strong>What a faculty educator account does not change</strong>
+      <p>Faculty do not need to own your workspace. You own it and invite them to the top-level track page as a guest. Their access follows the permissions you give. Your plan controls the guest limit, not theirs.</p>
+    </div>
+  </div>
+</section>
+
+<section class="stage">
+  <div class="wrap">
+    <div class="stage-head">
+      <p class="num">Step two</p>
+      <h2>Build the workspace</h2>
+      <p>Six work areas under one private parent page. They correspond directly to §3 of the Trainee Field Guide.</p>
+    </div>
+
+    <ol class="steps">
+      <li>
+        <h3>Create one private parent page</h3>
+        <p>Select New page and create a blank page under Private. Name it <em>Physician Innovator — [Your Name]</em>. Keep it private while you build it out.</p>
+      </li>
+      <li>
+        <h3>Add the six work areas</h3>
+        <p>Inside the parent page, create six full-page databases — type <span class="path">/database → Table</span> — or subpages containing databases.</p>
+        <table class="areas">
+          <tr><th>Work area</th><th>What it holds</th></tr>
+          <tr><td>Field Log</td><td>Raw dated observations. No solutions permitted in this database.</td></tr>
+          <tr><td>Needs Inventory</td><td>Candidate needs, one per row, each with a status: open, parked, retired, converged.</td></tr>
+          <tr><td>Stakeholder Register</td><td>Who you spoke with, their role, what surprised you, and what it changed.</td></tr>
+          <tr><td>Decision Log</td><td>Consequential choices: alternatives considered, evidence, and what would reverse it.</td></tr>
+          <tr><td>AI Ledger</td><td>One row per substantive AI-assisted session. What you kept, and what judgment stayed yours.</td></tr>
+          <tr><td>Weekly Entry</td><td>One dated reflection each week, written the same week.</td></tr>
+        </table>
+      </li>
+      <li>
+        <h3>Add properties that will earn their keep</h3>
+        <p>Date, Select or Status, Text, and Person as appropriate. Every database item is also a page, so the body can hold the narrative while the properties stay scannable.</p>
+      </li>
+      <li>
+        <h3>Create the Weekly Entry template</h3>
+        <p>In Weekly Entry, use the arrow beside New, then New template. Add the prompts from Appendix A of the Trainee Field Guide so every week opens with the same structure and you are never staring at a blank page.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="stage">
+  <div class="wrap">
+    <div class="stage-head">
+      <p class="num">Step three</p>
+      <h2>Share it with faculty</h2>
+      <p>Sharing the parent page passes its permissions down to everything beneath it, including subpages you create later.</p>
+    </div>
+
+    <ol class="steps">
+      <li>
+        <h3>Check the parent page first</h3>
+        <p>Open the top-level Physician Innovator page and confirm all six work areas sit beneath it. Anything created outside the parent will not inherit access, and faculty will silently not see it.</p>
+      </li>
+      <li>
+        <h3>Invite faculty by email</h3>
+        <p>Select Share, enter each reviewer's email, choose the permission level, and Invite.</p>
+        <p>Use <strong>Can comment</strong> by default. Faculty respond in the margins; they do not rewrite your record. That is the whole point of the surface.</p>
+      </li>
+      <li>
+        <h3>Lock down general access</h3>
+        <p>In Share, set General access to <strong>Only people invited</strong>. Do not use "Anyone on the web with link" for this workspace. Copying a page link does not by itself grant access, but the setting is what actually holds the line.</p>
+      </li>
+      <li>
+        <h3>Test it before you begin</h3>
+        <p>Verify the names and permission levels. Open each work area and confirm it inherited access from the parent. Create one test Weekly Entry and ask a faculty reviewer to confirm they can see it and leave a comment.</p>
+        <p>Do this now rather than discovering at your first review that nobody has been able to read anything for six weeks.</p>
+      </li>
+    </ol>
+
+    <div class="use">
+      <h3>Then use it this way</h3>
+      <ul>
+        <li>Add a Field Log entry when the observation happens. Nights and weekends count, and are often where the most revealing things are.</li>
+        <li>Write one Weekly Entry every week, in the same week. Do not go back and rewrite history to look smarter than you were — the false starts are the evidence.</li>
+        <li>Before each individual review, make sure your current thinking and your open decisions are visible without anyone having to dig.</li>
+        <li>Faculty leave substantive feedback in Notion or the repository at least every two weeks. If two weeks pass in silence, say so.</li>
+      </ul>
+    </div>
+
+    <div class="onward">
+      <a class="prev" href="physician-innovator.html"><span>Back</span>The track</a>
+      <a class="next" href="trainee-guide.html"><span>Next</span>Trainee guide</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <span class="fq">“The competence should travel with the learner.”</span>
+  <span class="src"><b>mu<span class="two">2</span>sd</b> · The Making of a Physician Innovator &nbsp;·&nbsp; Narratives &amp; rubrics: drvoz.com — a mu2sd studio</span>
+</footer>
+
+<script>
+  (function(){
+    var root=document.documentElement, btn=document.getElementById('tgl');
+    function cur(){var t=root.getAttribute('data-theme'); if(t) return t; return matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';}
+    try{var s=localStorage.getItem('mu2sd-theme'); if(s) root.setAttribute('data-theme',s);}catch(e){}
+    if(btn) btn.addEventListener('click',function(){var next=cur()==='dark'?'light':'dark'; root.setAttribute('data-theme',next); try{localStorage.setItem('mu2sd-theme',next)}catch(e){}});
+  })();
+</script>
+</body>
+</html>

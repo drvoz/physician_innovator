@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<!--
+  Physician Innovator Track — Activity Gantt
+  UICOMP Graduate Medical Education · Peoria, IL
+  A mu2sd project. © 2026 mu2sd LLC.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Physician Innovator Track — Activity Gantt</title>
+<meta name="description" content="Two-year Gantt of the Physician Innovator Track: activity streams by participant, the eight gates, and the moments everyone must be in the room.">
+<meta name="author" content="mu2sd LLC">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,900;1,9..144,400;1,9..144,500&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="site.css">
+<style>
+  :root{--label:190px; --band:color-mix(in srgb,var(--orange) 11%, transparent);}
+
+  .wrap{max-width:1080px;margin:0 auto;padding:0 clamp(20px,4vw,44px);}
+  header{padding:52px 0 26px;}
+  h1{font-size:clamp(1.8rem,4.4vw,2.4rem);font-weight:normal;margin:0 0 14px;max-width:24ch;line-height:1.15;}
+  .lede{max-width:66ch;color:var(--ink-soft);margin:0 0 8px;}
+  .rule{height:2px;background:var(--cognac);width:74px;margin:24px 0 0;}
+
+  .scroller{overflow-x:auto;padding:6px 0 10px;}
+  .chart{min-width:1000px;position:relative;}
+
+  .row{display:grid;grid-template-columns:var(--label) repeat(9,1fr);align-items:stretch;}
+  .cell{border-left:1px solid var(--hair);min-height:34px;}
+  .row .cell:nth-of-type(2){border-left:1px solid var(--ink-soft);}
+  .rl{
+    padding:8px 14px 8px 0;font-size:.84rem;color:var(--ink-soft);
+    display:flex;align-items:center;line-height:1.35;
+  }
+
+  /* header row */
+  .head .cell{
+    border-bottom:2px solid var(--ink-soft);
+    padding:8px 8px 8px 10px;font-size:.78rem;color:var(--ink-faint);
+    display:flex;align-items:flex-end;min-height:52px;
+  }
+  .head .rl{border-bottom:2px solid var(--ink-soft);align-items:flex-end;padding-bottom:8px;}
+  .head .cell.year{color:var(--ink);}
+
+  /* swimlane group header */
+  .group{display:grid;grid-template-columns:var(--label) repeat(9,1fr);}
+  .group .gl{
+    grid-column:1 / -1;
+    padding:22px 0 6px;font-size:.95rem;color:var(--ink);
+    border-bottom:1px solid var(--hair-soft);margin-bottom:2px;
+  }
+  .group .gl span{color:var(--ink-faint);font-size:.8rem;}
+
+  /* bars */
+  .bar{
+    grid-row:1;align-self:center;
+    margin:4px 3px;padding:5px 10px;
+    font-size:.79rem;line-height:1.3;color:var(--ink);
+    background:var(--panel-2);border-left:3px solid var(--ink-soft);
+    position:relative;z-index:2;
+  }
+  .bar.tog{background:var(--hair-soft);border-left-color:var(--cognac);}
+  .bar.faint{background:transparent;border:1px dashed var(--hair);border-left:3px solid var(--hair);color:var(--ink-faint);}
+  .mark{
+    grid-row:1;align-self:center;justify-self:center;
+    width:13px;height:13px;background:var(--cognac);
+    transform:rotate(45deg);position:relative;z-index:2;
+  }
+  .mark.open{background:var(--ground);border:2px solid var(--cognac);}
+
+  /* gate row */
+  .gates{border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);background:var(--panel);}
+  .gates .rl{font-size:.9rem;color:var(--ink);}
+  .gate{
+    grid-row:1;align-self:center;justify-self:center;text-align:center;
+    position:relative;z-index:2;padding:7px 2px;
+  }
+  .gate .dia{width:15px;height:15px;background:var(--ground);border:2px solid var(--cognac);transform:rotate(45deg);margin:0 auto 7px;}
+  .gate.cp .dia{background:var(--cognac);}
+  .gate .gn{font-size:.74rem;color:var(--ink-faint);display:block;line-height:1.25;}
+  .gate.cp .gn{color:var(--ink);}
+
+  /* vertical decision bands */
+  .band{
+    position:absolute;top:0;bottom:0;
+    background:var(--band);
+    border-left:1px dashed var(--cognac);border-right:1px dashed var(--cognac);
+    pointer-events:none;z-index:3;
+  }
+
+  /* ---------- site nav ---------- */
+
+
+
+  /* legend */
+  .legend{display:flex;flex-wrap:wrap;gap:22px;padding:30px 0 0;font-size:.82rem;color:var(--ink-soft);}
+  .legend div{display:flex;align-items:center;gap:9px;}
+  .sw{width:26px;height:13px;}
+  .sw.own{background:var(--panel-2);border-left:3px solid var(--ink-soft);}
+  .sw.tog{background:var(--hair-soft);border-left:3px solid var(--cognac);}
+  .sw.faint{border:1px dashed var(--hair);border-left:3px solid var(--hair);}
+  .sw.dia{width:13px;height:13px;background:var(--cognac);transform:rotate(45deg);}
+  .sw.diao{width:13px;height:13px;background:var(--ground);border:2px solid var(--cognac);transform:rotate(45deg);}
+
+  section.notes{padding:44px 0 0;border-top:1px solid var(--hair);margin-top:40px;}
+  section.notes h2{font-size:1.2rem;font-weight:normal;margin:0 0 12px;}
+  section.notes p{max-width:64ch;color:var(--ink-soft);font-size:.94rem;}
+  footer{padding:40px 0 56px;font-size:.79rem;color:var(--ink-faint);}
+  footer p{margin:0 0 5px;}
+  @media print{.scroller{overflow:visible;} body{background:#fff;}}
+  h1,h2,h3,.stage-head h2,.beat h3,.item h4,.era-head h3{
+    font-family:"Fraunces",Georgia,serif; font-weight:600; letter-spacing:-.012em;
+  }
+  .kicker,.meta,.when,.num,.lane-title,.rl,.gn,.legend,.head .cell,.gl span{
+    font-family:"JetBrains Mono",ui-monospace,monospace;
+    letter-spacing:.08em; text-transform:uppercase; font-size:11px;
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a class="brandmark" href="index.html">mu<span class="two">2</span>sd</a>
+  <button class="toggle" id="tgl" aria-label="Toggle light or dark theme">Theme</button>
+</div>
+<nav class="subnav" aria-label="Track sections">
+  <ul>
+    <li><a href="index.html">The way</a></li>
+    <li><a href="notion.html">Set up</a></li>
+    <li><a href="trainee-guide.html">Trainee guide</a></li>
+    <li><a href="faculty-guide.html">Faculty guide</a></li>
+    <li><a href="fieldnotes.html">Field notes</a></li>
+    <li><a href="gantt.html" aria-current="page">Schedule</a></li>
+  </ul>
+</nav>
+
+
+<header>
+  <div class="wrap">
+    <h1>Two years, by who is doing what</h1>
+    <p class="lede">Solid bars are work carried alone. Gold bars are work that requires other people. Diamonds are gates — filled ones carry a written determination to continue. The dashed vertical bands are the four moments where every party converges on the same decision.</p>
+    <div class="rule"></div>
+  </div>
+</header>
+
+<div class="wrap">
+<div class="scroller">
+<div class="chart" id="chart">
+
+  <!-- time header -->
+  <div class="row head">
+    <div class="rl">Quarter</div>
+    <div class="cell">Onboarding</div>
+    <div class="cell year">Jul–Sep 27</div>
+    <div class="cell">Oct–Dec 27</div>
+    <div class="cell">Jan–Mar 28</div>
+    <div class="cell">Apr–Jun 28</div>
+    <div class="cell year">Jul–Sep 28</div>
+    <div class="cell">Oct–Dec 28</div>
+    <div class="cell">Jan–Mar 29</div>
+    <div class="cell">Apr–Jun 29</div>
+  </div>
+
+  <!-- gates -->
+  <div class="row gates">
+    <div class="rl">Gates</div>
+    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+    <div class="gate" style="grid-column:3"><div class="dia"></div><span class="gn">1 · Sept</span></div>
+    <div class="gate cp" style="grid-column:4"><div class="dia"></div><span class="gn">2 · Dec<br>month 6</span></div>
+    <div class="gate" style="grid-column:5"><div class="dia"></div><span class="gn">3 · Mar</span></div>
+    <div class="gate cp" style="grid-column:6"><div class="dia"></div><span class="gn">4 · Jun<br>month 12 · capstone</span></div>
+    <div class="gate" style="grid-column:7"><div class="dia"></div><span class="gn">5 · Sept</span></div>
+    <div class="gate cp" style="grid-column:8"><div class="dia"></div><span class="gn">6 · Dec<br>month 18</span></div>
+    <div class="gate" style="grid-column:9"><div class="dia"></div><span class="gn">7 · Mar</span></div>
+    <div class="gate cp" style="grid-column:10"><div class="dia"></div><span class="gn">8 · Jun<br>graduation</span></div>
+  </div>
+
+  <!-- RESIDENT -->
+  <div class="group"><div class="gl">Resident, alone <span>— asynchronous, and where the learning shows</span></div></div>
+
+  <div class="row">
+    <div class="rl">Field log and AI ledger</div>
+    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+    <div class="bar" style="grid-column:2 / 11">Weekly entries · commits · nights and weekends on a personal device</div>
+  </div>
+  <div class="row">
+    <div class="rl">Observation window</div>
+    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+    <div class="bar" style="grid-column:3 / 4">40 observations · 20 needs · no building</div>
+  </div>
+  <div class="row">
+    <div class="rl">Frame and converge</div>
+    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+    <div class="bar" style="grid-column:4 / 6">20 needs → 3 → 1, reasoning written for each retirement</div>
+  </div>
+  <div class="row">
+    <div class="rl">Concepts and prototypes</div>
+    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+    <div class="bar" style="grid-column:5 / 7">5 concepts · 3 paper prototypes</div>
+  </div>
+  <div class="row">
+    <div class="rl">Experiments</div>
+    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+    <div class="bar" style="grid-column:7 / 10">4 minimum · disconfirming condition written first</div>
+  </div>
+  <div class="row">
+    <div class="rl">Value case and pivot record</div>
+    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+    <div class="bar" style="grid-column:8 / 10">Who pays, what it displaces, persist / pivot / stop</div>
+  </div>
+  <div class="row">
+    <div class="rl">Portfolio and scholarly product</div>
+    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+    <div class="bar" style="grid-column:10 / 11">Assembled from the repo</div>
+  </div>
+
+  <!-- TOGETHER -->
+  <div class="group"><div class="gl">In the room together <span>— synchronous, inside protected and elective time</span></div></div>
+
+  <div class="row">
+    <div class="rl">Onboarding</div>
+    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+    <div class="bar tog" style="grid-column:2 / 3">Cohort · faculty · SME faculty</div>
+  </div>
+  <div class="row">
+    <div class="rl">Continuity hour</div>
+    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+    <div class="bar tog" style="grid-column:3 / 11">Every 2 weeks, 1 hr · cohort hour and individual reviews alternating</div>
+  </div>
+  <div class="row">
+    <div class="rl">Focused block</div>
+    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+    <div class="bar faint" style="grid-column:3 / 7">2 weeks somewhere in this window · field travel</div>
+    <div class="bar faint" style="grid-column:7 / 11">2 weeks somewhere in this window · field travel</div>
+  </div>
+  <div class="row">
+    <div class="rl">Cohort convening</div>
+    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+    <div class="bar faint" style="grid-column:3 / 11">Where programs align conference days</div>
+  </div>
+  <div class="row">
+    <div class="rl">Symposium</div>
+    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+    <div class="bar tog" style="grid-column:10 / 11">Prototype or pilot, presented</div>
+  </div>
+
+  <!-- CORE FACULTY -->
+  <div class="group"><div class="gl">Core faculty <span>— obligations that can be missed, and noticed</span></div></div>
+
+  <div class="row">
+    <div class="rl">Written feedback</div>
+    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+    <div class="bar" style="grid-column:3 / 11">Within 7 days of each individual review</div>
+  </div>
+  <div class="row">
+    <div class="rl">Repo and Notion comments</div>
+    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+    <div class="bar" style="grid-column:3 / 11">At least one substantive comment per resident every 2 weeks</div>
+  </div>
+  <div class="row">
+    <div class="rl">Determination and PD note</div>
+    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+    <div class="mark" style="grid-column:4"></div>
+    <div class="mark" style="grid-column:6"></div>
+    <div class="mark" style="grid-column:8"></div>
+    <div class="mark" style="grid-column:10"></div>
+  </div>
+  <div class="row">
+    <div class="rl">Privacy and QI/IRB review</div>
+    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+    <div class="bar faint" style="grid-column:3 / 11">Before any data collection, and before anything goes public</div>
+  </div>
+
+  <!-- SME FACULTY -->
+  <div class="group"><div class="gl">SME faculty <span>— a handful of scheduled dates, plus reading</span></div></div>
+
+  <div class="row">
+    <div class="rl">Onboarding</div>
+    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+    <div class="bar tog" style="grid-column:2 / 3">Meet the cohort</div>
+  </div>
+  <div class="row">
+    <div class="rl">Cohort hours in your domain</div>
+    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+    <div class="bar faint" style="grid-column:3 / 11">By invitation · content teaching welcome, judgment stays with the learner</div>
+  </div>
+  <div class="row">
+    <div class="rl">June gates</div>
+    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+    <div class="mark open" style="grid-column:6"></div>
+    <div class="mark open" style="grid-column:10"></div>
+  </div>
+
+  <!-- PROGRAM DIRECTOR -->
+  <div class="group"><div class="gl">Program director <span>— scheduling authority, and informed of outcomes</span></div></div>
+
+  <div class="row">
+    <div class="rl">Co-design and scheduling</div>
+    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+    <div class="bar faint" style="grid-column:2 / 11">Protected didactic time, elective blocks, and clinical load</div>
+  </div>
+  <div class="row">
+    <div class="rl">Informed at checkpoints</div>
+    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+    <div class="mark open" style="grid-column:4"></div>
+    <div class="mark open" style="grid-column:6"></div>
+    <div class="mark open" style="grid-column:8"></div>
+    <div class="mark open" style="grid-column:10"></div>
+  </div>
+
+</div><!-- /chart -->
+</div><!-- /scroller -->
+
+<div class="legend">
+  <div><span class="sw own"></span> Carried alone</div>
+  <div><span class="sw tog"></span> Requires other people</div>
+  <div><span class="sw faint"></span> Window, not a fixed date</div>
+  <div><span class="sw diao"></span> Gate</div>
+  <div><span class="sw dia"></span> Checkpoint — written determination</div>
+</div>
+</div>
+
+<section class="notes">
+  <div class="wrap">
+    <h2>Reading the intersections</h2>
+    <p>The four banded columns are the only places where the resident, core faculty, SME faculty and the program director are all engaged with the same question at the same time. Everything else can slip a week without consequence. These cannot: a determination that arrives late, or arrives with a concern the resident is hearing for the first time, breaks the compact both sides signed.</p>
+    <p>The two long gold bars carry most of the load. If the continuity hour and the seven-day feedback window hold, the gates take care of themselves. If they lapse, the gate becomes the first honest conversation in three months — which is exactly the failure this schedule exists to prevent.</p>
+  </div>
+</section>
+
+<div class="wrap">
+<div class="onward">
+  <a class="prev" href="fieldnotes.html"><span>Back</span><b>Field notes</b></a>
+  <span></span>
+</div>
+</div>
+
+<footer class="site">
+  <span class="fq">“The competence should travel with the learner.”</span>
+  <span class="src"><b>mu<span class="two">2</span>sd</b> · The Making of a Physician Innovator &nbsp;·&nbsp; Narratives &amp; rubrics: drvoz.com — a mu2sd studio</span>
+</footer>
+
+<script>
+(function(){
+  var chart = document.getElementById('chart');
+  // decision columns: 4, 6, 8, 10 in a 1 + 9 grid (label col is 1)
+  [4,6,8,10].forEach(function(col){
+    var i = col - 2;                 // 0-based index among the 9 time columns
+    var b = document.createElement('div');
+    b.className = 'band';
+    b.style.left  = 'calc(var(--label) + (100% - var(--label)) * ' + i + ' / 9)';
+    b.style.width = 'calc((100% - var(--label)) / 9)';
+    chart.appendChild(b);
+  });
+})();
+</script>
+
+<script>
+  (function(){
+    var root=document.documentElement, btn=document.getElementById('tgl');
+    function cur(){var t=root.getAttribute('data-theme'); if(t) return t; return matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';}
+    try{var s=localStorage.getItem('mu2sd-theme'); if(s) root.setAttribute('data-theme',s);}catch(e){}
+    if(btn) btn.addEventListener('click',function(){var next=cur()==='dark'?'light':'dark'; root.setAttribute('data-theme',next); try{localStorage.setItem('mu2sd-theme',next)}catch(e){}});
+  })();
+</script>
+</body>
+</html>

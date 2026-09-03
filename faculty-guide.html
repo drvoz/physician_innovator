@@ -1,0 +1,440 @@
+<!doctype html>
+<!--
+  Faculty and SME Guide — Physician Innovator Track
+  UICOMP Graduate Medical Education · Physician Innovator Track
+  A mu2sd project. © 2026 mu2sd LLC.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="How to read a resident repo, give feedback without solving the problem, run a gate, and where to intervene.">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<title>Faculty and SME Guide — Physician Innovator Track</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,900;1,9..144,400;1,9..144,500&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="site.css">
+
+</head>
+<body>
+
+<div class="topbar">
+  <a class="brandmark" href="index.html">mu<span class="two">2</span>sd</a>
+  <button class="toggle" id="tgl" aria-label="Toggle light or dark theme">Theme</button>
+</div>
+<nav class="subnav" aria-label="Track sections">
+  <ul>
+    <li><a href="index.html">The way</a></li>
+    <li><a href="notion.html">Set up</a></li>
+    <li><a href="trainee-guide.html">Trainee guide</a></li>
+    <li><a href="faculty-guide.html" aria-current="page">Faculty guide</a></li>
+    <li><a href="fieldnotes.html">Field notes</a></li>
+    <li><a href="gantt.html">Schedule</a></li>
+  </ul>
+</nav>
+
+<div class="wrap narrow">
+
+<header>
+  <div class="eyebrow">Physician Innovator Track · For faculty</div>
+  <h1>Faculty and SME Guide</h1>
+</header>
+<article>
+
+<h2>Faculty and SME Guide</h2>
+<p><em>UICOMP Graduate Medical Education · Cohort beginning July 2027</em></p>
+<p>This document is public to trainees. They have been given a copy. They know what we are held to, and they have been told to name it when we fail.</p>
+<hr />
+<h2>1. The one rule</h2>
+<p><strong>Do not solve it.</strong></p>
+<p>Every other instruction here is downstream of that. You have thirty years of pattern recognition that will let you see the answer in four minutes, and the entire purpose of this track is to prevent you from spending it. The trainee's slow, wrong, partially-informed path <em>is the curriculum</em>. Shortening it looks like generosity and functions like theft.</p>
+<p>Target ratio in any feedback session: <strong>three questions for every one assertion.</strong> Count them if you have to.</p>
+<p>When you cannot stand it any longer — and you will not be able to — convert the answer into the question that would have produced it. Not "you need to talk to the schedulers," but "who touches this patient between the referral and the scan, and which of them have you not met?"</p>
+<h3>The three faculty failure modes</h3>
+<ol>
+<li><strong>Solving it.</strong> Handing over the answer, the contact, the framing, the design. The most common and most damaging.</li>
+<li><strong>Praising polish.</strong> A well-formatted deck, a clean repo, a fluent narrative — these are the easiest things to reward and correlate poorly with learning. In an AI-enabled era they correlate almost not at all.</li>
+<li><strong>Going silent.</strong> Missing the seven-day feedback window, letting a month lapse, being unreachable. This is the failure trainees will not report and will interpret as a verdict on their work.</li>
+</ol>
+<hr />
+<h2>2. What you are actually reading</h2>
+<p>Trainees maintain two surfaces:</p>
+<ul>
+<li><strong>Notion</strong> — field log, needs inventory, stakeholder register, decision log, AI ledger, weekly entries. This is the thinking. Chronological, unpolished, append-only in spirit. <strong>This is where the learning is visible.</strong></li>
+<li><strong>GitHub repo</strong> (<code>pi-&lt;lastname&gt;-2027</code>, with Pages) — synthesized artifacts, prototypes, experiment records, public narrative. This is the output.</li>
+</ul>
+<p>Read Notion first. The repo shows what was produced; the commit history and the weekly entries show whether a person changed.</p>
+<p>Specifically, look at:</p>
+<ul>
+<li><strong>Commit rhythm.</strong> Steady small commits across weeks means the work happened. A burst three days before review means the work was assembled.</li>
+<li><strong>Whether early entries embarrass later ones.</strong> They should. A trainee whose month-two thinking is consistent with their month-ten thinking has either not been listening or has been quietly editing history.</li>
+<li><strong>Retired needs.</strong> The reasoning attached to abandonment is worth more than the reasoning attached to the survivor.</li>
+<li><strong>The disconfirming condition</strong> in each experiment record — written before the test or not at all.</li>
+</ul>
+<p>Expect entries timestamped at odd hours. Trainees are told to capture observations when they are working, including nights and weekends, using Notion on their personal device. A short, rough, three-in-the-morning entry is a better sign than a well-formed one written the following week — read it as evidence, not as sloppiness. It also means the field log will contain the most privacy-sensitive material in the whole system, so the Notion-only rule for raw notes is not negotiable.</p>
+<hr />
+<h2>3. Evidence of passage, by stage</h2>
+<p>What you are looking for, and the tell that it has not happened.</p>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>Evidence it happened</th>
+<th>Tell that it has not</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>SEE</strong></td>
+<td>Observations of things nobody complained about. Notices the unremarkable.</td>
+<td>Only records what someone told them was a problem.</td>
+</tr>
+<tr>
+<td><strong>UNDERSTAND</strong></td>
+<td>Talked to people whose work is invisible. Can state a need they initially misread.</td>
+<td>All stakeholders are physicians. Wants and needs are the same list.</td>
+</tr>
+<tr>
+<td><strong>FRAME</strong></td>
+<td>Need statement contains no solution. Has been revised on evidence, more than once.</td>
+<td>Statement smuggles in a technology. First version survived unchanged.</td>
+</tr>
+<tr>
+<td><strong>CREATE</strong></td>
+<td>Multiple genuinely different alternatives, at least two the trainee dislikes.</td>
+<td>Five variants of the same idea. The first concept became the project.</td>
+</tr>
+<tr>
+<td><strong>TEST</strong></td>
+<td>A pre-registered disconfirming condition. A test that could actually have failed.</td>
+<td>"Testing" is a demo to a friendly audience. No failure was possible.</td>
+</tr>
+<tr>
+<td><strong>LEARN</strong></td>
+<td>Reports a result that contradicted their expectation, and stayed with it.</td>
+<td>Every result confirmed the hypothesis. Anomalies explained away.</td>
+</tr>
+<tr>
+<td><strong>ADAPT</strong></td>
+<td>A dated persist/pivot/stop decision with named evidence.</td>
+<td>Direction changed after a faculty comment, not after data. Or never changed.</td>
+</tr>
+<tr>
+<td><strong>IMPLEMENT</strong></td>
+<td>Named who has to say yes, what it costs, what it displaces.</td>
+<td>"Then we would roll it out." No owner, no cost, no displacement.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>4. Cadence and commitments</h2>
+<p>The track sits inside existing protected and elective time. It asks program directors for no new hours — which is why the biweekly hour has to carry both the cohort work and the individual reviews.</p>
+<h3>The continuity hour</h3>
+<p>One hour every two weeks, inside each program's existing protected didactic time. For Internal Medicine that is flexible within the 11:30–1:00 window. The hour alternates:</p>
+<ul>
+<li><strong>Cohort hour</strong> (weeks 1, 5, 9…) — whole cohort plus faculty, sometimes an SME guest. A live problem, a critique, or a teaching block. Not a round of progress reports.</li>
+<li><strong>Individual reviews</strong> (weeks 3, 7, 11…) — roughly twenty minutes per resident inside the same hour. With a cohort of two or three, all of them fit. The resident sets the agenda and sends it 24 hours ahead.</li>
+</ul>
+<h3>Standing obligations</h3>
+<table>
+<thead>
+<tr>
+<th>What</th>
+<th>When</th>
+<th>Faculty obligation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Trainee field entry</td>
+<td>Weekly</td>
+<td>Skim. No response required.</td>
+</tr>
+<tr>
+<td>Cohort hour</td>
+<td>Every 2 weeks</td>
+<td>Core faculty lead. SME faculty by invitation.</td>
+</tr>
+<tr>
+<td>Individual review</td>
+<td>Every 2 weeks, alternating</td>
+<td>Written feedback within <strong>7 days</strong>.</td>
+</tr>
+<tr>
+<td>Repo and Notion comments</td>
+<td>Ongoing</td>
+<td>At least one substantive comment per resident every 2 weeks.</td>
+</tr>
+<tr>
+<td>Progression gate</td>
+<td>Quarterly</td>
+<td>Core faculty lead, 60–90 min. SME faculty welcome.</td>
+</tr>
+<tr>
+<td>Note to program director</td>
+<td>December and June</td>
+<td>Short summary of engagement, so the PD has something concrete for their own review cycle.</td>
+</tr>
+<tr>
+<td>Focused block</td>
+<td>2 weeks, once per year</td>
+<td>Faculty accompany or receive the debrief.</td>
+</tr>
+</tbody>
+</table>
+<h3>The calendar</h3>
+<table>
+<thead>
+<tr>
+<th>When</th>
+<th>What</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Before the track opens</strong></td>
+<td>Onboarding, and a calibration conversation per resident: set the observation and stakeholder counts against real rotation schedules.</td>
+</tr>
+<tr>
+<td><strong>July 2027</strong></td>
+<td>The track opens. Full rhythm begins.</td>
+</tr>
+<tr>
+<td><strong>Sept 2027 · Dec 2027 · Mar 2028 · June 2028</strong></td>
+<td>Gates 1–4. December and June are checkpoints (§7); Gate 4 also carries capstone plan approval.</td>
+</tr>
+<tr>
+<td><strong>July 2028</strong></td>
+<td>PI-2 opens.</td>
+</tr>
+<tr>
+<td><strong>Sept 2028 · Dec 2028 · Mar 2029</strong></td>
+<td>Gates 5–7. December is a checkpoint.</td>
+</tr>
+<tr>
+<td><strong>Apr – June 2029</strong></td>
+<td>Symposium, portfolio, final gate, graduation.</td>
+</tr>
+</tbody>
+</table>
+<h3>For SME faculty — when you are actually needed</h3>
+<p>You are not on the biweekly hook. Your touchpoints are onboarding, cohort hours where your domain is the subject, gates you are invited to, and asynchronous reading of a trainee's repo when core faculty flags something in your area. Roughly a handful of scheduled commitments per year, plus reading.</p>
+<h3>Stall protocol</h3>
+<p>Two consecutive missed weekly entries triggers a direct, non-punitive conversation initiated by core faculty within three days. Not an email — a conversation. Residents disappear from longitudinal tracks for reasons that have nothing to do with commitment, and the failure mode is to interpret silence as disinterest. Ask what is happening clinically and offer to move the dials.</p>
+<hr />
+<h2>5. How to give feedback here</h2>
+<p>A usable shape for written feedback:</p>
+<pre><code class="language-markdown">**What I saw that you may not have noticed you did:**
+(name a specific, real strength — behavioral, not evaluative)
+
+**Three questions:**
+1.
+2.
+3.
+
+**One thing I would push on:**
+(a challenge, framed as a question, not a correction)
+
+**What I do not know:**
+(your own uncertainty, named)
+
+**Who you might talk to:**
+(people, not answers)
+</code></pre>
+<p>Two disciplines worth holding:</p>
+<p><strong>Name your uncertainty out loud.</strong> Modeling epistemic honesty is most of what we are teaching. A trainee who never sees a senior physician say "I don't know, and here's how I'd find out" will not learn to say it either.</p>
+<p><strong>Praise the reversal, not the result.</strong> When a trainee reports that they were wrong about something, that is the highest-value moment in the track, and the reinforcement should be unmistakable. If reversals get a lukewarm response and polished artifacts get enthusiasm, we will train exactly the behavior we are trying to eliminate.</p>
+<h3>For SME faculty specifically</h3>
+<p>You are here because you know something the trainee does not — engineering, design, operations, regulatory, finance, informatics. The temptation to teach it directly is legitimate and mostly correct: <strong>teaching your domain content is welcome.</strong> Teaching them what to do with it is not.</p>
+<p>The line: explain how a 510(k) pathway works, how a time-and-motion study is run, what a payer will and will not reimburse. Do not tell them whether their idea should pursue one. Content, yes. Judgment, no.</p>
+<hr />
+<h2>6. The quarterly gate — put the artifact away</h2>
+<p>Eight gates across the two years: September, December, March and June — true quarters from a July start. Sixty to ninety minutes each, scheduled separately from the continuity hour — do not try to run one inside the biweekly slot. Core faculty lead; SME faculty are welcome and add most value at the June gates.</p>
+<p>The June gates carry additional weight. June 2028 is where the capstone plan is approved or sent back. June 2029 is the final reconstruction of the whole two years.</p>
+<p>Close the laptop. No repo, no slides, no notes. The trainee reconstructs the journey out loud.</p>
+<p>Five questions, asked in order:</p>
+<ol>
+<li>What did you personally experience?</li>
+<li>What did you personally notice or understand because of that experience?</li>
+<li>What did AI contribute?</li>
+<li>What judgment or decision remained yours?</li>
+<li><strong>How are you different now because you went through this?</strong></li>
+</ol>
+<p>Useful probes when an answer is thin:</p>
+<ul>
+<li>"Tell me about the moment you changed your mind."</li>
+<li>"What did you believe in month one that you now think was wrong?"</li>
+<li>"Who told you something you did not want to hear?"</li>
+<li>"Walk me through a decision where you chose the harder option."</li>
+<li>"What are you still uncertain about?"</li>
+</ul>
+<h3>Reading the answer</h3>
+<p><strong>Owned</strong> sounds unpolished and moves through reversal: <em>I thought X. Then I saw Y. That made me question Z. I chose this because of these constraints. It surprised me. I am still unsure about that.</em> Contains specific people, specific moments, specific surprise, and residual uncertainty.</p>
+<p><strong>Borrowed</strong> sounds fluent, general, and seamless. Correct-sounding conceptual vocabulary with no incident attached to it. No reversals. No named individuals. No uncertainty. Ask for the moment of surprise and you get an abstraction.</p>
+<p>The diagnostic move: ask for the <em>specific instance</em> behind any general claim. "Stakeholder alignment was a challenge" → "Which conversation, and what exactly did they say?" Borrowed competence does not survive that question. Owned competence gets more vivid.</p>
+<p>A weak gate is information, not a verdict. Name it plainly, ask what would need to change, and set the next gate's question. A gate at which <em>nothing has changed since the last one</em> is the actual concern — that is a stalled learner, not a slow one, and it warrants a different conversation than a project problem.</p>
+<hr />
+<h2>7. The six-month checkpoint</h2>
+<p>Half the gates are ordinary. Half carry a decision.</p>
+<p>The <strong>December and June gates are checkpoint gates</strong>. Structurally identical — artifacts away, five questions, same probes — but they end in a written determination that is shared with the trainee and, where it is anything other than "continue," with their program director.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Point in track</th>
+<th>Determination</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Dec 2027</strong></td>
+<td>Month 6</td>
+<td>Continue</td>
+</tr>
+<tr>
+<td><strong>June 2028</strong></td>
+<td>Month 12</td>
+<td>Continue, and capstone plan approved or returned</td>
+</tr>
+<tr>
+<td><strong>Dec 2028</strong></td>
+<td>Month 18</td>
+<td>Continue</td>
+</tr>
+<tr>
+<td><strong>June 2029</strong></td>
+<td>Month 24</td>
+<td>Graduation</td>
+</tr>
+</tbody>
+</table>
+<h3>The three determinations</h3>
+<p><strong>Continue.</strong> The default. Say it plainly and say why — a trainee who hears only silence will assume they are on thin ice and will start optimizing for appearance.</p>
+<p><strong>Continue with conditions.</strong> Two or three conditions, written, specific, dated, with a review point eight weeks out. Conditions attach to documented work and engagement, never to project outcomes. Acceptable: <em>file the four missing weekly entries and commit the retirement reasoning for the three parked needs by 15 February.</em> Not acceptable: <em>demonstrate a viable prototype.</em></p>
+<p><strong>Withdraw from the track.</strong> Narrow, and only in the four circumstances below.</p>
+<h3>What we are deciding on</h3>
+<p>Not the project. The learner.</p>
+<p>Read for: presence of documented work at roughly the agreed rhythm; commit distribution across weeks rather than a pre-review burst; movement across the eight stages since the last checkpoint; ownership under §6 probing; an honest AI ledger; and whether feedback has changed anything. That last one is the most diagnostic and the easiest to miss — a trainee who receives feedback warmly and acts on none of it will read as engaged right up until the second checkpoint.</p>
+<p><strong>A stalled learner is the signal. A stalled project is not.</strong> These look similar in a repo and are opposite findings. A trainee whose project has gone nowhere for four months but whose reasoning has visibly sharpened is doing exactly what this track is for. A trainee whose project is advancing while their thinking has not moved since October is the one who needs the conversation.</p>
+<p>Do not let a failed project, a pivot, an abandoned need, a refused pilot, or a killed idea count against a determination. State this at every checkpoint, out loud, because trainees will not believe it from a document alone.</p>
+<h3>Grounds for withdrawal</h3>
+<ol>
+<li><strong>Sustained absence with no communication</strong>, after the stall protocol has been used and a direct conversation has been had.</li>
+<li><strong>Borrowed competence at two consecutive gates</strong>, where it was named in writing at the first and nothing changed. One weak gate is never sufficient.</li>
+<li><strong>A breach of patient privacy, professionalism, or clinical safety.</strong> Handle through the ordinary institutional channels first; the track determination follows, it does not substitute.</li>
+<li><strong>The resident's clinical training needs the time.</strong> Usually raised by the PD or by the resident. Treat it as a scheduling reality, not a performance finding, and say so in the written determination.</li>
+</ol>
+<h3>Process</h3>
+<ul>
+<li><strong>No surprises.</strong> Nothing may appear at a checkpoint that has not already been raised in writing at least once. If it has not been, the concern is noted for the next checkpoint and the trainee is told what to work on — it does not drive this determination. Our documentation failure is not their problem.</li>
+<li><strong>Written within seven days</strong>, to the trainee. The trainee may file a written response, which is kept alongside it.</li>
+<li><strong>PD informed</strong> of any determination other than "continue."</li>
+<li><strong>Not an adverse academic action.</strong> The track is elective and additive. Withdrawal returns protected and elective time to the home program. It is not reportable and it is not a residency performance finding. Be explicit about this in writing, or a resident will reasonably fear it is one.</li>
+<li><strong>Voluntary withdrawal at any time, without explanation.</strong> Honour it immediately and without persuasion. A resident who wants out and is talked into staying will not do good work and may be telling you something about their clinical load that they cannot say directly.</li>
+</ul>
+<h3>A note on the inaugural cohort</h3>
+<p>With two or three trainees, a withdrawal is a third or half the cohort. The pressure to avoid one will be real and will not announce itself as pressure. Decide on the criteria above, not on how the cohort will look.</p>
+<hr />
+<h2>8. Pivots, drift, and failure</h2>
+<p><strong>A pivot is documented, evidence-based, and dated.</strong> It names what was learned, what it invalidated, and what the new direction is. A pivot raises the assessment. Say so explicitly at the moment it happens, or the trainee will read it as loss.</p>
+<p><strong>Drift is undocumented change.</strong> The project is now about something else and no one wrote down why. Drift is usually avoidance — a hard result arrived and the trainee walked away from it rather than through it. The intervention is not to push them back to the old direction; it is to make them write the decision record they skipped.</p>
+<p><strong>Failure, as we define it here, is an unlearned experiment.</strong> Data collected and not interpreted. Feedback received and absorbed without consequence. An idea abandoned for comfort. A pivot made because a faculty member frowned.</p>
+<p>None of these are failures:
+- The prototype did not work.
+- The pilot was refused by operations.
+- The need turned out to be already solved elsewhere.
+- Eight months of work were abandoned on evidence.
+- Nothing was commercialized.</p>
+<p>A trainee who kills their own project in month eighteen on good evidence, and can articulate what the evidence was, should graduate at Advanced.</p>
+<hr />
+<h2>9. AI in trainee work</h2>
+<p>Trainees are permitted and encouraged to use AI. The stated position: <strong>AI is a partner-organizer, not a creative.</strong> Perception, judgment, and decision must remain with the learner.</p>
+<p>They maintain an <strong>AI Ledger</strong> in Notion — date, tool, what was asked, what was produced, what was kept and why, what judgment stayed theirs.</p>
+<p>How to read it:</p>
+<ul>
+<li><strong>Heavy use + clear retained judgment + honest ledger</strong> → this is the target state. Score it well and say so.</li>
+<li><strong>Thin ledger + polished artifact</strong> → the flag. Not proof of anything, but it is the case for a hard gate. Go to §6 and ask for specific instances.</li>
+<li><strong>No ledger</strong> → an expectation was not met. Address it as a documentation lapse first, not an integrity accusation.</li>
+</ul>
+<p>Do not treat the ledger as an enforcement instrument. The moment trainees experience it as surveillance, it stops being honest and stops being useful. It is framed to them as <em>how they prove ownership</em>, and we should discuss it that way.</p>
+<p>The gate, not the ledger, is where ownership is actually established. A trainee can fabricate a ledger. Nobody can fabricate the texture of a real reversal under §6 probing.</p>
+<hr />
+<h2>10. Guardrails — where faculty must intervene</h2>
+<p>These are the places where "do not solve it" is suspended. Act directly.</p>
+<p><strong>Privacy.</strong> Public repositories are permanent. Before any trainee's repo goes public, someone reviews it for identifiable information — in files, commit messages, images, filenames, and image metadata. Deleting a file does not remove it from git history; if something gets in, it requires history rewriting and possibly a fresh repo. Raw field notes belong in Notion and never in the repo. Check this at every gate.</p>
+<p><strong>QI versus human subjects research.</strong> Determine this <em>before</em> data collection, not at manuscript time. If it is research, IRB precedes the work. Trainees will not reliably see the line; this is our job.</p>
+<p><strong>Clinical space access and photography.</strong> Cleared in advance, every time.</p>
+<p><strong>Institutional commitments.</strong> No trainee signs anything, commits institutional resources, or enters discussions with a vendor or potential partner without core faculty. If a project develops genuine IP, bring in the technology-transfer office early — early enough that a public repo or a poster has not already created a disclosure problem.</p>
+<p><strong>Clinical duties.</strong> This track is subordinate to residency training and duty-hour requirements, without exception. If the innovation work is displacing clinical obligations or sleep, we reduce scope. Watch for the trainee who is proud of doing both at full intensity.</p>
+<p><strong>Wellbeing.</strong> Residents are a population under strain, and a longitudinal track that emphasizes austerity and pressure-tested judgment can be misread as a demand for endurance. It is not. Deliberate difficulty applies to the <em>intellectual</em> work — to withholding easy answers, not to withholding support. If a trainee seems to be struggling in a way that goes beyond the project, escalate to their program director and GME, and reduce the load here first.</p>
+<hr />
+<h2>11. What we are held to</h2>
+<p>Trainees have this list. They have been told to hold us to it.</p>
+<ol>
+<li><strong>We do not solve it.</strong> Questions, not answers, at roughly 3:1. If a faculty member hands over the solution, that is a program failure and the trainee is instructed to name it.</li>
+<li><strong>We respond within seven days</strong> of an individual review, and comment substantively in the repo or Notion at least every two weeks.</li>
+<li><strong>We state our own uncertainty</strong> out loud, and name who might know.</li>
+<li><strong>We reward pivots.</strong> Documented, evidence-based changes of direction raise the assessment.</li>
+<li><strong>We do not penalize honest AI disclosure.</strong> The ledger evaluates ownership; it never counts against use.</li>
+<li><strong>We tell them where they stand,</strong> in plain language, at every gate, including when it is unwelcome.</li>
+<li><strong>No concern reaches a checkpoint cold.</strong> Anything bearing on continuation was raised in writing first. If it was not, it waits for the next checkpoint.</li>
+<li><strong>We go find them when they go quiet.</strong> Two missed weeks triggers a conversation, not a demerit.</li>
+</ol>
+<hr />
+<h2>Appendix — Assessment anchors</h2>
+<p>Applied across the eight stages. Most trainees should reach Proficient across the majority of stages by graduation. A project that stays at Developing while the <em>learner</em> moves to Proficient is a good outcome and should be scored as one.</p>
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>Behavioral anchor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Emerging</strong></td>
+<td>Names only the obvious. Moves to solutions before understanding. Treats feedback as an obstacle. Cannot say what would change their mind.</td>
+</tr>
+<tr>
+<td><strong>Developing</strong></td>
+<td>Observes without immediately solving, but stays at the surface. Reads system problems as individual failures. Changes course when told to, not when evidence says to.</td>
+</tr>
+<tr>
+<td><strong>Proficient</strong></td>
+<td>Connects observations to system design. Designs experiments that could genuinely fail. Pivots on evidence and can name the evidence. Distinguishes wants from needs in real conversations.</td>
+</tr>
+<tr>
+<td><strong>Advanced</strong></td>
+<td>Detects structural and compounded burdens others have normalized. Actively hunts disconfirmation. Holds an idea loosely enough to kill it and firmly enough to defend it under pressure. Can teach the move to a peer.</td>
+</tr>
+</tbody>
+</table>
+</article>
+
+<div class="onward">
+  <a class="prev" href="trainee-guide.html"><span>Back</span><b>Trainee guide</b></a>
+  <a class="next" href="fieldnotes.html"><span>Next</span><b>Field notes</b></a>
+</div>
+
+<footer class="site">
+  <span class="fq">“The competence should travel with the learner.”</span>
+  <span class="src"><b>mu<span class="two">2</span>sd</b> · The Making of a Physician Innovator &nbsp;·&nbsp; Narratives &amp; rubrics: drvoz.com — a mu2sd studio</span>
+</footer>
+
+</div>
+
+<script>
+  (function(){
+    var root=document.documentElement, btn=document.getElementById('tgl');
+    function cur(){var t=root.getAttribute('data-theme'); if(t) return t; return matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';}
+    try{var s=localStorage.getItem('mu2sd-theme'); if(s) root.setAttribute('data-theme',s);}catch(e){}
+    if(btn) btn.addEventListener('click',function(){var next=cur()==='dark'?'light':'dark'; root.setAttribute('data-theme',next); try{localStorage.setItem('mu2sd-theme',next)}catch(e){}});
+  })();
+</script>
+</body>
+</html>
