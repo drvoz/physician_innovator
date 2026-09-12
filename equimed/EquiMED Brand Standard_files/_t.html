@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<!-- saved from url=(0092)https://7eff0894-76dd-4748-8971-cb3a0f9a7840.frame.claudeusercontent.com/_f/1789129870-628d/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><!-- frame-runtime --><script>window.__FRAME_PREAMBLE={"v":1,"capabilities":{"artifact":"artifact.BoUB4pxl.js","assets":"assets.B6H5Rue4.js","comments":"comments.CJGulO07.js","db":"db.D373BnLH.js","downloads":"downloads.CKk-Yshd.js","embed":"embed.Hf7Acqy1.js","endpoints":"endpoints.BGpYVATw.js","mcp":"mcp.GIBQRXCC.js","network":"network.B5UA9Su4.js","permissions":"permissions.DAF5cUfF.js","room":"room.Dptr10ye.js","sample":"sample.BTkq5Oaj.js","self":"artifact.BoUB4pxl.js","user":"user.DV7k6YjV.js"},"transforms":"_transforms.C6t_n-gA.js","comments":"_comments.Daca5pvt.js","translate":"_translate.B2LIOQT7.js","ldx":"_ldx.CMCg6PeI.js"}                                                                                                                                                                                                                    </script><script>(function(){"use strict";var St=["light","dark","system"],At=/^[A-Za-z0-9_-]{1,64}$/,Xe=/^[a-zA-Z_:][a-zA-Z0-9_:.-]{0,127}$/,kt=new Set(["class","hidden","value","checked","style","title","alt","placeholder","lang","dir","role","tabindex","disabled","readonly","contenteditable","open","colspan","rowspan"]);function Tt(t){const e=t.toLowerCase();return e.startsWith("data-")||e.startsWith("aria-")||kt.has(e)}var Ye="data-ldx-props";function Rt(t,e){if(e.toLowerCase()===Ye)return!0;const n=t.getAttribute(Ye);if(n===null)return!1;try{const o=JSON.parse(n);if(o===null||typeof o!="object"||Array.isArray(o))return!0;const s=e.toLowerCase();return Object.keys(o).some(a=>a.toLowerCase()===s)}catch{return!0}}var qr="http://www.w3.org/1999/xhtml",Ot="http://www.w3.org/2000/svg",Lt=new Set(["script","style","iframe","noscript","noframes","noembed","xmp","plaintext","template","title","textarea","object","embed"]),Pt=new Set(["script","style"]);function Mt(t){const e=t.localName.toLowerCase();return t.namespaceURI==="http://www.w3.org/1999/xhtml"?!Lt.has(e):t.namespaceURI===Ot?!Pt.has(e):!1}function Te(t,e){return t===e||(t===160||t===32)&&(e===160||e===32)}function Nt(t,e){const n=t.length,o=e.length;let s=0;for(;s<n&&s<o&&Te(t.charCodeAt(s),e.charCodeAt(s));)s++;let a=0;for(;a<n-s&&a<o-s&&Te(t.charCodeAt(n-1-a),e.charCodeAt(o-1-a));)a++;return{p:s,s:a}}function Ct(t,e){const n=t.firstChild;if(t.childNodes.length!==1||n===null||n.nodeType!==Node.TEXT_NODE){t.textContent=e;return}const o=n.data,s=o.length,a=e.length,{p:i,s:f}=Nt(o,e);i===s&&f===0&&s===a||n.replaceData(i,s-i-f,e.slice(i,a-f));const S=n.data,w=t.ownerDocument.getSelection?.()??null,y=w!==null&&w.rangeCount>0&&(w.anchorNode===n||w.focusNode===n)?{anchor:w.anchorNode,anchorOffset:w.anchorOffset,focus:w.focusNode,focusOffset:w.focusOffset}:null;let A=-1,p=-1;for(let b=0;b<S.length&&b<e.length;b++){const L=S.charCodeAt(b),P=e.charCodeAt(b);L!==P&&Te(L,P)&&(A<0&&(A=b),p=b)}const v=A>=0;if(v&&n.replaceData(A,p-A+1,e.slice(A,p+1)),v&&y!==null&&y.anchor!==null&&y.focus!==null)try{w.setBaseAndExtent(y.anchor,y.anchorOffset,y.focus,y.focusOffset)}catch{}}var jt=new Set(["html","head","body","frameset"]);function It(t){return t.namespaceURI==="http://www.w3.org/1999/xhtml"&&jt.has(t.localName)}function xt(t){if(t===null||typeof t!="object")return!1;const e=t;if(typeof e.target!="string"||!At.test(e.target)||e.text!==void 0&&typeof e.text!="string")return!1;if(e.attrsSet!==void 0){if(e.attrsSet===null||typeof e.attrsSet!="object")return!1;for(const[n,o]of Object.entries(e.attrsSet))if(!Xe.test(n)||typeof o!="string")return!1}if(e.attrsRemoved!==void 0){if(!Array.isArray(e.attrsRemoved))return!1;for(const n of e.attrsRemoved)if(typeof n!="string"||!Xe.test(n))return!1}return!0}function Ft(t,e){if(t===null||typeof t!="object")return!1;const{seq:n,elements:o}=t;if(typeof n!="number"||!Number.isSafeInteger(n)||!Array.isArray(o)||o.length===0||o.length>64)return!1;for(let s=0;s<o.length;s++)if(!e(o[s]))return!1;return!0}function Dt(t){return t===null||typeof t!="object"?!1:Ft(t.__frame_patch,xt)}function Ht(t){if(t===null||typeof t!="object")return!1;const e=t.__frame_init;return e!==null&&typeof e=="object"}function qt(t){return t!==null&&typeof t=="object"&&t.__frame_size_poke===!0}function Bt(t){if(t===null||typeof t!="object")return!1;const e=t.__frame_host_visible;return e!==null&&typeof e=="object"&&typeof e.visible=="boolean"}function Ut(t){if(t===null||typeof t!="object")return!1;const e=t.__frame_theme;if(e===null||typeof e!="object")return!1;const n=e.theme;return typeof n=="string"&&St.includes(n)}var zt=["ok","empty","snapshot_error","snapshot_timeout","unclonable","oversize","unavailable","restore_error","withheld"],Kt=["TypeError","RangeError","ReferenceError","SyntaxError","DataCloneError","QuotaExceededError","AbortError","TimeoutError","SecurityError","Error","other"];function Wt(t){return typeof t=="string"&&Kt.includes(t)?t:"other"}var $t=Object.freeze({until:null,now:!1}),Xt="__claude_hot",Yt="__claude_hot_in",Gt=/^__claude_hot(?:_in)?(?::|$)/,Ge=/^[0-9a-z]{1,32}$/,Re=t=>t===void 0?Xt:"__claude_hot:"+t,se=t=>t===void 0?Yt:"__claude_hot_in:"+t;function Vt(t,e){const n=[];for(let o=0;o<t.length;o++){const s=t.key(o);s!==null&&s!==e&&Gt.test(s)&&n.push(s)}for(const o of n)t.removeItem(o)}function Jt(t){let e=null;try{e=q(JSON.parse(t)?.hot)}catch{return null}return e===null||typeof e.k!="string"||!Ge.test(e.k)?null:le(e.g)?{k:e.k,g:e.g}:{k:e.k}}var Br=262144,Zt=3e3,Ve=/^[a-z0-9._:-]{1,64}$/,Qt=["none","hot-restart","hard-reload"],er=["asset","doc","added","removed"],tr=1500,rr=/^[0-9a-f]{64}$/;function q(t){return t!==null&&typeof t=="object"?t:null}function le(t){return typeof t=="number"&&Number.isInteger(t)&&t>=0&&t<2**31}function Je(t){return t===void 0||typeof t=="number"&&Number.isFinite(t)}function nr(t){return t===void 0||typeof t=="string"&&Ve.test(t)}function Ze(t){const e=q(t);return e!==null&&(e.until===null||typeof e.until=="number"&&Number.isFinite(e.until))&&typeof e.now=="boolean"}function Oe(t){const e=q(t);return e!==null&&typeof e.ver=="string"&&e.ver.length<=128&&Je(e.seq)&&typeof e.handoff=="string"&&zt.includes(e.handoff)&&nr(e.note)}function or(t){const e=q(t);return e!==null&&le(e.gen)&&(e.phase==="final"||e.phase==="pending")&&(e.from===null||Oe(e.from))}function ar(t){const e=q(t);return e!==null&&e.kv===1&&le(e.gen)&&Oe(e.from)&&Object.hasOwn(e,"data")}function sr(t){const e=q(t);return e!==null&&e.__frame_hot_snapshot===!0&&le(e.gen)&&typeof e.timeoutMs=="number"&&e.timeoutMs>=0&&e.timeoutMs<=6e4&&(e.handoff===void 0||typeof e.handoff=="boolean")&&(e.deadline===void 0||Ze(e.deadline))&&Je(e.seq)&&(e.note===void 0||typeof e.note=="string")&&(e.key===void 0||typeof e.key=="string")}function lr(t){const e=q(t);return e!==null&&e.__frame_hot_start===!0&&le(e.gen)&&Oe(e.from)}function Qe(t){const e=q(t);return e!==null&&typeof e.ver=="string"&&e.ver.length<=128&&Number.isFinite(e.seq)}function et(t){if(t==null||typeof t=="string")return!0;const e=q(t);return e!==null&&typeof e.doc=="string"&&typeof e.profile=="string"}function ir(t){const e=q(t);return e!==null&&typeof e.path=="string"&&er.includes(e.kind)&&et(e.from)&&et(e.to)}function cr(t){return t===null?null:Object.freeze(t.filter(ir))}function ur(t){const e=q(t);return e!==null&&e.__frame_hot_update===!0&&Number.isFinite(e.id)&&Qe(e.from)&&Qe(e.to)&&(e.changed===null||Array.isArray(e.changed))&&Qt.includes(e.required)&&Ze(e.deadline)&&typeof e.verdictTimeoutMs=="number"&&e.verdictTimeoutMs>=0&&e.verdictTimeoutMs<=6e4&&(e.preflight===void 0||typeof e.preflight=="string"&&rr.test(e.preflight))}var Z=/^[\w.-]+\.js$/;function fr(t,e,n){return n?"inert":typeof e=="string"&&Z.test(e)?t?[e]:"inert":t?"inert":"framed"}var tt=Object.freeze({[Symbol("claude.hot.restart")]:!0});function rt(t,e){let n;try{n=t??sessionStorage}catch{return null}const o=Re(e?.k),s=se(e?.k);let a=null;try{a=n.getItem(o)}catch{}try{n.removeItem(o)}catch{}try{Vt(n,s)}catch{}let i=null;if(a!==null&&!(e!==null&&e.g===void 0))try{const f=JSON.parse(a);ar(f)&&(e===null||f.gen===e.g)&&(i=f)}catch{}if(i===null)try{n.removeItem(s)}catch{}return i}function dr(){const t=/^\/_f\/([^/]{1,128})\//.exec(location.pathname);return t?t[1]:""}var he="{}";function ie(t){if(!t)return null;const e={ver:t.ver,handoff:t.handoff};return t.seq!==void 0&&(e.seq=t.seq),t.note!==void 0&&(e.note=t.note),e}function nt(t,e){return t!==null&&t.note===void 0&&e?.note!==void 0?{...t,note:e.note}:t}function ot(t){const e=t?.k;return e!==null&&typeof e=="object"?e:void 0}function hr(t,e,n,o=null){const s=setTimeout,a=clearTimeout,i=queueMicrotask,f=performance.now.bind(performance),S=new TextEncoder,w=dr();let y=null;try{y=sessionStorage}catch{}const A={storage:y,fetch:typeof fetch=="function"?fetch.bind(globalThis):null,entry:location.origin+location.pathname+location.search,ver:w,key:o?.k};let p=o?.k;const v=typeof requestAnimationFrame=="function"?requestAnimationFrame:r=>s(()=>r(f()),16);let b=e?.data??{},L=ie(e?.from),P=e?.gen??0,h=e!==null,k=!1,E=!1,j=null,ce=!1;const ue=new AbortController;let fe=null,I=null,ee=null,we=!1,$=()=>{};const l=new Promise(r=>{$=r});let m=!1,g=!1,C=!1,M,R=null,D=!1,B=!1;const te=r=>{for(const c of[Re(r),se(r)])try{y?.removeItem(c)}catch{}},x=(r,c)=>{try{c!==null&&n.post(r,c)}catch{}},K=()=>{const r={__frame_hot:!0,ready:I!==null,accept:ee!==null};m&&(r.readData=!0),C&&(r.threw=!0),R?.assess&&(r.preflight=!0),x(r,j)};let d=!1,re=!1,z=!1,ne=!1;const oe=()=>{d||!ce||z||(d=!0,x({__frame_reveal_hold:!0},"*"))},W=()=>new Promise(r=>{let c,u=0;const _=O=>{if(c===void 0)c=O;else if(O!==c||++u>=8){r();return}try{v(_)}catch{r()}};try{v(_)}catch{r()}}),be=()=>{z=!0,x({__frame_reveal_ready:!0},"*")},qe=r=>{re||(re=!0,r.then(c=>{if(c===!1)return;let u=null;try{u=R?.settle?.()??null}catch{}return(u===null?W():new Promise(_=>{s(_,50),Promise.resolve(u).then(_,_)}).then(W)).then(be)}))},Cr=()=>{if(ne||!z)return;ne=!0;const r=()=>{try{R?.afterReveal?.()}catch{}};r(),W().then(()=>{r(),be()})},Ee=(r=!1)=>{if(we||I===null||!h||!E)return;we=!0;const c=I,u=b;i(()=>{let _;try{_=c(u)}catch(H){throw $(!1),H}let O=!1;try{O=typeof _?.then=="function"}catch{}if(!O){$(!0);return}Promise.resolve(_).then(()=>$(!0),H=>{$(!1),i(()=>{throw H})})}),qe(r?l:n.dcl.then(()=>l))},Se=r=>typeof r=="string"&&Ve.test(r)?r:void 0,mt=r=>{const c={__frame_hot_restart:!0},u=Se(r?.note);u!==void 0&&(c.note=u),r?.required==="hard-reload"&&(c.required="hard-reload"),x(c,j)},_t=Object.freeze({get data(){return E||(g=!0),!h&&!m&&(m=!0,E&&K()),b},get from(){return L},get gen(){return P},signal:ue.signal,snapshot(r){typeof r=="function"&&(fe=r)},ready(r){typeof r!="function"||I!==null||(I=r,oe(),K(),k&&x({__frame_hot_ready:!0,gen:P},j),Ee())},accept(r){typeof r=="function"&&(ee=r,K())},restart(r){const c={note:r?.note,required:r?.required};if(E){mt(c);return}const u=M;M={note:Se(u?.note)??c.note,required:u?.required==="hard-reload"||c.required==="hard-reload"?"hard-reload":void 0}}});let Ae=null,yt=()=>{};const jr=new Promise(r=>{yt=r});let Ir=null;const vt=()=>Ir??=n.dcl.then(()=>{let r=!1;try{r=Ae!==null&&Ae.expect()}catch{}if(!r)return;const c=Ae.maxMs;return new Promise(u=>{jr.then(u),s(u,c)})}),gt=()=>{if(!D||B||R===null)return;B=!0;const r=R;vt().then(()=>{try{z||r.afterStart(ot(e),!1)}catch{}})},wt=r=>{e!==null&&g&&(m=!0),b={},L=null,P=0;try{y?.removeItem(se(o?.k))}catch{}e!==null&&!r&&qe(n.dcl.then(()=>I!==null?l:void 0))},xr=()=>{D=!0,qe(vt().then(()=>I!==null?l:void 0)),gt()};try{addEventListener("error",()=>{C||I!==null||(C=!0,K())})}catch{}let X=-1,Be,Ue,de=!0,ze=!1,Ke,ke=null;const We=r=>{const c=ke===null;ke=de&&r[0]!=="withheld"?r:["withheld",r[1],he];let u=r[0];if(de&&u!=="withheld"){const O={ver:w,handoff:u};Be!==void 0&&(O.seq=Be),Ue!==void 0&&(O.note=Ue);try{if(y===null)throw new Error("no storage");y.setItem(Re(p),'{"kv":1,"gen":'+X+',"from":'+JSON.stringify(O)+(Ke!==void 0?',"k":'+JSON.stringify(Ke):"")+',"data":'+(u==="ok"?r[2]:he)+"}")}catch{u="unavailable"}}else{u="withheld",te(p);try{R?.release?.()}catch{}}const _={__frame_hot_snapshotted:!0,gen:X,handoff:u,bytes:r[1]};if(r[3]!==void 0&&(_.errName=r[3]),x(_,j),c&&(u==="snapshot_error"||u==="unclonable"||u==="oversize"))try{console.warn("claude.hot: snapshot",u,r[3])}catch{}},bt=r=>{try{return Wt(r?.name)}catch{return"other"}},ae=(r,c,u=0)=>We(c===void 0?[r,u,he]:[r,u,he,bt(c)]),Fr=r=>{if(r.gen<=X)return;const c=X>=0;if(X=r.gen,Be=r.seq,Ue=Se(r.note),typeof r.key=="string"&&Ge.test(r.key)&&r.key!==p&&(te(p),p=r.key),de&&=r.handoff!==!1,c){ke!==null?We(ke):ze&&x({__frame_hot_held:!0,gen:X},j);return}ue.abort();const u=Object.freeze({handoff:de,timeoutMs:r.timeoutMs,deadline:r.deadline??$t}),_=fe,O=()=>{if(de)try{Ke=R?.capture()}catch{}if(_===null){ae("empty");return}let F=!1;const Y=s(()=>{F||(F=!0,ae("snapshot_timeout"))},Math.max(0,u.timeoutMs));Promise.resolve().then(()=>_(u)).then(G=>{if(F)return;F=!0,a(Y);let V;try{V=JSON.stringify(G)}catch(J){ae("unclonable",J);return}if(typeof V!="string"){ae("unclonable");return}let N=V.length;try{N=S.encode(V).length}catch{}if(N>262144){ae("oversize",void 0,N);return}We(["ok",N,V])},G=>{F||(F=!0,a(Y),ae("snapshot_error",G))})};let H=null;try{H=R?.holdForIme()??null}catch{}if(H===null)O();else{ze=!0,x({__frame_hot_held:!0,gen:X},j);const F=()=>{ze=!1,O()};H.then(F,F)}},Dr=r=>{if(!k||h||I===null||r.gen!==P)return;let c=null;try{c=rt(y,o&&{k:o.k,g:r.gen})}catch{}if(c!==null&&c.gen!==r.gen){c=null;try{y?.removeItem(se(o?.k))}catch{}}b=c?.data??{},L=nt(ie(c?.from??r.from),ie(r.from)),c!==null&&(P=c.gen),h=!0,k=!1;const u=ot(c);l.then(_=>{try{_&&R?.afterStart(u,!0)}catch{}}),Ee(!0)};let $e=0;const Hr=r=>{const c=ee;if(c===null||r.id<=$e)return;$e=r.id;const u=R?.assess;if(r.preflight===void 0||u===void 0){Et(r,c);return}let _=!1;const O=Y=>{_||(_=!0,a(F),r.id===$e&&Et(r,c,Y))},H=()=>O(u.timeout(r)),F=s(H,tr+100);u.run(r,window).then(O,H)},Et=(r,c,u)=>{let _,O=!1;const H=Object.freeze({from:{ver:r.from.ver,seq:r.from.seq},to:{ver:r.to.ver,seq:r.to.seq},changed:cr(r.changed),required:r.required,deadline:r.deadline,restart(N){return _??=Se(N?.note),O||=N?.required==="hard-reload",tt},...u?.update}),F=N=>{const J={__frame_hot_verdict:!0,id:r.id};N==="applied"||N==="deferred"?J.verdict=N:N===tt&&(J.verdict="restart",O&&(J.required="hard-reload"),_!==void 0&&(J.note=_)),x(Object.assign(J,u?.verdict),j)};let Y=!1;const G=N=>Y?!1:(Y=!0,a(V),F(N),!0),V=s(G,r.verdictTimeoutMs);Promise.resolve().then(()=>c(H)).then(G,N=>{if(G(void 0))try{console.warn("claude.hot: accept",bt(N))}catch{}})};try{t.hot===void 0&&Object.defineProperty(t,"hot",{value:_t,writable:!1,configurable:!1,enumerable:!1})}catch{}return{hot:_t,boot:A,afterConnect(){ce=!0,(e!==null||I!==null)&&oe()},onInit(r,c){j=c,E=!0;const u=or(r)?r:null;u?.phase==="final"&&e!==null&&e.gen===u.gen?(h=!0,L=nt(L,ie(u.from)),xr()):(k=u?.phase==="pending",wt(k),h=!k,P=u?.gen??0,L=ie(u?.from)),K(),k&&I!==null&&x({__frame_hot_ready:!0,gen:P},c),M!==void 0&&(mt(M),M=void 0),Ee()},onNoInit(){E=!0,wt(!1),h=!0,Ee()},onShell(r){return r?.__frame_revealed===!0?(Cr(),!1):sr(r)?(Fr(r),!0):lr(r)?(Dr(r),!0):ur(r)?(Hr(r),!0):!1},attachExtras(r){R=r,gt(),r.assess&&K()},inSlot:()=>se(p),hydration(r,c){Ae??={expect:r,maxMs:c}},hydrated(){yt()},carried(){return h?b:{}},presented:()=>z}}var Ur="frame_ldx_runtime",pr="frame_ldx_build",zr="script#an-form",mr=256;function at(t,e,n){for(const o of t)n(o)&&t.delete(o);t.size>=mr&&!t.has(e)&&t.delete(t.values().next().value),t.add(e)}function Le(t,e,n){try{const o=t[e];if(typeof o!="function")return;t[e]=function(...s){const a=o.apply(this,s);try{n(this)}catch{}return a}}catch{}}var Pe;function _r(){if(Pe)return Pe;const t={media:new Set,contexts:new Set,onStart:null,onPause:null};Pe=t;const e=window.HTMLMediaElement?.prototype;e&&(Le(e,"play",s=>{at(t.media,s,a=>a.paused),t.onStart?.(s)}),Le(e,"pause",s=>t.onPause?.(s)));const n=window.AudioContext,o=window.AudioNode?.prototype;return n&&o&&Le(o,"connect",s=>{const a=s.context;a instanceof n&&(at(t.contexts,a,i=>i.state==="closed"),t.onStart?.(a))}),t}function yr(t){let e=window;for(let n=0;e.parent&&e.parent!==e&&n<8;n++)if(e=e.parent,t(e))return!0;return!1}function vr(){let t=null;const e=()=>t??parent,n=o=>t?o===t:yr(s=>s===o);return{post(o,s){if(t){e().postMessage(o,s);return}let a=parent;for(let i=0;i<8&&(a.postMessage(o,s),!(!a.parent||a.parent===a));i++)a=a.parent},on(o){const s=a=>{const i=a.source;n(i)&&o(a.data,a.origin,a.isTrusted,()=>{t??=i})};return addEventListener("message",s),()=>removeEventListener("message",s)},port:o=>({post(s,a){if(a?.activation){e().postMessage(s,{targetOrigin:o,includeUserActivation:!0});return}if(a?.transfer){e().postMessage(s,o,a.transfer);return}e().postMessage(s,o)},on(s,a){const i=f=>{n(f.source)&&f.origin===o&&s(f.data,f)};return addEventListener("message",i,a),()=>removeEventListener("message",i,a)}})}}function gr(){const t={post:()=>{},on:()=>()=>{}};return{...t,port:()=>t}}var Me="__frame_scroll",wr=150,br=310,Er=160,Sr=3e4;function Ar(){let t=0,e=!1,n=!1,o=!1,s=0,a=null;const i=h=>{try{sessionStorage.setItem(Me,JSON.stringify({y:h}))}catch{}},f=()=>{if(clearTimeout(t),a===null)return;const h=a;a=null,i(h)},S=()=>{if(e){e=!1;return}n=!0,a=scrollY,clearTimeout(t),t=setTimeout(f,wr)};try{addEventListener("scroll",S,{passive:!0}),addEventListener("pagehide",f)}catch{}const w=()=>{let h;try{h=sessionStorage.getItem(Me)}catch{return null}if(h===null)return null;let k;try{k=JSON.parse(h)}catch{k=null}const E=k?.y;if(!(typeof E=="number"&&Number.isFinite(E)&&E>=0)){try{sessionStorage.removeItem(Me)}catch{}return null}return E};let y=!1;const A=h=>{try{const k=scrollY;scrollTo({top:h,left:0,behavior:"instant"}),s=h,o=!0,clearTimeout(t),a=null,i(h);const E=scrollY;E!==k&&(e=!0),E!==h&&!y&&(y=!0,addEventListener("load",()=>{try{if(scrollY===E){const j=w();A(j!==null?j:s)}}catch{}},{once:!0}))}catch{}},p=()=>{try{return!!location.hash}catch{return!0}};let v=!1;const b=()=>{try{if(v||innerWidth>br||innerHeight>Er)return;v=!0;const h=Date.now(),k=()=>{try{removeEventListener("resize",k)}catch{}if(Date.now()-h>Sr||n||p())return;const E=w();A(E!==null?E:s)};addEventListener("resize",k)}catch{}};let L=!1,P=!1;return{restore(){if(L||(L=!0,p()))return;const h=w();h!==null&&(A(h),b())},promoted(){if(P||(P=!0,p()))return;const h=w();h!==null?(A(h),b()):o&&A(s)}}}function kr(t,e,n,o){let s=null;try{s=window.trustedTypes?.createPolicy("frame-runtime",{createScriptURL:S=>S})??null}catch{}const a=window.Worker,i=a?.prototype,f=Object.freeze({Worker:a,workerOn:i?.addEventListener,workerPost:i?.postMessage,workerTerminate:i?.terminate,fetch:window.fetch.bind(window),preventDefault:Event.prototype.preventDefault,now:Date.now,policy:s,origins:e});n(t).then(S=>S?.bootTopLevel?S.bootTopLevel(f,o):o.settle()).catch(()=>o.settle())}var Kr="modulepreload",Wr=function(t){return"/"+t},$r={},Tr=function(e,n,o){let s=Promise.resolve();function a(i){const f=new Event("vite:preloadError",{cancelable:!0});if(f.payload=i,window.dispatchEvent(f),!f.defaultPrevented)throw i}return s.then(i=>{for(const f of i||[])f.status==="rejected"&&a(f.reason);return e().catch(a)})},Rr=window===top,st=Object.getOwnPropertyDescriptor(window,"claude"),pe=fr(Rr,window.__FRAME_PREAMBLE?.topLevel,st?.writable===!1),Ne=typeof pe=="object"&&pe[0],T=Ne?gr():vr();(function(){const t=Object.defineProperty,e=globalThis,n=["RTCPeerConnection","webkitRTCPeerConnection","RTCDataChannel","RTCIceCandidate","RTCSessionDescription","RTCRtpSender","RTCRtpReceiver"];let o=0;for(let s=0;s<n.length;s++){const a=n[s];try{t(e,a,{value:void 0,writable:!1,configurable:!1})}catch{try{delete e[a]}catch{}try{t(e,a,{value:void 0,writable:!1,configurable:!0})}catch{}}typeof e[a]=="function"&&o++}if(o&&pe==="framed")try{T.post({__frame_rtc_lockdown_failed:o},"*")}catch{}})();var Or=1e4,Lr=2e3,Ce=2e3,lt=Object.freeze([...window.__FRAME_PREAMBLE?.origins??["https://claude.ai","https://preview.claude.ai"]]);function it(t){for(const e of lt)if(e.endsWith(":*"))try{const n=new URL(t);if(`${n.protocol}//${n.hostname}:*`===e)return!0}catch{}else if(t===e)return!0;return!1}var me=Object.freeze({...window.__FRAME_PREAMBLE?.capabilities}),je=window.__FRAME_PREAMBLE?.transforms,Ie=window.__FRAME_PREAMBLE?.comments,xe=window.__FRAME_PREAMBLE?.translate,_e=window.__FRAME_PREAMBLE?.ldx;function Q(t){return Tr(()=>import("/_runtime/"+t),void 0)}function ct(t,e,n){return{contract:t.contract,changes:new Set(t.changes??[]),flags:new Set(t.flags??[]),capabilities:t.capabilities??{},capBudgets:t.capBudgets??{},transforms:new Map,shellOrigin:e,shell:n,mount:He,hooks:ve,pipe:()=>({wrap:(o,s)=>(...a)=>{try{return s(...a)}catch(i){return Promise.reject(i)}}})}}var ye=null,U=null;function ut(t,e,n){try{Object.defineProperty(t,e,{value:n,writable:!1,configurable:!1,enumerable:!0})}catch{try{Object.defineProperty(t,e,{value:n,writable:!1,configurable:!0,enumerable:!0})}catch{}}}var Fe=!1,ve={editBefore:null,edit:null};function Pr(t,e,n=!1){const o=[];let s;if(n)try{ve.editBefore?.(t)}catch{}for(const a of t.elements){const i=document.querySelector(`[data-id="${a.target}"]`);if(!i){s=a.target;break}if([...Object.keys(a.attrsSet??{}),...a.attrsRemoved??[]].some(f=>!Tt(f)||Rt(i,f))){s=a.target;break}if(a.text!==void 0&&(!Mt(i)||It(i))){s=a.target;break}for(const[f,S]of Object.entries(a.attrsSet??{}))if(!dt(i,f)){try{i.setAttribute(f,S)}catch{}ft(i,f,S)}for(const f of a.attrsRemoved??[])dt(i,f)||(i.removeAttribute(f),ft(i,f,null));typeof a.text=="string"&&Ct(i,a.text),o.push(a.target)}if(n)try{ve.edit?.(t.seq,o,s)}catch{}if(s!==void 0){T.post({__frame_patch_miss:{seq:t.seq}},e);return}try{document.dispatchEvent(new CustomEvent("claude:edit",{detail:{seq:t.seq,targets:o}}))}catch{}}function ft(t,e,n){if(!(t instanceof HTMLInputElement))return;const o=e.toLowerCase();o==="checked"?t.checked=n!==null:o==="value"&&t.type!=="file"&&(t.value=n??"")}function dt(t,e){const n=e.toLowerCase(),o=t;return n==="data-id"||(n==="value"||n==="checked")&&(o.__artifactSecret===!0||/^(password|hidden|file)$/.test(o.type??"")||/(^|\s)(cc-|one-time-code|current-password|new-password)/i.test(`${t.getAttribute("autocomplete")??""} ${o.autocomplete??""}`))}function ht(t){const e=document.documentElement;t==="light"||t==="dark"?(e.dataset.theme=t,e.style.colorScheme=t,Fe=!0):Fe&&(delete e.dataset.theme,e.style.colorScheme="",Fe=!1)}var ge=new Map;function Mr(){let t;const e={u:new Promise(n=>{t=n}),r:n=>{e.done=!0,t(n)},done:!1,nulled:!1};return e}function De(){for(const t of ge.values())t.done||(t.nulled=!0,t.r(null))}var Nr=Object.freeze(Object.assign(Object.create(null),{call:Function.prototype.call,apply:Function.prototype.apply,bind:Function.prototype.bind})),He=(t,e)=>{const n=ge.get(t);if(!n||n.done){n?.nulled&&U&&T.post({__frame_cap_telemetry:{kind:"cap-load-error",cap:t}},U);return}const o=typeof e=="function"?Object.setPrototypeOf(e,Nr):Object.assign(Object.create(null),e);typeof o.then=="function"&&delete o.then,n.r(Object.freeze(o))};function pt(){const t=st?.value??{};ut(window,"claude",t);for(const e of Object.keys(me)){if(t[e]!==void 0){ut(t,e,t[e]);continue}ge.set(e,Mr())}if(t.use===void 0){const e=n=>{if(typeof n!="string"||!Object.hasOwn(me,n))return Promise.resolve(null);const o=ge.get(n);return o?o.u:Promise.resolve(t[n]??null)};try{Object.defineProperty(t,"use",{value:e,writable:!0,configurable:!0,enumerable:!1})}catch{}}return t}if(pe==="framed"){const t=je&&Z.test(je)?Q(je).catch(()=>{}):Promise.resolve(void 0),e=l=>{if(l.type==="auxclick"&&l.button!==1)return;const m=l.target,g=m&&m.closest?m.closest("a[href],area[href]"):null;if(!g)return;const C=g.getAttribute("href");if(!C)return;let M;try{M=new URL(C,document.baseURI)}catch{return}if((M.protocol==="http:"||M.protocol==="https:")&&M.origin!==location.origin){l.preventDefault();const R=(g.getAttribute("target")??"").toLowerCase(),D=l.type==="auxclick"||l.metaKey||l.ctrlKey||l.shiftKey||l.altKey||!["","_self","_top","_parent"].includes(R);T.post({__frame_nav:!0,url:M.href,newTab:D},"*")}};addEventListener("click",e,!0),addEventListener("auxclick",e,!0);const n={},o=l=>{l.isTrusted&&(n.pointer=!0)},s=l=>{l.isTrusted&&(n.click=!0)};addEventListener("pointermove",o,{capture:!0,passive:!0}),addEventListener("click",s,{capture:!0,passive:!0});const a={cb:null};addEventListener("keydown",l=>a.cb?.(l),!0);const i=_r();t.then(l=>l?.installEscapeForward?.(a,m=>{U&&T.post(m,U)})),t.then(l=>{try{l?.installFocusKeep?.()}catch{}}),t.then(l=>{if(!l?.wireNav)return;const m=T.port("*");l.wireNav(m),removeEventListener("click",e,!0),removeEventListener("auxclick",e,!0),removeEventListener("pointermove",o,!0),removeEventListener("click",s,!0),l.wireEngagement?.(n,m)});let f=null;try{f=Ar()}catch{}const S=document.readyState==="loading"?new Promise(l=>document.addEventListener("DOMContentLoaded",()=>l(),{once:!0})):Promise.resolve();let w=null,y=null;try{y=Jt(window.name),w=rt(null,y)}catch{}const A=pt();let p=null;try{p=hr(A,w,{post:(l,m)=>T.post(l,m),dcl:S},y)}catch{}t.then(l=>{try{p&&l?.installHotExtras?.(p)}catch{}});let v=null;const b=()=>Array.isArray(v?.flags)&&v.flags.includes("frame_ldx_runtime")&&!!_e&&Z.test(_e)&&document.querySelector("script#an-form")!==null;try{p?.hydration(b,Zt)}catch{}let L=null,P=0;const h=T.on((l,m,g,C)=>{it(m)&&Ht(l)&&(C(),v=l.__frame_init,U=m,h(),clearTimeout(P),L?.())});T.post({__frame_connect:!0},"*");try{p?.afterConnect()}catch{}const k=setTimeout,E=clearTimeout;let j=()=>NaN;try{j=performance.now.bind(performance)}catch{}let ce=0;const ue=()=>{try{T.post({__frame_alive:!0},"*")}catch{}ce=k(ue,Lr)},fe=()=>E(ce);ue(),addEventListener("load",fe,{once:!0});const I=new Promise(l=>{L=l,P=setTimeout(()=>{h(),l()},Or)}),ee=new WeakSet;addEventListener("error",l=>{l.target&&ee.add(l.target)},!0);const we=()=>{let l=[];try{l=[...document.querySelectorAll("link[rel~=stylesheet]:not([rel~=alternate])")].filter(g=>!g.sheet&&!g.disabled&&!ee.has(g)&&g.getAttribute("href")&&URL.canParse(g.href)&&(!g.media||matchMedia(g.media).matches))}catch{}let m=l.length;return m===0?Promise.resolve():new Promise(g=>{try{const C=Ce-j(),M=k(g,C>0?C<Ce?C:Ce:0),R=()=>{--m===0&&(E(M),g())};for(const D of l)D.addEventListener("load",R,{once:!0}),D.addEventListener("error",R,{once:!0})}catch{g()}})};S.then(()=>{try{f?.restore()}catch{}});const $={cb:null};T.on((l,m)=>{if(it(m)&&qt(l)){try{f?.promoted()}catch{}$.cb?.()}}),I.then(async()=>{if(!v||!U){De();try{p?.onNoInit()}catch{}return}ht(v.theme),v.hostVisible===!1&&t.then(d=>d?.applyHostVisible?.(!1,i));try{p?.onInit(v.hot,U)}catch{}const l=U,m=T.port(l);let g=!1,C=!1;T.on((d,re,z)=>{if(re!==l)return;try{if(p?.onShell(d))return}catch{}if(Ut(d)&&ht(d.__frame_theme.theme),Bt(d)){const W=d.__frame_host_visible.visible;t.then(be=>be?.applyHostVisible?.(W,i))}Dt(d)&&Pr(d.__frame_patch,l,z);const ne=d?.__fc_mode;ne&&typeof ne=="object"&&!g&&Ie&&Z.test(Ie)&&(g=!0,Q(Ie).then(W=>W.install?.(l,ne.on===!0,m)).catch(()=>{}));const oe=d?.__ft_cmd;oe&&typeof oe=="object"&&!C&&xe&&Z.test(xe)&&(C=!0,Q(xe).then(W=>W.install?.(l,oe,m)).catch(()=>{}))});const M=Object.keys(v.capabilities??{}).filter(d=>Object.hasOwn(me,d)).map(d=>[d,me[d]]).filter(d=>typeof d[1]=="string"&&Z.test(d[1])),R=await Promise.allSettled(M.map(([,d])=>Q(d))),D=await t,B=U;if(D?.buildBoot||T.post({__frame_cap_telemetry:{kind:"cap-load-error",cap:"_transforms"}},B),D?.buildBoot)try{ye=D.buildBoot(v,D.TRANSFORMS??{},{shellOrigin:B,mount:He,hooks:ve,shell:m},d=>T.post({__frame_cap_telemetry:d},B))}catch{T.post({__frame_cap_telemetry:{kind:"cap-load-error",cap:"_transforms"}},B),ye=ct(v,B,m)}else ye=ct(v,B,m);const te=d=>T.post({__frame_cap_telemetry:{kind:"cap-load-error",cap:d}},B),x=ye;R.forEach((d,re)=>{const z=M[re][0];if(d.status!=="fulfilled"){te(z);return}try{d.value?.install?.(x)}catch{te(z)}}),De(),await S,await we(),fe(),T.post({__frame_ready:!0},U),t.then(d=>d?.installSizeReporter?.(B,$,m));let K=!1;try{K=b()}catch{}_e&&K?Q(_e).then(d=>d?.boot?.({shellOrigin:l,build:x.flags.has(pr),hot:p?.hot??null,carried:p?.carried(),presented:()=>p?.presented()??!0})).catch(()=>!1).then(d=>{p?.hydrated(),d!==!0&&te("_ldx")}):p?.hydrated()})}else Ne&&(pt(),kr(Ne,lt,Q,{settle:De,mount:He}))})();</script><!-- /frame-runtime --><meta name="viewport" content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>EquiMED Brand Standard</title>
+<link rel="stylesheet" href="./css2">
+<style>
+:root{
+  --ground:#FCFBF9;
+  --surface:#FFFFFF;
+  --surface-2:#F4F2EE;
+  --ink:#15181F;
+  --ink-2:#565E6E;
+  --ink-3:#868D9B;
+  --rule:#E2DFD9;
+  --rule-strong:#CBC7BF;
+  --accent:#001E62;
+  --accent-ink:#001E62;
+  --flag-red:#D50032;
+  --ok:#1A7A4C;
+  --warn:#9A6300;
+  --bad:#B10000;
+  --shadow:0 1px 2px rgba(21,24,31,.05);
+  --display:"Bricolage Grotesque","Arial Black",Arial,sans-serif;
+  --body:"Public Sans",Arial,Helvetica,sans-serif;
+  --mono:"Azeret Mono",ui-monospace,"SF Mono",Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#0E1116;--surface:#151A21;--surface-2:#1B212A;
+    --ink:#E9EBEF;--ink-2:#A2AAB8;--ink-3:#767E8C;
+    --rule:#262D37;--rule-strong:#3A424E;
+    --accent:#8FAAE8;--accent-ink:#B9C9F2;
+    --flag-red:#FF5C7A;--ok:#54C48D;--warn:#E0A83C;--bad:#FF7E7E;
+    --shadow:0 1px 2px rgba(0,0,0,.4);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0E1116;--surface:#151A21;--surface-2:#1B212A;
+  --ink:#E9EBEF;--ink-2:#A2AAB8;--ink-3:#767E8C;
+  --rule:#262D37;--rule-strong:#3A424E;
+  --accent:#8FAAE8;--accent-ink:#B9C9F2;
+  --flag-red:#FF5C7A;--ok:#54C48D;--warn:#E0A83C;--bad:#FF7E7E;
+  --shadow:0 1px 2px rgba(0,0,0,.4);
+}
+
+*{box-sizing:border-box}
+body{background:var(--ground);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:24px;padding-block:0 96px}
+h1,h2,h3,h4{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.12;letter-spacing:-.015em}
+p{margin:0}
+a{color:var(--accent-ink)}
+img{max-width:100%;display:block}
+hr{border:0;border-top:1px solid var(--rule);margin:0}
+
+/* ---------- masthead ---------- */
+.masthead{padding-block:48px 40px;border-bottom:3px solid var(--accent);}
+.plate{background:#fff;border:1px solid var(--rule);border-radius:2px;padding:26px 30px;box-shadow:var(--shadow)}
+.plate img{width:100%;max-width:760px}
+.mast-grid{display:grid;gap:32px;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);align-items:end;margin-top:34px}
+h1{font-size:clamp(34px,5.6vw,58px);font-weight:800;letter-spacing:-.03em}
+.dek{color:var(--ink-2);font-size:17px;max-width:60ch;margin-top:14px}
+.meta{font-family:var(--mono);font-size:11.5px;line-height:1.9;color:var(--ink-3);text-transform:uppercase;letter-spacing:.06em}
+.meta b{color:var(--ink-2);font-weight:500}
+
+/* ---------- nav ---------- */
+nav.toc{position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--ground) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule);margin-bottom:0}
+nav.toc ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:2px;max-width:1120px;margin-inline:auto;padding-inline:24px}
+nav.toc a{display:block;padding:11px 12px;font-size:12.5px;font-weight:600;letter-spacing:.02em;text-decoration:none;color:var(--ink-2);border-bottom:2px solid transparent}
+nav.toc a:hover{color:var(--ink);border-bottom-color:var(--rule-strong)}
+nav.toc a:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+
+/* ---------- sections ---------- */
+section{padding-block:64px;border-bottom:1px solid var(--rule)}
+.eyebrow{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:var(--flag-red);font-weight:600}
+h2{font-size:clamp(25px,3.4vw,34px);font-weight:700;margin-top:10px}
+.lede{color:var(--ink-2);max-width:68ch;margin-top:12px;font-size:16.5px}
+h3{font-size:15px;font-weight:700;letter-spacing:.01em;margin-top:44px;padding-bottom:9px;border-bottom:1px solid var(--rule)}
+h3:first-of-type{margin-top:34px}
+h4{font-size:13.5px;font-weight:700;color:var(--ink-2)}
+
+/* ---------- swatches ---------- */
+.swatches{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(212px,1fr));margin-top:20px}
+.sw{background:var(--surface);border:1px solid var(--rule);border-radius:2px;overflow:hidden;display:flex;flex-direction:column;text-align:left;padding:0;font:inherit;color:inherit;cursor:pointer;transition:border-color .12s}
+.sw:hover{border-color:var(--rule-strong)}
+.sw:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.chip{height:104px;display:flex;align-items:flex-end;padding:12px 14px;font-family:var(--display);font-size:15px;font-weight:700;letter-spacing:-.01em;position:relative}
+.chip.bordered{box-shadow:inset 0 0 0 1px var(--rule-strong)}
+.sw-body{padding:13px 14px 15px;display:flex;flex-direction:column;gap:7px;flex:1}
+.sw-name{font-size:13.5px;font-weight:600;line-height:1.3}
+.sw-role{font-size:11.5px;color:var(--ink-3);line-height:1.45}
+dl.specs{margin:0;font-family:var(--mono);font-size:10.5px;color:var(--ink-2);display:grid;grid-template-columns:auto 1fr;gap:1px 10px;font-variant-numeric:tabular-nums}
+dl.specs dt{color:var(--ink-3);letter-spacing:.05em}
+dl.specs dd{margin:0}
+.copyhint{font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;color:var(--ink-3);text-transform:uppercase;margin-top:auto;padding-top:8px}
+.sw[data-copied="1"] .copyhint{color:var(--ok)}
+
+/* ratio pills */
+.ratios{display:flex;gap:5px;flex-wrap:wrap}
+.pill{font-family:var(--mono);font-size:9.5px;letter-spacing:.03em;padding:2px 6px;border-radius:2px;border:1px solid var(--rule);color:var(--ink-2);font-variant-numeric:tabular-nums;white-space:nowrap}
+.pill.pass{border-color:color-mix(in srgb,var(--ok) 40%,transparent);color:var(--ok)}
+.pill.large{border-color:color-mix(in srgb,var(--warn) 45%,transparent);color:var(--warn)}
+.pill.fail{border-color:color-mix(in srgb,var(--bad) 45%,transparent);color:var(--bad)}
+
+/* tint ramp */
+.ramp{display:flex;margin-top:20px;border:1px solid var(--rule);border-radius:2px;overflow:hidden;flex-wrap:wrap}
+.ramp button{flex:1 1 92px;border:0;padding:0;font:inherit;cursor:pointer;height:112px;display:flex;flex-direction:column;justify-content:flex-end;gap:1px;padding:10px;text-align:left;font-family:var(--mono);font-size:10px;letter-spacing:.03em}
+.ramp button:focus-visible{outline:2px solid var(--accent);outline-offset:-3px}
+.ramp b{font-size:11px;font-weight:600;letter-spacing:.06em}
+
+/* ---------- tables ---------- */
+.tablewrap{overflow-x:auto;margin-top:20px;border:1px solid var(--rule);border-radius:2px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:13px;min-width:560px}
+th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--rule)}
+thead th{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:.09em;color:var(--ink-3);font-weight:600;background:var(--surface-2);white-space:nowrap}
+tbody tr:last-child td{border-bottom:0}
+td.num{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+.dot{display:inline-block;width:11px;height:11px;border-radius:50%;vertical-align:-1px;margin-right:8px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.14)}
+.verdict{font-family:var(--mono);font-size:10.5px;letter-spacing:.04em;font-weight:600}
+.verdict.ok{color:var(--ok)}.verdict.lg{color:var(--warn)}.verdict.no{color:var(--bad)}
+
+/* ---------- rules blocks ---------- */
+.rules{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(258px,1fr));margin-top:22px}
+.rule-card{border:1px solid var(--rule);border-radius:2px;padding:16px 18px;background:var(--surface);display:flex;flex-direction:column;gap:7px}
+.rule-card.deny{border-left:3px solid var(--bad)}
+.rule-card.allow{border-left:3px solid var(--ok)}
+.rule-card h4{margin:0;font-size:12px;text-transform:uppercase;letter-spacing:.07em;font-family:var(--mono);font-weight:600}
+.rule-card.deny h4{color:var(--bad)}
+.rule-card.allow h4{color:var(--ok)}
+.rule-card p{font-size:13.5px;color:var(--ink-2);line-height:1.55}
+
+.callout{margin-top:24px;border:1px solid var(--rule);border-left:3px solid var(--flag-red);border-radius:2px;background:var(--surface);padding:18px 20px}
+.callout h4{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--flag-red);margin-bottom:8px}
+.callout p{font-size:14px;color:var(--ink-2)}
+.callout p + p{margin-top:9px}
+
+/* ---------- logo ---------- */
+.logo-grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));margin-top:22px;align-items:start}
+.logo-plate{background:#fff;border:1px solid var(--rule);border-radius:2px;padding:24px;display:flex;align-items:center;justify-content:center;min-height:132px}
+.logo-plate.navy{background:#001E62}
+.logo-plate.navy .knockout{background:#fff;padding:14px 18px;border-radius:2px}
+.cap{font-family:var(--mono);font-size:10.5px;letter-spacing:.05em;color:var(--ink-3);margin-top:9px;line-height:1.6}
+
+/* ---------- type specimens ---------- */
+.spec{border:1px solid var(--rule);border-radius:2px;background:var(--surface);padding:20px 22px;margin-top:14px;display:grid;gap:12px;grid-template-columns:minmax(0,1fr) 168px;align-items:center}
+.spec-meta{font-family:var(--mono);font-size:10px;line-height:1.85;color:var(--ink-3);letter-spacing:.04em;text-transform:uppercase}
+.spec-meta b{display:block;color:var(--ink-2);font-weight:500;text-transform:none;letter-spacing:0;font-size:11px}
+.t-display{font-family:var(--display);font-weight:800;font-size:clamp(26px,4vw,40px);letter-spacing:-.028em;line-height:1.05}
+.t-sub{font-family:var(--display);font-weight:600;font-size:22px;letter-spacing:-.012em}
+.t-body{font-size:16px;line-height:1.62;color:var(--ink-2)}
+.t-data{font-family:var(--mono);font-size:14px;letter-spacing:.02em;font-variant-numeric:tabular-nums}
+
+/* ---------- slide previews ---------- */
+.slides{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));margin-top:22px}
+.slide{aspect-ratio:16/9;max-width:100%;border:1px solid var(--rule-strong);border-radius:2px;overflow:hidden;position:relative;font-family:Arial,Helvetica,sans-serif;container-type:inline-size}
+.s-title{background:#001E62;color:#fff;padding:7.5cqw 7cqw;display:flex;flex-direction:column;justify-content:flex-end;gap:2.2cqw}
+.s-title .kicker{font-size:2.5cqw;letter-spacing:.18em;text-transform:uppercase;color:#A6C5D7}
+.s-title .h{font-size:7.6cqw;font-weight:700;line-height:1.05;letter-spacing:-.02em}
+.s-title .sub{font-size:3cqw;color:#BFC7D8}
+.s-title .em{color:#41B6E6}
+.s-title .lg{position:absolute;right:5cqw;bottom:5cqw;background:#fff;padding:1.6cqw 2cqw;border-radius:1px}
+.s-title .lg img{width:22cqw}
+
+.s-content{background:#fff;padding:6cqw 6.5cqw;display:flex;flex-direction:column;gap:2.4cqw}
+.s-content .h{font-size:5.4cqw;font-weight:700;color:#001E62;letter-spacing:-.02em;line-height:1.1}
+.s-content .em{color:#D50032}
+.s-content .figure{position:absolute;right:6.5cqw;top:13cqw;background:#F0F2F6;width:26cqw;padding:2.6cqw;display:flex;flex-direction:column;gap:1cqw}
+.s-content .figure b{font-size:8cqw;font-weight:700;color:#D50032;letter-spacing:-.04em;line-height:1}
+.s-content .figure span{font-size:1.9cqw;color:#4C6291;line-height:1.4}
+.s-content ul{margin:0;padding-left:4cqw;font-size:3cqw;color:#343333;line-height:1.55;display:flex;flex-direction:column;gap:1.2cqw}
+.s-content .foot{position:absolute;left:6.5cqw;right:6.5cqw;bottom:3.2cqw;display:flex;justify-content:space-between;align-items:center;border-top:.3cqw solid #E0E4EC;padding-top:1.8cqw;font-size:2.1cqw;color:#7383A9;letter-spacing:.06em}
+.s-content .foot img{height:2.9cqw;width:auto}
+
+.s-section{background:#F6F3EC;padding:6.5cqw;display:flex;flex-direction:column;justify-content:center;gap:2cqw}
+.s-section .n{font-size:2.4cqw;letter-spacing:.2em;color:#D50032;font-weight:700}
+.s-section .h{font-size:6.4cqw;font-weight:700;color:#001E62;letter-spacing:-.022em;line-height:1.08}
+.s-section .r{display:none}
+
+.s-data{background:#fff;padding:5.5cqw 6cqw;display:flex;flex-direction:column;gap:2.6cqw}
+.s-data .h{font-size:4.2cqw;font-weight:700;color:#001E62}
+.s-data .kpis{display:flex;gap:2.5cqw}
+.s-data .kpi{flex:1;border-top:.7cqw solid #2552AA;padding-top:1.8cqw;display:flex;flex-direction:column;gap:.5cqw}
+.s-data .kpi:nth-child(2){border-color:#D50032}
+.s-data .kpi:nth-child(3){border-color:#1F8FA8}
+.s-data .kpi .v{font-size:6.8cqw;font-weight:700;color:#001E62;letter-spacing:-.03em;line-height:1}
+.s-data .kpi .l{font-size:2.1cqw;color:#565E6E;line-height:1.35}
+.s-data .bars{display:flex;align-items:flex-end;gap:1.6cqw;height:16cqw;border-bottom:.3cqw solid #E0E4EC;padding-bottom:0}
+.s-data .bars i{flex:1;border-radius:.6cqw .6cqw 0 0;display:block}
+
+.s-brz{background:#001E62;padding:6.5cqw;display:flex;flex-direction:column;justify-content:center;gap:2.4cqw;position:relative;overflow:hidden}
+.s-brz .badge{position:absolute;left:6.5cqw;top:8cqw;width:4.4cqw;height:4.4cqw;background:#009739;display:flex;align-items:center;justify-content:center}
+.s-brz .badge i{width:2.4cqw;height:2.4cqw;background:#FEDD00;transform:rotate(45deg);display:block}
+.s-brz .kicker{font-size:2.4cqw;letter-spacing:.18em;text-transform:uppercase;color:#FEDD00;font-weight:700}
+.s-brz .h{font-size:6.6cqw;font-weight:700;color:#fff;letter-spacing:-.022em;line-height:1.07}
+.s-brz .sub{font-size:2.8cqw;color:#BFC7D8;max-width:70%}
+.s-brz .lg{position:absolute;right:5cqw;bottom:5cqw;background:#fff;padding:1.5cqw 1.9cqw}
+.s-brz .lg img{width:20cqw}
+
+.slide-cap{font-family:var(--mono);font-size:10.5px;letter-spacing:.05em;color:var(--ink-3);margin-top:9px;text-transform:uppercase}
+
+/* chart palette strip */
+.chartpal{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap}
+.chartpal .cs{flex:1 1 150px;border:1px solid var(--rule);border-radius:2px;overflow:hidden;background:var(--surface)}
+.chartpal .cs .band{height:56px}
+.chartpal .cs .lab{padding:9px 11px;font-family:var(--mono);font-size:10px;line-height:1.7;color:var(--ink-2)}
+.chartpal .cs .lab b{display:block;font-family:var(--body);font-size:12px;color:var(--ink);font-weight:600;margin-bottom:2px}
+.slotnum{font-family:var(--mono);font-size:9.5px;color:var(--ink-3);letter-spacing:.1em}
+
+/* manifest */
+.files{margin-top:20px;border:1px solid var(--rule);border-radius:2px;background:var(--surface);overflow:hidden}
+.files div{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;padding:11px 16px;border-bottom:1px solid var(--rule);align-items:center;font-size:13.5px}
+.files div:last-child{border-bottom:0}
+.files code{font-family:var(--mono);font-size:12px;color:var(--ink)}
+.files span{font-size:12px;color:var(--ink-3);text-align:right}
+
+.foot{padding-block:36px;color:var(--ink-3);font-size:12.5px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-family:var(--mono);letter-spacing:.04em}
+
+@media (max-width:760px){
+  .mast-grid{grid-template-columns:1fr;gap:24px;align-items:start}
+  .spec{grid-template-columns:1fr}
+  section{padding-block:48px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+<nav class="toc">
+  <ul>
+    <li><a href="https://7eff0894-76dd-4748-8971-cb3a0f9a7840.frame.claudeusercontent.com/_f/1789129870-628d/#core">Core palette</a></li>
+    <li><a href="https://7eff0894-76dd-4748-8971-cb3a0f9a7840.frame.claudeusercontent.com/_f/1789129870-628d/#tints">Navy scale</a></li>
+    <li><a href="https://7eff0894-76dd-4748-8971-cb3a0f9a7840.frame.claudeusercontent.com/_f/1789129870-628d/#support">Supporting</a></li>
+    <li><a href="https://7eff0894-76dd-4748-8971-cb3a0f9a7840.frame.claudeusercontent.com/_f/1789129870-628d/#contrast">Contrast matrix</a></li>
+    <li><a href="https://7eff0894-76dd-4748-8971-cb3a0f9a7840.frame.claudeusercontent.com/_f/1789129870-628d/#charts">Chart palette</a></li>
+    <li><a href="https://7eff0894-76dd-4748-8971-cb3a0f9a7840.frame.claudeusercontent.com/_f/1789129870-628d/#logo">Logo</a></li>
+    <li><a href="https://7eff0894-76dd-4748-8971-cb3a0f9a7840.frame.claudeusercontent.com/_f/1789129870-628d/#type">Type</a></li>
+    <li><a href="https://7eff0894-76dd-4748-8971-cb3a0f9a7840.frame.claudeusercontent.com/_f/1789129870-628d/#slides">Slide system</a></li>
+    <li><a href="https://7eff0894-76dd-4748-8971-cb3a0f9a7840.frame.claudeusercontent.com/_f/1789129870-628d/#brazil">Brazil sub-theme</a></li>
+    <li><a href="https://7eff0894-76dd-4748-8971-cb3a0f9a7840.frame.claudeusercontent.com/_f/1789129870-628d/#files">Files</a></li>
+  </ul>
+</nav>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="plate"><img src="./lockup.png" alt="University of Illinois College of Medicine Peoria and EquiMED — Equity Innovation Medicine"></div>
+    <div class="mast-grid">
+      <div>
+        <h1>EquiMED Brand Standard</h1>
+        <p class="dek">The color, type and layout system for EquiMED — Equity Innovation Medicine — a program of the University of Illinois College of Medicine Peoria. Every value here is UIC-official or derived from a UIC-official value, and every pairing has been checked for contrast.</p>
+      </div>
+      <div class="meta">
+        <b>Version</b> 1.0 · September 2026<br>
+        <b>Owner</b> UICOMP · EquiMED<br>
+        <b>Governs</b> Slides, documents, signage, web<br>
+        <b>Authority</b> UIC Brand Standards
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ CORE ============ -->
+  <section id="core">
+    <p class="eyebrow">Color · Core</p>
+    <h2>Five colors carry the brand</h2>
+    <p class="lede">EquiMED does not have its own palette. It uses the University of Illinois Chicago palette, and it uses it the way the university specifies. Navy Pier Blue is the brand; Fire Engine Red is the accent that makes it UIC. Everything else in this document is structure around those two.</p>
+
+    <div class="swatches" id="core-sw"><button class="sw" type="button" aria-label="Copy #001E62"><span class="chip" style="background:#001E62;color:#FFFFFF">#001E62</span>
+   <span class="sw-body">
+     <span class="sw-name">Navy Pier Blue</span>
+     <span class="sw-role">The brand. Grounds, headings, body, structure.</span>
+     <span class="ratios"><span class="pill pass">vs white 15.42</span><span class="pill pass">vs Expo 13.91</span></span>
+     <dl class="specs"><dt>RGB</dt><dd>0 30 98</dd><dt>CMYK</dt><dd>100 94 30 28</dd><dt>PMS</dt><dd>2758 C</dd></dl>
+     <span class="copyhint">Click to copy hex</span>
+   </span></button><button class="sw" type="button" aria-label="Copy #D50032"><span class="chip" style="background:#D50032;color:#FFFFFF">#D50032</span>
+   <span class="sw-body">
+     <span class="sw-name">Fire Engine Red</span>
+     <span class="sw-role">Accent only. Keylines, underlines, one highlighted mark.</span>
+     <span class="ratios"><span class="pill pass">vs white 5.42</span><span class="pill fail">vs navy 2.85</span></span>
+     <dl class="specs"><dt>RGB</dt><dd>213 0 50</dd><dt>CMYK</dt><dd>10 100 86 2</dd><dt>PMS</dt><dd>199 C</dd></dl>
+     <span class="copyhint">Click to copy hex</span>
+   </span></button><button class="sw" type="button" aria-label="Copy #343333"><span class="chip" style="background:#343333;color:#FFFFFF">#343333</span>
+   <span class="sw-body">
+     <span class="sw-name">Steel Gray</span>
+     <span class="sw-role">Body copy on white where navy would be too loud.</span>
+     <span class="ratios"><span class="pill pass">vs white 12.59</span></span>
+     <dl class="specs"><dt>RGB</dt><dd>52 51 51</dd><dt>CMYK</dt><dd>69 63 62 58</dd><dt>PMS</dt><dd>—</dd></dl>
+     <span class="copyhint">Click to copy hex</span>
+   </span></button><button class="sw" type="button" aria-label="Copy #F6F3EC"><span class="chip bordered" style="background:#F6F3EC;color:#001E62">#F6F3EC</span>
+   <span class="sw-body">
+     <span class="sw-name">Expo White</span>
+     <span class="sw-role">Warm ground for section dividers and cards.</span>
+     <span class="ratios"><span class="pill pass">navy on it 13.91</span></span>
+     <dl class="specs"><dt>RGB</dt><dd>246 243 236</dd><dt>CMYK</dt><dd>—</dd><dt>PMS</dt><dd>7527 @ 25%</dd></dl>
+     <span class="copyhint">Click to copy hex</span>
+   </span></button><button class="sw" type="button" aria-label="Copy #FFFFFF"><span class="chip bordered" style="background:#FFFFFF;color:#001E62">#FFFFFF</span>
+   <span class="sw-body">
+     <span class="sw-name">White</span>
+     <span class="sw-role">The default ground. Containment field for both logos.</span>
+     <span class="ratios"><span class="pill pass">navy on it 15.42</span></span>
+     <dl class="specs"><dt>RGB</dt><dd>255 255 255</dd><dt>CMYK</dt><dd>0 0 0 0</dd><dt>PMS</dt><dd>—</dd></dl>
+     <span class="copyhint">Click to copy hex</span>
+   </span></button></div>
+
+    <div class="callout">
+      <h4>The one rule that decides most layouts</h4>
+      <p>Fire Engine Red never sets body text and never sits on navy. On white it clears 5.42:1, which passes for headlines and standfirsts but violates UIC's own instruction not to set small type in red. On Navy Pier Blue it measures 2.85:1 — below every threshold, for every size.</p>
+      <p>Red's job is the mark, the rule, the underline, the one number you want counted. When red and navy want to touch, put white between them.</p>
+    </div>
+  </section>
+
+  <!-- ============ TINTS ============ -->
+  <section id="tints">
+    <p class="eyebrow">Color · Structure</p>
+    <h2>The navy scale</h2>
+    <p class="lede">Tables need banding, charts need a magnitude ramp, and slides need dividers that recede. Rather than admit new hues for that work, EquiMED uses Navy Pier Blue mixed toward white in seven fixed steps. These are structural values, not brand colors — they are never the subject of a layout, and they never replace navy in a headline.</p>
+    <div class="ramp" id="ramp"><button type="button" aria-label="Copy #001E62" style="background: rgb(0, 30, 98); color: rgb(255, 255, 255);"><b>Navy 100</b><span>#001E62</span><span style="opacity:.72">0% white</span></button><button type="button" aria-label="Copy #26407A" style="background: rgb(38, 64, 122); color: rgb(255, 255, 255);"><b>Navy 85</b><span>#26407A</span><span style="opacity:.72">15% white</span></button><button type="button" aria-label="Copy #4C6291" style="background: rgb(76, 98, 145); color: rgb(255, 255, 255);"><b>Navy 70</b><span>#4C6291</span><span style="opacity:.72">30% white</span></button><button type="button" aria-label="Copy #7383A9" style="background: rgb(115, 131, 169); color: rgb(255, 255, 255);"><b>Navy 55</b><span>#7383A9</span><span style="opacity:.72">45% white</span></button><button type="button" aria-label="Copy #99A5C0" style="background: rgb(153, 165, 192); color: rgb(0, 30, 98);"><b>Navy 40</b><span>#99A5C0</span><span style="opacity:.72">60% white</span></button><button type="button" aria-label="Copy #BFC7D8" style="background: rgb(191, 199, 216); color: rgb(0, 30, 98);"><b>Navy 25</b><span>#BFC7D8</span><span style="opacity:.72">75% white</span></button><button type="button" aria-label="Copy #E0E4EC" style="background: rgb(224, 228, 236); color: rgb(0, 30, 98);"><b>Navy 12</b><span>#E0E4EC</span><span style="opacity:.72">88% white</span></button><button type="button" aria-label="Copy #F0F2F6" style="background: rgb(240, 242, 246); color: rgb(0, 30, 98);"><b>Navy 06</b><span>#F0F2F6</span><span style="opacity:.72">94% white</span></button></div>
+    <p class="cap">Click any step to copy. Percentages are the proportion of white in the mix. Steps 25 and lighter are fills and rules only — they carry no text.</p>
+
+    <h3>Where each step belongs</h3>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Step</th><th>Hex</th><th>Use</th><th>Text on white</th></tr></thead>
+        <tbody>
+          <tr><td class="num"><span class="dot" style="background:#001E62"></span>Navy 100</td><td class="num">#001E62</td><td>Headings, body text, slide grounds, the whole identity</td><td class="num"><span class="verdict ok">15.42 AAA</span></td></tr>
+          <tr><td class="num"><span class="dot" style="background:#26407A"></span>Navy 85</td><td class="num">#26407A</td><td>Secondary headings, hover states, chart slot 1 on light</td><td class="num"><span class="verdict ok">10.02 AAA</span></td></tr>
+          <tr><td class="num"><span class="dot" style="background:#4C6291"></span>Navy 70</td><td class="num">#4C6291</td><td>Captions, table subheads, axis labels</td><td class="num"><span class="verdict ok">6.06 AA</span></td></tr>
+          <tr><td class="num"><span class="dot" style="background:#7383A9"></span>Navy 55</td><td class="num">#7383A9</td><td>Slide footers, page numbers, disabled states</td><td class="num"><span class="verdict lg">3.78 Large only</span></td></tr>
+          <tr><td class="num"><span class="dot" style="background:#99A5C0"></span>Navy 40</td><td class="num">#99A5C0</td><td>Rules, borders, chart gridlines</td><td class="num"><span class="verdict no">2.47 No text</span></td></tr>
+          <tr><td class="num"><span class="dot" style="background:#BFC7D8"></span>Navy 25</td><td class="num">#BFC7D8</td><td>Dividers, table borders, keyline on navy grounds</td><td class="num"><span class="verdict no">1.70 No text</span></td></tr>
+          <tr><td class="num"><span class="dot" style="background:#E0E4EC"></span>Navy 12</td><td class="num">#E0E4EC</td><td>Table banding, chart plot backgrounds, diverging midpoint</td><td class="num"><span class="verdict no">1.27 No text</span></td></tr>
+          <tr><td class="num"><span class="dot" style="background:#F0F2F6"></span>Navy 06</td><td class="num">#F0F2F6</td><td>Cool alternative to Expo White for card fills</td><td class="num"><span class="verdict no">1.12 No text</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ============ SUPPORTING ============ -->
+  <section id="support">
+    <p class="eyebrow">Color · Supporting</p>
+    <h2>Supporting colors, and the twenty percent ceiling</h2>
+    <p class="lede">UIC's secondary and tertiary colors are available to EquiMED for data, diagrams and photographic accents. The university caps tertiary color at twenty percent of a layout, and asks that red and green never sit adjacent without a neutral between them. Both constraints hold here.</p>
+    <div class="swatches" id="support-sw"><button class="sw" type="button" aria-label="Copy #3D8DA4"><span class="chip" style="background:#3D8DA4;color:#FFFFFF">#3D8DA4</span>
+   <span class="sw-body">
+     <span class="sw-name">UI Health Sky</span>
+     <span class="sw-role">Clinical diagrams, photographic tint.</span>
+     <span class="ratios"><span class="pill large">vs white 3.79</span><span class="pill large">vs navy 4.07</span></span>
+     <dl class="specs"><dt>RGB</dt><dd>61 141 164</dd><dt>CMYK</dt><dd>90 18 10 10</dd><dt>PMS</dt><dd>7704</dd></dl>
+     <span class="copyhint">Click to copy hex</span>
+   </span></button><button class="sw" type="button" aria-label="Copy #A6C5D7"><span class="chip" style="background:#A6C5D7;color:#001E62">#A6C5D7</span>
+   <span class="sw-body">
+     <span class="sw-name">Second City Slate</span>
+     <span class="sw-role">Kickers and attributions on navy. Never on white.</span>
+     <span class="ratios"><span class="pill pass">vs navy 8.51</span><span class="pill fail">vs white 1.81</span></span>
+     <dl class="specs"><dt>RGB</dt><dd>166 197 215</dd><dt>CMYK</dt><dd>34 13 9 0</dd><dt>PMS</dt><dd>543</dd></dl>
+     <span class="copyhint">Click to copy hex</span>
+   </span></button><button class="sw" type="button" aria-label="Copy #00966C"><span class="chip" style="background:#00966C;color:#FFFFFF">#00966C</span>
+   <span class="sw-body">
+     <span class="sw-name">Chicago River Green</span>
+     <span class="sw-role">Positive status. Never beside red without a neutral.</span>
+     <span class="ratios"><span class="pill large">vs white 3.76</span><span class="pill large">vs navy 4.10</span></span>
+     <dl class="specs"><dt>RGB</dt><dd>0 150 108</dd><dt>CMYK</dt><dd>84 17 73 3</dd><dt>PMS</dt><dd>7724</dd></dl>
+     <span class="copyhint">Click to copy hex</span>
+   </span></button><button class="sw" type="button" aria-label="Copy #41B6E6"><span class="chip" style="background:#41B6E6;color:#001E62">#41B6E6</span>
+   <span class="sw-body">
+     <span class="sw-name">Chicago Blue</span>
+     <span class="sw-role">Highlight on navy grounds, callout fills.</span>
+     <span class="ratios"><span class="pill pass">vs navy 6.65</span><span class="pill fail">vs white 2.32</span></span>
+     <dl class="specs"><dt>RGB</dt><dd>65 182 230</dd><dt>CMYK</dt><dd>65 3 0 0</dd><dt>PMS</dt><dd>298</dd></dl>
+     <span class="copyhint">Click to copy hex</span>
+   </span></button><button class="sw" type="button" aria-label="Copy #B10000"><span class="chip" style="background:#B10000;color:#FFFFFF">#B10000</span>
+   <span class="sw-body">
+     <span class="sw-name">Chicago Brick</span>
+     <span class="sw-role">Deep red for print and dense text settings.</span>
+     <span class="ratios"><span class="pill pass">vs white 7.32</span></span>
+     <dl class="specs"><dt>RGB</dt><dd>177 0 0</dd><dt>CMYK</dt><dd>20 100 100 14</dd><dt>PMS</dt><dd>3517</dd></dl>
+     <span class="copyhint">Click to copy hex</span>
+   </span></button></div>
+  </section>
+
+  <!-- ============ CONTRAST ============ -->
+  <section id="contrast">
+    <p class="eyebrow">Accessibility</p>
+    <h2>Contrast matrix</h2>
+    <p class="lede">Academic medicine publishes to a public audience under Section 508 and the ADA. Every pairing below is a measured WCAG 2.1 contrast ratio, not an estimate. <b>AA</b> requires 4.5:1 for text under 18pt (or 14pt bold) and 3:1 above it; <b>AAA</b> requires 7:1. Anything marked <span class="verdict no">No text</span> is a fill.</p>
+
+    <h3>On white — the default ground</h3>
+    <div class="tablewrap"><table><thead><tr><th>Color</th><th>Hex</th><th>Ratio</th><th>Verdict</th><th>Permitted use</th></tr></thead><tbody id="cw"><tr><td><span class="dot" style="background:#001E62"></span>Navy Pier Blue</td><td class="num">#001E62</td>
+  <td class="num">15.42:1</td><td><span class="verdict ok">AAA</span></td><td>Everything, any size</td></tr><tr><td><span class="dot" style="background:#343333"></span>Steel Gray</td><td class="num">#343333</td>
+  <td class="num">12.59:1</td><td><span class="verdict ok">AAA</span></td><td>Body copy, tables</td></tr><tr><td><span class="dot" style="background:#B10000"></span>Chicago Brick</td><td class="num">#B10000</td>
+  <td class="num">7.32:1</td><td><span class="verdict ok">AAA</span></td><td>Dense red text where red is required</td></tr><tr><td><span class="dot" style="background:#D50032"></span>Fire Engine Red</td><td class="num">#D50032</td>
+  <td class="num">5.42:1</td><td><span class="verdict ok">AA</span></td><td>Headlines 18pt+ and accents — never body copy</td></tr><tr><td><span class="dot" style="background:#008030"></span>Verde Profundo</td><td class="num">#008030</td>
+  <td class="num">5.08:1</td><td><span class="verdict ok">AA</span></td><td>Brazil sub-theme body text</td></tr><tr><td><span class="dot" style="background:#009739"></span>Verde Bandeira</td><td class="num">#009739</td>
+  <td class="num">3.83:1</td><td><span class="verdict lg">AA Large</span></td><td>18pt+ and graphics only</td></tr><tr><td><span class="dot" style="background:#3D8DA4"></span>UI Health Sky</td><td class="num">#3D8DA4</td>
+  <td class="num">3.79:1</td><td><span class="verdict lg">AA Large</span></td><td>18pt+ and graphics only</td></tr><tr><td><span class="dot" style="background:#00966C"></span>Chicago River Green</td><td class="num">#00966C</td>
+  <td class="num">3.76:1</td><td><span class="verdict lg">AA Large</span></td><td>18pt+ and graphics only</td></tr><tr><td><span class="dot" style="background:#41B6E6"></span>Chicago Blue</td><td class="num">#41B6E6</td>
+  <td class="num">2.32:1</td><td><span class="verdict no">Fail</span></td><td>Fills and rules — no text</td></tr><tr><td><span class="dot" style="background:#A6C5D7"></span>Second City Slate</td><td class="num">#A6C5D7</td>
+  <td class="num">1.81:1</td><td><span class="verdict no">Fail</span></td><td>Fills and rules — no text</td></tr><tr><td><span class="dot" style="background:#FEDD00"></span>Amarelo Ouro</td><td class="num">#FEDD00</td>
+  <td class="num">1.35:1</td><td><span class="verdict no">Fail</span></td><td>Fills and rules — no text</td></tr></tbody></table></div>
+
+    <h3>On Navy Pier Blue — title and section slides</h3>
+    <div class="tablewrap"><table><thead><tr><th>Color</th><th>Hex</th><th>Ratio</th><th>Verdict</th><th>Permitted use</th></tr></thead><tbody id="cn"><tr><td><span class="dot" style="background:#FFFFFF"></span>White</td><td class="num">#FFFFFF</td>
+  <td class="num">15.42:1</td><td><span class="verdict ok">AAA</span></td><td>Everything, any size</td></tr><tr><td><span class="dot" style="background:#F6F3EC"></span>Expo White</td><td class="num">#F6F3EC</td>
+  <td class="num">13.91:1</td><td><span class="verdict ok">AAA</span></td><td>Body copy on navy grounds</td></tr><tr><td><span class="dot" style="background:#FEDD00"></span>Amarelo Ouro</td><td class="num">#FEDD00</td>
+  <td class="num">11.42:1</td><td><span class="verdict ok">AAA</span></td><td>Brazil kickers, headlines, KPI figures</td></tr><tr><td><span class="dot" style="background:#A6C5D7"></span>Second City Slate</td><td class="num">#A6C5D7</td>
+  <td class="num">8.51:1</td><td><span class="verdict ok">AAA</span></td><td>Kickers, attributions, captions</td></tr><tr><td><span class="dot" style="background:#41B6E6"></span>Chicago Blue</td><td class="num">#41B6E6</td>
+  <td class="num">6.65:1</td><td><span class="verdict ok">AA</span></td><td>Links and highlights on navy</td></tr><tr><td><span class="dot" style="background:#00966C"></span>Chicago River Green</td><td class="num">#00966C</td>
+  <td class="num">4.10:1</td><td><span class="verdict lg">AA Large</span></td><td>18pt+ only</td></tr><tr><td><span class="dot" style="background:#009739"></span>Verde Bandeira</td><td class="num">#009739</td>
+  <td class="num">4.03:1</td><td><span class="verdict lg">AA Large</span></td><td>18pt+ and flag graphics</td></tr><tr><td><span class="dot" style="background:#3D8DA4"></span>UI Health Sky</td><td class="num">#3D8DA4</td>
+  <td class="num">4.07:1</td><td><span class="verdict lg">AA Large</span></td><td>18pt+ only</td></tr><tr><td><span class="dot" style="background:#D50032"></span>Fire Engine Red</td><td class="num">#D50032</td>
+  <td class="num">2.85:1</td><td><span class="verdict no">Fail</span></td><td>Prohibited on navy at every size</td></tr></tbody></table></div>
+  </section>
+
+  <!-- ============ CHARTS ============ -->
+  <section id="charts">
+    <p class="eyebrow">Data</p>
+    <h2>Chart palette</h2>
+    <p class="lede">Brand colors and chart colors are different jobs. Navy Pier Blue is too dark to sit beside four other series, and Second City Slate is too pale to read as a mark at all. So EquiMED charts use five steps <em>derived from</em> the UIC hues — same families, re-tuned into the lightness and chroma band where categorical color actually works.</p>
+    <p class="lede">The order is fixed. Series one always takes Data Blue, series two always takes Fire Engine Red, and so on down the list. A filter that removes a series never repaints the survivors.</p>
+
+    <div class="chartpal" id="chartpal"><div class="cs"><div class="band" style="background:#2552AA"></div>
+    <div class="lab"><b>Data Blue</b><span class="slotnum">SLOT 1</span><br>#2552AA<br>3.52:1 on white<br>from Navy Pier Blue</div></div><div class="cs"><div class="band" style="background:#D50032"></div>
+    <div class="lab"><b>Fire Engine Red</b><span class="slotnum">SLOT 2</span><br>#D50032<br>5.42:1 on white<br>from UIC official</div></div><div class="cs"><div class="band" style="background:#1F8FA8"></div>
+    <div class="lab"><b>Data Teal</b><span class="slotnum">SLOT 3</span><br>#1F8FA8<br>3.58:1 on white<br>from UI Health Sky</div></div><div class="cs"><div class="band" style="background:#CCB100"></div>
+    <div class="lab"><b>Data Gold</b><span class="slotnum">SLOT 4</span><br>#CCB100<br>2.13:1 on white<br>from warm neutral</div></div><div class="cs"><div class="band" style="background:#00A071"></div>
+    <div class="lab"><b>Data Green</b><span class="slotnum">SLOT 5</span><br>#00A071<br>3.32:1 on white<br>from Chicago River Green</div></div></div>
+
+    <div class="callout">
+      <h4>Verified, not eyeballed</h4>
+      <p>This sequence was checked under simulated protanopia and deuteranopia. The closest adjacent pair — Data Green against Data Gold — separates by ΔE 13.0 under protanopia and 20.9 under normal vision, both comfortably above the ΔE 8 target. Data Gold sits at 2.13:1 against white, so any chart using it must carry direct labels or a table view; it is never the only way to identify a series.</p>
+      <p>Five is the ceiling. A sixth series folds into “Other”, or the chart becomes small multiples. Never generate a sixth hue.</p>
+    </div>
+
+    <h3>The other three jobs</h3>
+    <div class="rules">
+      <div class="rule-card">
+        <h4>Sequential — magnitude</h4>
+        <p>One hue, light to dark: Navy 12 → 25 → 40 → 55 → 70 → 85 → 100. Choropleths, heat maps, intensity.</p>
+      </div>
+      <div class="rule-card">
+        <h4>Diverging — polarity</h4>
+        <p>Fire Engine Red arm ← Navy 12 neutral midpoint → Data Teal arm, equal steps each side. Never a hue at the midpoint.</p>
+      </div>
+      <div class="rule-card">
+        <h4>Status — state</h4>
+        <p>Reserved and never reused as a series: <b style="color:#00966C">#00966C</b> good, <b style="color:#9A6300">#CCB100</b> watch, <b style="color:#D50032">#D50032</b> critical. Always shipped with an icon and a word.</p>
+      </div>
+      <div class="rule-card deny">
+        <h4>Never</h4>
+        <p>No dual axes. No 3-D. No rainbow ramps. No chart on a navy ground — put it on a white card instead, where this palette was validated.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LOGO ============ -->
+  <section id="logo">
+    <p class="eyebrow">Identity</p>
+    <h2>Logo and lockup</h2>
+    <p class="lede">Both marks are fixed artwork. They are never redrawn, recolored, outlined, reversed to white, set in a single color, stretched, rotated, or given effects. If a background will not accept them, the background changes — not the logo.</p>
+
+    <div class="logo-grid">
+      <div>
+        <div class="logo-plate"><img src="./lockup.png" alt="Co-branded lockup: UICOMP, divider rule, EquiMED" style="max-width:100%"></div>
+        <p class="cap">Primary lockup — UICOMP leads, EquiMED follows the rule.<br>Minimum width 2.25 in / 216 px.</p>
+      </div>
+      <div>
+        <div class="logo-plate navy"><span class="knockout"><img src="./lockup.png" alt="Lockup on a white containment field over navy" style="max-width:100%"></span></div>
+        <p class="cap">On navy, the lockup sits in a white containment field.<br>Never knocked out, never reversed.</p>
+      </div>
+    </div>
+
+    <h3>Clear space and minimum size</h3>
+    <svg viewBox="0 0 720 210" width="100%" style="max-width:720px;margin-top:18px;border:1px solid var(--rule);border-radius:2px;background:var(--surface)" role="img" aria-label="Clear space diagram: the exclusion zone equals the height of the UIC roundel on all four sides">
+      <rect x="70" y="46" width="580" height="118" fill="none" stroke="var(--rule-strong)" stroke-width="1" stroke-dasharray="5 4"></rect>
+      <rect x="118" y="82" width="484" height="46" fill="none" stroke="var(--accent)" stroke-width="1.5"></rect>
+      <circle cx="141" cy="105" r="21" fill="#D50032"></circle>
+      <text x="141" y="110" fill="#FFFFFF" font-family="Arial,sans-serif" font-size="12" font-weight="700" text-anchor="middle">UIC</text>
+      <rect x="172" y="92" width="168" height="8" fill="#001E62"></rect>
+      <rect x="172" y="106" width="132" height="7" fill="#001E62"></rect>
+      <rect x="378" y="84" width="1.5" height="42" fill="#001E62"></rect>
+      <rect x="412" y="90" width="150" height="16" fill="#001E62"></rect>
+      <rect x="412" y="112" width="150" height="6" fill="#001E62"></rect>
+      <g stroke="var(--ink-3)" stroke-width="1">
+        <line x1="94" y1="46" x2="94" y2="82"></line><line x1="90" y1="46" x2="98" y2="46"></line><line x1="90" y1="82" x2="98" y2="82"></line>
+        <line x1="118" y1="30" x2="118" y2="42"></line>
+      </g>
+      <text x="104" y="68" fill="var(--ink-3)" font-family="monospace" font-size="11">X</text>
+      <text x="70" y="188" fill="var(--ink-3)" font-family="monospace" font-size="11">X = height of the UIC roundel. Clear space on all four sides = X. Nothing enters the dashed zone.</text>
+    </svg>
+
+    <h3>What is and is not permitted</h3>
+    <div class="rules">
+      <div class="rule-card allow"><h4>Do</h4><p>Place the lockup on white, Expo White, or a white containment field over any darker ground.</p></div>
+      <div class="rule-card allow"><h4>Do</h4><p>Scale proportionally from the supplied PNG, and keep the divider rule and both marks together as one object.</p></div>
+      <div class="rule-card allow"><h4>Do</h4><p>Use EquiMED alone inside program materials where UICOMP is already established on the title slide.</p></div>
+      <div class="rule-card deny"><h4>Do not</h4><p>Recolor either mark — including making them all-navy, all-white, or all-black.</p></div>
+      <div class="rule-card deny"><h4>Do not</h4><p>Place either mark directly on navy, on a photograph, or on any fill that reduces contrast against its red and navy.</p></div>
+      <div class="rule-card deny"><h4>Do not</h4><p>Rebuild the lockup by setting the words in a typeface, or alter the spacing between the marks and the rule.</p></div>
+    </div>
+  </section>
+
+  <!-- ============ TYPE ============ -->
+  <section id="type">
+    <p class="eyebrow">Typography</p>
+    <h2>Type</h2>
+    <p class="lede">UIC licenses three typefaces — Obviously, Theinhardt and Pitch Sans — and licensing is per device, requested through the university's Marketing Project Request Form. Because EquiMED decks are edited by people who will not all hold those licenses, the deck template ships in the university's own documented substitutes. Swap the licensed faces in for anything going to an external or print audience.</p>
+
+    <div class="spec">
+      <p class="t-display">Equity Innovation Medicine</p>
+      <p class="spec-meta"><b>Display / headlines</b> Obviously Bold · licensed<br>Substitute: Bricolage Grotesque<br>Deck substitute: Arial Bold<br>Tracking −2.5%</p>
+    </div>
+    <div class="spec">
+      <p class="t-sub">Section and subhead, sentence case</p>
+      <p class="spec-meta"><b>Subheads</b> Theinhardt Medium · licensed<br>Substitute: Public Sans 600<br>Deck substitute: Arial Bold<br>Tracking −1%</p>
+    </div>
+    <div class="spec">
+      <p class="t-body">Running text sits at sixteen to eighteen point in a deck and never runs past roughly sixty-five characters on a line. Body copy is Steel Gray on white, or Navy Pier Blue where the slide is quiet enough to take it. Body copy is never Fire Engine Red.</p>
+      <p class="spec-meta"><b>Body</b> Theinhardt Regular · licensed<br>Substitute: Public Sans 400<br>Deck substitute: Arial<br>Line height 1.55</p>
+    </div>
+    <div class="spec">
+      <p class="t-data">#001E62 · 0 30 98 · PMS 2758 C · 15.42:1</p>
+      <p class="spec-meta"><b>Data &amp; eyebrows</b> Pitch Sans · licensed<br>Substitute: Azeret Mono<br>Deck substitute: Consolas / Menlo<br>Tabular figures always</p>
+    </div>
+
+    <h3>Deck type scale — 16:9, 13.333 × 7.5 in</h3>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Role</th><th>Size</th><th>Weight</th><th>Color</th><th>Case</th></tr></thead>
+        <tbody>
+          <tr><td>Title slide headline</td><td class="num">40 pt</td><td>Bold</td><td>White on navy</td><td>Sentence</td></tr>
+          <tr><td>Kicker / eyebrow</td><td class="num">12 pt</td><td>Bold</td><td>Second City Slate</td><td>All caps, +18% tracking</td></tr>
+          <tr><td>Section divider</td><td class="num">32 pt</td><td>Bold</td><td>Navy on Expo White</td><td>Sentence</td></tr>
+          <tr><td>Content headline</td><td class="num">28 pt</td><td>Bold</td><td>Navy Pier Blue</td><td>Sentence</td></tr>
+          <tr><td>Body / bullets</td><td class="num">18 pt</td><td>Regular</td><td>Steel Gray</td><td>Sentence</td></tr>
+          <tr><td>Sub-bullet</td><td class="num">15 pt</td><td>Regular</td><td>Navy 70</td><td>Sentence</td></tr>
+          <tr><td>KPI figure</td><td class="num">54 pt</td><td>Bold</td><td>Navy Pier Blue</td><td>Tabular figures</td></tr>
+          <tr><td>Chart axis / label</td><td class="num">11 pt</td><td>Regular</td><td>Navy 70</td><td>Sentence</td></tr>
+          <tr><td>Footer</td><td class="num">9 pt</td><td>Regular</td><td>Navy 55</td><td>Sentence</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="cap">Minimum type size on any slide is 14 pt. If the content will not fit above that, it is two slides.</p>
+  </section>
+
+  <!-- ============ SLIDES ============ -->
+  <section id="slides">
+    <p class="eyebrow">Application</p>
+    <h2>Slide system</h2>
+    <p class="lede">Seven layouts cover almost every EquiMED deck. Navy grounds open and divide; white grounds carry the argument. There are no accent stripes, edge bars or rules under titles anywhere in this system — the EquiMED wordmark makes its point with a single red letter in a navy word, and the slides do the same.</p>
+
+    <div class="slides">
+      <div>
+        <div class="slide s-title">
+          <p class="kicker">UIC College of Medicine Peoria</p>
+          <p class="h">Equity Innovation Medicine</p>
+          <p class="sub">Program overview · September 2026</p>
+          <span class="lg"><img src="./lockup.png" alt=""></span>
+        </div>
+        <p class="slide-cap">Title — navy ground, lockup on a white containment field</p>
+      </div>
+
+      <div>
+        <div class="slide s-section">
+          <p class="n">PART TWO</p>
+          <p class="h">Where the gaps actually are</p>
+          <span class="r"></span>
+        </div>
+        <p class="slide-cap">Section divider — Expo White, no rules, no bars</p>
+      </div>
+
+      <div>
+        <div class="slide s-content">
+          <p class="h">Three commitments</p>
+          <ul style="width:60%">
+            <li>Train physicians who can name a structural cause</li>
+            <li>Build interventions with the community, not for it</li>
+            <li>Measure outcomes by who was previously missed</li>
+          </ul>
+          <span class="figure"><b>3.4x</b><span>higher rate of avoidable admission in the tracts EquiMED students are placed in</span></span>
+          <div class="foot"><span>EQUIMED · UICOMP</span><span>04</span></div>
+        </div>
+        <p class="slide-cap">Content — the pull-figure is this slide's one emphasised mark</p>
+      </div>
+
+      <div>
+        <div class="slide s-data">
+          <p class="h">Enrollment by cohort</p>
+          <div class="kpis">
+            <div class="kpi"><span class="v">248</span><span class="l">Students reached</span></div>
+            <div class="kpi"><span class="v">31%</span><span class="l">First-generation</span></div>
+            <div class="kpi"><span class="v">12</span><span class="l">Partner clinics</span></div>
+          </div>
+          <div class="bars">
+            <i style="background:#2552AA;height:48%"></i><i style="background:#2552AA;height:62%"></i>
+            <i style="background:#2552AA;height:71%"></i><i style="background:#2552AA;height:88%"></i>
+            <i style="background:#D50032;height:100%"></i>
+          </div>
+        </div>
+        <p class="slide-cap">Data — KPI rules in chart-palette order, one bar emphasised</p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <h4>One emphasised mark per slide</h4>
+      <p>Every slide carries exactly one element that is allowed to raise its voice: a figure, a filled row, a highlighted bar, a single word. On white and Expo White grounds that element is Fire Engine Red. On navy grounds — where red is prohibited — it is Chicago Blue, or Amarelo Ouro in the Brazil sub-theme. Two emphasised marks on one slide means neither is emphasised.</p>
+      <p>This is the motif in place of decoration. No accent stripe down a slide edge, no rule under a heading, no coloured band across a header or footer.</p>
+    </div>
+
+    <h3>The full layout set</h3>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Layout</th><th>Ground</th><th>Carries</th></tr></thead>
+        <tbody>
+          <tr><td>Title</td><td class="num"><span class="dot" style="background:#001E62"></span>Navy Pier Blue</td><td>Kicker, headline, standfirst, date line, lockup on white</td></tr>
+          <tr><td>Section divider</td><td class="num"><span class="dot" style="background:#F6F3EC;box-shadow:inset 0 0 0 1px #CBC7BF"></span>Expo White</td><td>Part label in red, headline in navy, lockup at the foot</td></tr>
+          <tr><td>Content</td><td class="num"><span class="dot" style="background:#FFFFFF;box-shadow:inset 0 0 0 1px #CBC7BF"></span>White</td><td>Headline, bullets at 60% width, one pull-figure, footer rule</td></tr>
+          <tr><td>Two column</td><td class="num"><span class="dot" style="background:#FFFFFF;box-shadow:inset 0 0 0 1px #CBC7BF"></span>White</td><td>Text left, figure or image right, 8-column split</td></tr>
+          <tr><td>Data</td><td class="num"><span class="dot" style="background:#FFFFFF;box-shadow:inset 0 0 0 1px #CBC7BF"></span>White</td><td>Up to three KPI tiles, one chart, source line</td></tr>
+          <tr><td>Quote</td><td class="num"><span class="dot" style="background:#001E62"></span>Navy Pier Blue</td><td>Quotation in white, attribution in Second City Slate</td></tr>
+          <tr><td>Closing</td><td class="num"><span class="dot" style="background:#001E62"></span>Navy Pier Blue</td><td>Contact block, lockup on white, red keyline</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ============ BRAZIL ============ -->
+  <section id="brazil">
+    <p class="eyebrow">Sub-theme</p>
+    <h2>Brazil</h2>
+    <p class="lede">EquiMED's Brazil work — exchanges, Fiocruz collaboration, travel and field decks — gets a sub-theme built on the flag of Brazil. It is a variation on the standard, not a second brand: the layouts, type and logo rules are unchanged, and the ground stays Navy Pier Blue.</p>
+
+    <div class="callout">
+      <h4>Why this works without inventing anything</h4>
+      <p>The blue of the Brazilian flag is Pantone 280 C, <code style="font-family:var(--mono)">#012169</code>. Navy Pier Blue is Pantone 2758 C, <code style="font-family:var(--mono)">#001E62</code>. They measure 1.04:1 against each other — indistinguishable to the eye. The sub-theme therefore keeps UIC navy in the blue role and adds exactly two colors: the green and the yellow.</p>
+    </div>
+
+    <div class="swatches" id="brz-sw"><button class="sw" type="button" aria-label="Copy #009739"><span class="chip" style="background:#009739;color:#FFFFFF">#009739</span>
+   <span class="sw-body">
+     <span class="sw-name">Verde Bandeira</span>
+     <span class="sw-role">Flag bar, keylines, large type, fills.</span>
+     <span class="ratios"><span class="pill large">vs white 3.83</span><span class="pill large">vs navy 4.03</span></span>
+     <dl class="specs"><dt>RGB</dt><dd>0 151 57</dd><dt>CMYK</dt><dd>93 0 100 0</dd><dt>PMS</dt><dd>355 C</dd></dl>
+     <span class="copyhint">Click to copy hex</span>
+   </span></button><button class="sw" type="button" aria-label="Copy #008030"><span class="chip" style="background:#008030;color:#FFFFFF">#008030</span>
+   <span class="sw-body">
+     <span class="sw-name">Verde Profundo</span>
+     <span class="sw-role">The green that may set body text on white.</span>
+     <span class="ratios"><span class="pill pass">vs white 5.08</span></span>
+     <dl class="specs"><dt>RGB</dt><dd>0 128 48</dd><dt>CMYK</dt><dd>—</dd><dt>PMS</dt><dd>derived</dd></dl>
+     <span class="copyhint">Click to copy hex</span>
+   </span></button><button class="sw" type="button" aria-label="Copy #FEDD00"><span class="chip" style="background:#FEDD00;color:#001E62">#FEDD00</span>
+   <span class="sw-body">
+     <span class="sw-name">Amarelo Ouro</span>
+     <span class="sw-role">Display color on navy. Fill only on white.</span>
+     <span class="ratios"><span class="pill pass">vs navy 11.42</span><span class="pill fail">vs white 1.35</span></span>
+     <dl class="specs"><dt>RGB</dt><dd>254 221 0</dd><dt>CMYK</dt><dd>0 1 100 0</dd><dt>PMS</dt><dd>116 C</dd></dl>
+     <span class="copyhint">Click to copy hex</span>
+   </span></button><button class="sw" type="button" aria-label="Copy #012169"><span class="chip" style="background:#012169;color:#FFFFFF">#012169</span>
+   <span class="sw-body">
+     <span class="sw-name">Azul Celeste</span>
+     <span class="sw-role">Documented for reference. Use Navy Pier Blue instead — 1.04:1 apart.</span>
+     <span class="ratios"><span class="pill fail">vs UIC navy 1.04</span></span>
+     <dl class="specs"><dt>RGB</dt><dd>1 33 105</dd><dt>CMYK</dt><dd>100 85 0 39</dd><dt>PMS</dt><dd>280 C</dd></dl>
+     <span class="copyhint">Click to copy hex</span>
+   </span></button></div>
+
+    <h3>Rules specific to the Brazil sub-theme</h3>
+    <div class="rules">
+      <div class="rule-card deny">
+        <h4>Red retires to the logo</h4>
+        <p>UIC prohibits red and green adjacency without a neutral separator. In Brazil decks, Fire Engine Red appears only inside the UICOMP mark. The emphasised mark that would be red elsewhere becomes Amarelo Ouro on navy, or Verde Profundo on white.</p>
+      </div>
+      <div class="rule-card deny">
+        <h4>Amarelo Ouro never sets text on white</h4>
+        <p>1.35:1. It is a fill, a rule, a flag bar. On Navy Pier Blue it measures 11.42:1 and becomes the best display color in the whole system — use it there for kickers and KPI figures.</p>
+      </div>
+      <div class="rule-card deny">
+        <h4>Verde Bandeira is a large-type color</h4>
+        <p>3.83:1 on white clears large text and graphics only. For green body text or captions on white, use Verde Profundo at 5.08:1.</p>
+      </div>
+      <div class="rule-card">
+        <h4>Proportion</h4>
+        <p>Roughly 70% navy and white structure, 25% green and yellow accent, 5% everything else. The deck should read as a UICOMP deck that has travelled, not as a flag.</p>
+      </div>
+    </div>
+
+    <h3>Brazil chart order</h3>
+    <p class="cap" style="margin-top:6px">Validated separately — worst adjacent pair ΔE 16.3 under protanopia, 24.5 under normal vision.</p>
+    <div class="chartpal" id="brzpal"><div class="cs"><div class="band" style="background:#2552AA"></div>
+    <div class="lab"><b>Data Blue</b><span class="slotnum">SLOT 1</span><br>#2552AA<br>3.52:1 on white<br>from Navy Pier Blue</div></div><div class="cs"><div class="band" style="background:#008B34"></div>
+    <div class="lab"><b>Verde Escuro</b><span class="slotnum">SLOT 2</span><br>#008B34<br>4.43:1 on white<br>from Verde Bandeira</div></div><div class="cs"><div class="band" style="background:#CCB100"></div>
+    <div class="lab"><b>Data Gold</b><span class="slotnum">SLOT 3</span><br>#CCB100<br>2.13:1 on white<br>from Amarelo Ouro</div></div><div class="cs"><div class="band" style="background:#1F8FA8"></div>
+    <div class="lab"><b>Data Teal</b><span class="slotnum">SLOT 4</span><br>#1F8FA8<br>3.58:1 on white<br>from UI Health Sky</div></div><div class="cs"><div class="band" style="background:#D50032"></div>
+    <div class="lab"><b>Fire Engine Red</b><span class="slotnum">SLOT 5</span><br>#D50032<br>5.42:1 on white<br>from logo only in Brazil decks</div></div></div>
+
+    <h3>Applied</h3>
+    <div class="slides">
+      <div>
+        <div class="slide s-brz">
+          <span class="badge"><i></i></span>
+          <p class="kicker" style="margin-top:6cqw">EquiMED Brasil</p>
+          <p class="h">Field exchange · Rio de Janeiro</p>
+          <p class="sub">Fiocruz collaboration · March 2027</p>
+          <span class="lg"><img src="./lockup.png" alt=""></span>
+        </div>
+        <p class="slide-cap">Brazil title — the green-and-gold badge marks the sub-theme</p>
+      </div>
+      <div>
+        <div class="slide s-content" style="background:#001E62">
+          <p class="h" style="color:#FEDD00;font-size:5.4cqw">Três compromissos</p>
+          <ul style="color:#E0E4EC">
+            <li>Equidade medida por quem foi deixado de fora</li>
+            <li>Pesquisa conduzida com a comunidade</li>
+            <li>Formação que atravessa fronteiras</li>
+          </ul>
+          <div class="foot" style="border-top-color:#26407A;color:#A6C5D7"><span>EQUIMED BRASIL · UICOMP</span><span>07</span></div>
+        </div>
+        <p class="slide-cap">Brazil content — Amarelo Ouro headline on navy, 11.42:1</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FILES ============ -->
+  <section id="files" style="border-bottom:0">
+    <p class="eyebrow">Assets</p>
+    <h2>What ships with this standard</h2>
+    <div class="files">
+      <div><code>EquiMED-UICOMP-Template.pptx</code><span>16:9 deck, 13 slides: the full layout set worked through in real content, a palette reference slide to eyedropper from, and three Brazil sub-theme slides including the Fiocruz lecturer roster</span></div>
+      <div><code>lockup-uicomp-equimed.png</code><span>Primary co-branded lockup · transparent · 3160 px wide</span></div>
+      <div><code>uicomp-horizontal.png</code><span>UICOMP mark alone · transparent · 1800 px wide</span></div>
+      <div><code>equimed.png</code><span>EquiMED mark alone · transparent · 2400 px wide</span></div>
+    </div>
+
+    <div class="callout" style="border-left-color:var(--accent)">
+      <h4>Precedence</h4>
+      <p>Where this document and UIC Brand Standards disagree, UIC wins. Where UIC is silent — the chart palette, the navy scale, the Brazil sub-theme — this document governs, and every value in it was derived from a UIC color and measured before it was written down.</p>
+    </div>
+  </section>
+
+  <div class="foot">
+    <span>EquiMED Brand Standard · v1.0</span>
+    <span>University of Illinois College of Medicine Peoria</span>
+  </div>
+</div>
+
+<script>
+const CORE=[
+ {n:"Navy Pier Blue",h:"#001E62",fg:"#FFFFFF",rgb:"0 30 98",cmyk:"100 94 30 28",pms:"2758 C",role:"The brand. Grounds, headings, body, structure.",r:[["vs white","15.42","pass"],["vs Expo","13.91","pass"]]},
+ {n:"Fire Engine Red",h:"#D50032",fg:"#FFFFFF",rgb:"213 0 50",cmyk:"10 100 86 2",pms:"199 C",role:"Accent only. Keylines, underlines, one highlighted mark.",r:[["vs white","5.42","pass"],["vs navy","2.85","fail"]]},
+ {n:"Steel Gray",h:"#343333",fg:"#FFFFFF",rgb:"52 51 51",cmyk:"69 63 62 58",pms:"—",role:"Body copy on white where navy would be too loud.",r:[["vs white","12.59","pass"]]},
+ {n:"Expo White",h:"#F6F3EC",fg:"#001E62",rgb:"246 243 236",cmyk:"—",pms:"7527 @ 25%",role:"Warm ground for section dividers and cards.",r:[["navy on it","13.91","pass"]],border:1},
+ {n:"White",h:"#FFFFFF",fg:"#001E62",rgb:"255 255 255",cmyk:"0 0 0 0",pms:"—",role:"The default ground. Containment field for both logos.",r:[["navy on it","15.42","pass"]],border:1}
+];
+const SUPPORT=[
+ {n:"UI Health Sky",h:"#3D8DA4",fg:"#FFFFFF",rgb:"61 141 164",cmyk:"90 18 10 10",pms:"7704",role:"Clinical diagrams, photographic tint.",r:[["vs white","3.79","large"],["vs navy","4.07","large"]]},
+ {n:"Second City Slate",h:"#A6C5D7",fg:"#001E62",rgb:"166 197 215",cmyk:"34 13 9 0",pms:"543",role:"Kickers and attributions on navy. Never on white.",r:[["vs navy","8.51","pass"],["vs white","1.81","fail"]]},
+ {n:"Chicago River Green",h:"#00966C",fg:"#FFFFFF",rgb:"0 150 108",cmyk:"84 17 73 3",pms:"7724",role:"Positive status. Never beside red without a neutral.",r:[["vs white","3.76","large"],["vs navy","4.10","large"]]},
+ {n:"Chicago Blue",h:"#41B6E6",fg:"#001E62",rgb:"65 182 230",cmyk:"65 3 0 0",pms:"298",role:"Highlight on navy grounds, callout fills.",r:[["vs navy","6.65","pass"],["vs white","2.32","fail"]]},
+ {n:"Chicago Brick",h:"#B10000",fg:"#FFFFFF",rgb:"177 0 0",cmyk:"20 100 100 14",pms:"3517",role:"Deep red for print and dense text settings.",r:[["vs white","7.32","pass"]]}
+];
+const BRZ=[
+ {n:"Verde Bandeira",h:"#009739",fg:"#FFFFFF",rgb:"0 151 57",cmyk:"93 0 100 0",pms:"355 C",role:"Flag bar, keylines, large type, fills.",r:[["vs white","3.83","large"],["vs navy","4.03","large"]]},
+ {n:"Verde Profundo",h:"#008030",fg:"#FFFFFF",rgb:"0 128 48",cmyk:"—",pms:"derived",role:"The green that may set body text on white.",r:[["vs white","5.08","pass"]]},
+ {n:"Amarelo Ouro",h:"#FEDD00",fg:"#001E62",rgb:"254 221 0",cmyk:"0 1 100 0",pms:"116 C",role:"Display color on navy. Fill only on white.",r:[["vs navy","11.42","pass"],["vs white","1.35","fail"]]},
+ {n:"Azul Celeste",h:"#012169",fg:"#FFFFFF",rgb:"1 33 105",cmyk:"100 85 0 39",pms:"280 C",role:"Documented for reference. Use Navy Pier Blue instead — 1.04:1 apart.",r:[["vs UIC navy","1.04","fail"]]}
+];
+const CHART=[
+ {n:"Data Blue",h:"#2552AA",from:"Navy Pier Blue",c:"3.52"},
+ {n:"Fire Engine Red",h:"#D50032",from:"UIC official",c:"5.42"},
+ {n:"Data Teal",h:"#1F8FA8",from:"UI Health Sky",c:"3.58"},
+ {n:"Data Gold",h:"#CCB100",from:"warm neutral",c:"2.13"},
+ {n:"Data Green",h:"#00A071",from:"Chicago River Green",c:"3.32"}
+];
+const BRZCHART=[
+ {n:"Data Blue",h:"#2552AA",from:"Navy Pier Blue",c:"3.52"},
+ {n:"Verde Escuro",h:"#008B34",from:"Verde Bandeira",c:"4.43"},
+ {n:"Data Gold",h:"#CCB100",from:"Amarelo Ouro",c:"2.13"},
+ {n:"Data Teal",h:"#1F8FA8",from:"UI Health Sky",c:"3.58"},
+ {n:"Fire Engine Red",h:"#D50032",from:"logo only in Brazil decks",c:"5.42"}
+];
+
+function pillCls(k){return k==="pass"?"pill pass":k==="large"?"pill large":k==="fail"?"pill fail":"pill";}
+function swatch(c){
+  const b=document.createElement("button");
+  b.className="sw"; b.type="button"; b.setAttribute("aria-label","Copy "+c.h);
+  b.innerHTML=`<span class="chip${c.border?" bordered":""}" style="background:${c.h};color:${c.fg}">${c.h}</span>
+   <span class="sw-body">
+     <span class="sw-name">${c.n}</span>
+     <span class="sw-role">${c.role}</span>
+     <span class="ratios">${c.r.map(x=>`<span class="${pillCls(x[2])}">${x[0]} ${x[1]}</span>`).join("")}</span>
+     <dl class="specs"><dt>RGB</dt><dd>${c.rgb}</dd><dt>CMYK</dt><dd>${c.cmyk}</dd><dt>PMS</dt><dd>${c.pms}</dd></dl>
+     <span class="copyhint">Click to copy hex</span>
+   </span>`;
+  b.addEventListener("click",()=>copy(c.h,b));
+  return b;
+}
+function copy(v,el){
+  const done=()=>{el.dataset.copied="1";const h=el.querySelector(".copyhint");const o=h.textContent;h.textContent="Copied "+v;
+    setTimeout(()=>{h.textContent=o;delete el.dataset.copied;},1400);};
+  try{ navigator.clipboard.writeText(v).then(done,fallback); }catch(e){ fallback(); }
+  function fallback(){ const t=document.createElement("textarea");t.value=v;t.style.position="fixed";t.style.opacity="0";
+    document.body.appendChild(t);t.select();try{document.execCommand("copy");}catch(e){} t.remove(); done(); }
+}
+CORE.forEach(c=>document.getElementById("core-sw").appendChild(swatch(c)));
+SUPPORT.forEach(c=>document.getElementById("support-sw").appendChild(swatch(c)));
+BRZ.forEach(c=>document.getElementById("brz-sw").appendChild(swatch(c)));
+
+// tint ramp
+const TINTS=[["Navy 100","#001E62","0%","#FFFFFF"],["Navy 85","#26407A","15%","#FFFFFF"],["Navy 70","#4C6291","30%","#FFFFFF"],
+["Navy 55","#7383A9","45%","#FFFFFF"],["Navy 40","#99A5C0","60%","#001E62"],["Navy 25","#BFC7D8","75%","#001E62"],
+["Navy 12","#E0E4EC","88%","#001E62"],["Navy 06","#F0F2F6","94%","#001E62"]];
+const ramp=document.getElementById("ramp");
+TINTS.forEach(([n,h,p,fg])=>{const b=document.createElement("button");b.type="button";b.style.background=h;b.style.color=fg;
+  b.setAttribute("aria-label","Copy "+h);b.innerHTML=`<b>${n}</b><span>${h}</span><span style="opacity:.72">${p} white</span>`;
+  b.addEventListener("click",()=>{copyPlain(h,b);});ramp.appendChild(b);});
+function copyPlain(v,el){const o=el.innerHTML;try{navigator.clipboard.writeText(v);}catch(e){}
+  el.innerHTML=`<b>Copied</b><span>${v}</span>`;setTimeout(()=>{el.innerHTML=o;},1200);}
+
+// chart palettes
+function palStrip(target,list){
+  document.getElementById(target).innerHTML=list.map((c,i)=>
+   `<div class="cs"><div class="band" style="background:${c.h}"></div>
+    <div class="lab"><b>${c.n}</b><span class="slotnum">SLOT ${i+1}</span><br>${c.h}<br>${c.c}:1 on white<br>from ${c.from}</div></div>`).join("");
+}
+palStrip("chartpal",CHART); palStrip("brzpal",BRZCHART);
+
+// contrast tables
+const ONWHITE=[["Navy Pier Blue","#001E62","15.42","AAA","ok","Everything, any size"],
+["Steel Gray","#343333","12.59","AAA","ok","Body copy, tables"],
+["Chicago Brick","#B10000","7.32","AAA","ok","Dense red text where red is required"],
+["Fire Engine Red","#D50032","5.42","AA","ok","Headlines 18pt+ and accents — never body copy"],
+["Verde Profundo","#008030","5.08","AA","ok","Brazil sub-theme body text"],
+["Verde Bandeira","#009739","3.83","AA Large","lg","18pt+ and graphics only"],
+["UI Health Sky","#3D8DA4","3.79","AA Large","lg","18pt+ and graphics only"],
+["Chicago River Green","#00966C","3.76","AA Large","lg","18pt+ and graphics only"],
+["Chicago Blue","#41B6E6","2.32","Fail","no","Fills and rules — no text"],
+["Second City Slate","#A6C5D7","1.81","Fail","no","Fills and rules — no text"],
+["Amarelo Ouro","#FEDD00","1.35","Fail","no","Fills and rules — no text"]];
+const ONNAVY=[["White","#FFFFFF","15.42","AAA","ok","Everything, any size"],
+["Expo White","#F6F3EC","13.91","AAA","ok","Body copy on navy grounds"],
+["Amarelo Ouro","#FEDD00","11.42","AAA","ok","Brazil kickers, headlines, KPI figures"],
+["Second City Slate","#A6C5D7","8.51","AAA","ok","Kickers, attributions, captions"],
+["Chicago Blue","#41B6E6","6.65","AA","ok","Links and highlights on navy"],
+["Chicago River Green","#00966C","4.10","AA Large","lg","18pt+ only"],
+["Verde Bandeira","#009739","4.03","AA Large","lg","18pt+ and flag graphics"],
+["UI Health Sky","#3D8DA4","4.07","AA Large","lg","18pt+ only"],
+["Fire Engine Red","#D50032","2.85","Fail","no","Prohibited on navy at every size"]];
+function fill(id,rows){document.getElementById(id).innerHTML=rows.map(r=>
+ `<tr><td><span class="dot" style="background:${r[1]}"></span>${r[0]}</td><td class="num">${r[1]}</td>
+  <td class="num">${r[2]}:1</td><td><span class="verdict ${r[4]}">${r[3]}</span></td><td>${r[5]}</td></tr>`).join("");}
+fill("cw",ONWHITE); fill("cn",ONNAVY);
+</script>
+
+</body></html>
