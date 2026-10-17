@@ -19,11 +19,14 @@ The project is the vehicle. The change in the learner is the most important prod
 | `fieldnotes.html` | Every interaction across the two years, split into what happens with people and what happens alone. Filterable. | Residents, faculty |
 | `gantt.html` | The same two years as a swimlane schedule: activity by participant, the eight gates, and the four points where everyone converges. | Faculty, program directors |
 | `physician-innovator.html` | Redirect to `index.html`. It was a byte-identical duplicate; kept so existing external links resolve. | — |
+| `methods/` | Methods toolkit: conceptual model and logic model tutorials, a terms page with brief theory guides, and a 20-minute Sheffield practice exercise on synthetic data. | Residents, students, faculty |
 | `site.css` | Shared tokens, topbar, section nav, and document styles. All pages use it except `index.html`, which keeps its own inline styles. | — |
 
 The pages are ordered as a path. Each carries the same section navigation and a link onward, so the set reads start to finish or can be entered at any point. Light and dark themes are shared across all of them via the topbar toggle.
 
 Markdown sources for the two guides live alongside them as `trainee-field-guide.md` and `faculty-guide.md`. **Edit the markdown, not the HTML** — the pages are generated from it.
+
+The Methods pages follow the same rule: edit the `.md` files in `methods/`, then run `python3 methods/build.py` (needs `pip install markdown`) to regenerate the `.html` next to each one. Page order, titles and the in-section nav live in the `PAGES` list at the top of that script.
 
 ## The written guides
 
