@@ -37,6 +37,37 @@ The same table as a file for Mural or a spreadsheet: [sheffield-synthetic-data.c
 
 ## Run of show
 
+<figure class="dia">
+<svg viewBox="0 0 760 124" role="img" aria-label="The 20 minutes at a glance">
+<text class="t ttl" x="24" y="24">The 20 minutes at a glance</text>
+<rect class="band" x="24" y="40" width="69.2" height="52" rx="6"/>
+<rect class="band" x="97.2" y="40" width="102.8" height="52" rx="6"/>
+<rect class="band" x="204" y="40" width="138.4" height="52" rx="6"/>
+<rect class="box key" x="346.4" y="40" width="174" height="52" rx="6"/>
+<rect class="band" x="524.4" y="40" width="102.8" height="52" rx="6"/>
+<rect class="band" x="631.2" y="40" width="104.8" height="52" rx="6"/>
+<text class="t n" x="58.6" y="62" text-anchor="middle">Teams</text>
+<text class="t n" x="148.6" y="62" text-anchor="middle">Question</text>
+<text class="t n" x="273.2" y="62" text-anchor="middle">Concepts</text>
+<text class="t n" x="433.4" y="62" text-anchor="middle">Model</text>
+<text class="t n" x="575.8" y="62" text-anchor="middle">Hypotheses</text>
+<text class="t n" x="683.6" y="62" text-anchor="middle">Debrief</text>
+<text class="t q" x="58.6" y="80" text-anchor="middle">brief</text>
+<text class="t q" x="148.6" y="80" text-anchor="middle">Step 1</text>
+<text class="t q" x="273.2" y="80" text-anchor="middle">Step 3</text>
+<text class="t q" x="433.4" y="80" text-anchor="middle">Steps 4–5 · longest block</text>
+<text class="t q" x="575.8" y="80" text-anchor="middle">Steps 5–6</text>
+<text class="t q" x="683.6" y="80" text-anchor="middle">Step 7</text>
+<text class="t cap" x="24" y="112">0:00</text>
+<text class="t cap" x="95.2" y="112" text-anchor="middle">2:00</text>
+<text class="t cap" x="202" y="112" text-anchor="middle">5:00</text>
+<text class="t cap" x="344.4" y="112" text-anchor="middle">9:00</text>
+<text class="t cap" x="522.4" y="112" text-anchor="middle">14:00</text>
+<text class="t cap" x="629.2" y="112" text-anchor="middle">17:00</text>
+<text class="t cap" x="736" y="112" text-anchor="end">20:00</text>
+</svg>
+</figure>
+
 | Time | Students do | Tutorial step | Product |
 | --- | --- | --- | --- |
 | 0:00–2:00 | Form teams; facilitator reads the scenario and the synthetic-data note aloud | — | Teams ready |
@@ -51,7 +82,7 @@ The same table as a file for Mural or a spreadsheet: [sheffield-synthetic-data.c
 Create one board per team with four labeled frames:
 
 1. **Data:** paste the table and conversation notes.
-2. **Concept cards:** blank sticky notes in five colors, one per role, with a color key.
+2. **Concept cards:** blank sticky notes in five colors, one per role, matching the [role key](conceptual-model.html#step-3-identify-and-define-the-key-concepts).
 3. **Model canvas:** a left-to-right area with "Outcome" pre-placed on the right.
 4. **Hypotheses:** a template sticky: "Among [population], higher [A] will be associated with [higher / lower] [B]."
 
@@ -81,23 +112,23 @@ This is one defensible model built from the table, not the only right answer. Te
 <path d="M130 256V310H630V256" marker-end="url(#sh-arrow)"/>
 <path d="M380 350V314" marker-end="url(#sh-arrow)"/>
 </g>
-<rect class="box" x="250" y="56" width="260" height="72" rx="8"/>
+<rect class="box r-conf" x="250" y="56" width="260" height="72" rx="8"/>
 <text class="t n" x="380" y="80" text-anchor="middle">Distance and car access</text>
 <text class="t q" x="380" y="100" text-anchor="middle">Participants live 3.6 mi out;</text>
 <text class="t q" x="380" y="116" text-anchor="middle">non-participants 12.8 mi</text>
-<rect class="box" x="30" y="184" width="200" height="72" rx="8"/>
+<rect class="box r-exp" x="30" y="184" width="200" height="72" rx="8"/>
 <text class="t n" x="130" y="208" text-anchor="middle">Program participation</text>
 <text class="t q" x="130" y="228" text-anchor="middle">Cornerstone wellness group</text>
 <text class="t q" x="130" y="244" text-anchor="middle">7 in, 5 not in</text>
-<rect class="box" x="280" y="184" width="200" height="72" rx="8"/>
+<rect class="box r-med" x="280" y="184" width="200" height="72" rx="8"/>
 <text class="t n" x="380" y="208" text-anchor="middle">Self-efficacy</text>
 <text class="t q" x="380" y="228" text-anchor="middle">Mean 7.3 in program</text>
 <text class="t q" x="380" y="244" text-anchor="middle">vs 4.6 not in program</text>
-<rect class="box key" x="530" y="184" width="200" height="72" rx="8"/>
+<rect class="box r-out" x="530" y="184" width="200" height="72" rx="8"/>
 <text class="t n" x="630" y="208" text-anchor="middle">HbA1c</text>
 <text class="t" x="630" y="228" text-anchor="middle">Mean 7.5% in program</text>
 <text class="t" x="630" y="244" text-anchor="middle">vs 9.2% not in program</text>
-<rect class="box" x="250" y="350" width="260" height="72" rx="8"/>
+<rect class="box r-mod" x="250" y="350" width="260" height="72" rx="8"/>
 <text class="t n" x="380" y="374" text-anchor="middle">Food insecurity</text>
 <text class="t q" x="380" y="394" text-anchor="middle">HbA1c gap with program:</text>
 <text class="t q" x="380" y="410" text-anchor="middle">1.5 if food insecure, 1.1 if not</text>

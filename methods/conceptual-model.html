@@ -55,6 +55,18 @@
   </ul>
 </nav>
 
+<nav class="stepstrip" aria-label="Steps on this page">
+  <ol>
+    <li><a href="#step-1-define-the-research-question-and-the-outcome"><span class="num">1</span><span class="lbl">Question</span></a></li>
+    <li><a href="#step-2-review-the-literature-and-choose-a-guiding-theory-or-framework"><span class="num">2</span><span class="lbl">Literature</span></a></li>
+    <li><a href="#step-3-identify-and-define-the-key-concepts"><span class="num">3</span><span class="lbl">Concepts</span></a></li>
+    <li><a href="#step-4-map-the-relationships-between-concepts"><span class="num">4</span><span class="lbl">Relationships</span></a></li>
+    <li><a href="#step-5-draw-the-model-and-state-hypotheses"><span class="num">5</span><span class="lbl">Draw</span></a></li>
+    <li><a href="#step-6-operationalize-each-concept-into-measures"><span class="num">6</span><span class="lbl">Measures</span></a></li>
+    <li><a href="#step-7-critique-and-revise"><span class="num">7</span><span class="lbl">Critique</span></a></li>
+  </ol>
+</nav>
+
 <article>
 <h2 id="overview">Overview</h2>
 <p>In seven steps you will build a conceptual model: a diagram, with a short narrative, that shows the key concepts in your research question and how you believe they relate. It becomes the backbone of your literature review, hypotheses, measures and analysis plan.</p>
@@ -104,7 +116,7 @@
 <li>Critique and revise</li>
 </ol>
 <h2 id="step-1-define-the-research-question-and-the-outcome">Step 1: Define the research question and the outcome</h2>
-<p><strong>Goal:</strong> a focused question with one clearly named outcome. The outcome is the box your whole model points toward.</p>
+<div class="stepcard goal"><span class="lbl">Goal</span><p>a focused question with one clearly named outcome. The outcome is the box your whole model points toward.</p></div>
 <ol>
 <li>Write down the problem that interests you in plain language.</li>
 <li>Name the <strong>outcome</strong>: the condition, behavior or result you want to explain or change.</li>
@@ -116,9 +128,9 @@
 <p><strong>Template:</strong> Among [population] in [setting], how does [factor] relate to [outcome]?</p>
 <p><strong>Too broad:</strong> "What affects student wellbeing?" <strong>Focused:</strong> "Among first-year health professions students, how does sleep duration relate to exam performance?"</p>
 <p><strong>New to research questions?</strong> See the <a href="terms.html#research-question">deeper explanation</a>: what makes a good question, question types, common mistakes and a self-test.</p>
-<p><strong>Output:</strong> a one-sentence research question with a named outcome.</p>
+<div class="stepcard output"><span class="lbl">Output</span><p>a one-sentence research question with a named outcome.</p></div>
 <h2 id="step-2-review-the-literature-and-choose-a-guiding-theory-or-framework">Step 2: Review the literature and choose a guiding theory or framework</h2>
-<p><strong>Goal:</strong> ground your model in what is already known, so your arrows are justified rather than guessed.</p>
+<div class="stepcard goal"><span class="lbl">Goal</span><p>ground your model in what is already known, so your arrows are justified rather than guessed.</p></div>
 <ol>
 <li>Search for studies on your outcome and your main factor. Look first for systematic reviews.</li>
 <li>As you read, keep a log of the concepts each study used and the relationships it found, with the direction and strength of each.</li>
@@ -158,9 +170,9 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Output:</strong> a literature log, a chosen theory or framework, and a short list of gaps.</p>
+<div class="stepcard output"><span class="lbl">Output</span><p>a literature log, a chosen theory or framework, and a short list of gaps.</p></div>
 <h2 id="step-3-identify-and-define-the-key-concepts">Step 3: Identify and define the key concepts</h2>
-<p><strong>Goal:</strong> a short list of clearly defined concepts, each with a role in the model.</p>
+<div class="stepcard goal"><span class="lbl">Goal</span><p>a short list of clearly defined concepts, each with a role in the model.</p></div>
 <ol>
 <li>From your literature log, list every concept that plausibly affects your outcome.</li>
 <li>Keep the ones that matter most for your question and that the theory highlights. Aim for five to nine; more becomes hard to study and to read.</li>
@@ -175,6 +187,15 @@
 </li>
 <li>Group related concepts by level if your theory uses levels (individual, interpersonal, organizational, community, policy).</li>
 </ol>
+<div class="rolekey" aria-label="Role colors used in every diagram">
+<span class="role r-exp">Exposure</span>
+<span class="role r-med">Mediator</span>
+<span class="role r-mod">Moderator</span>
+<span class="role r-conf">Confounder</span>
+<span class="role r-out">Outcome</span>
+</div>
+
+<p>These five colors mark the same roles in every diagram on these pages. Use them for your Mural sticky notes too, so a role looks the same on the page and on the board.</p>
 <p><strong>Template: concept table</strong></p>
 <table>
 <thead>
@@ -210,9 +231,9 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Output:</strong> a concept table with definitions and roles.</p>
+<div class="stepcard output"><span class="lbl">Output</span><p>a concept table with definitions and roles.</p></div>
 <h2 id="step-4-map-the-relationships-between-concepts">Step 4: Map the relationships between concepts</h2>
-<p><strong>Goal:</strong> decide which concepts influence which, in what direction, and through what pathway.</p>
+<div class="stepcard goal"><span class="lbl">Goal</span><p>decide which concepts influence which, in what direction, and through what pathway.</p></div>
 <p>Most conceptual models are built from the same five roles. The generic model below shows how they connect.</p>
 <figure class="dia">
 <svg viewBox="0 0 760 416" role="img" aria-label="Arrows run from causes toward the outcome you explain">
@@ -228,19 +249,19 @@
 <path d="M128 232V290H632V232" marker-end="url(#cm-arrow)"/>
 <path d="M380 336V294" marker-end="url(#cm-arrow)"/>
 </g>
-<rect class="box" x="264" y="56" width="232" height="56" rx="8"/>
+<rect class="box r-conf" x="264" y="56" width="232" height="56" rx="8"/>
 <text class="t n" x="380" y="80" text-anchor="middle">Confounder</text>
 <text class="t q" x="380" y="98" text-anchor="middle">affects both; control for it</text>
-<rect class="box" x="36" y="176" width="184" height="56" rx="8"/>
+<rect class="box r-exp" x="36" y="176" width="184" height="56" rx="8"/>
 <text class="t n" x="128" y="200" text-anchor="middle">Exposure</text>
 <text class="t q" x="128" y="218" text-anchor="middle">main factor you study</text>
-<rect class="box" x="288" y="176" width="184" height="56" rx="8"/>
+<rect class="box r-med" x="288" y="176" width="184" height="56" rx="8"/>
 <text class="t n" x="380" y="200" text-anchor="middle">Mediator</text>
 <text class="t q" x="380" y="218" text-anchor="middle">the pathway: how it works</text>
-<rect class="box key" x="540" y="176" width="184" height="56" rx="8"/>
+<rect class="box r-out" x="540" y="176" width="184" height="56" rx="8"/>
 <text class="t n" x="632" y="200" text-anchor="middle">Outcome</text>
 <text class="t" x="632" y="218" text-anchor="middle">what you want to explain</text>
-<rect class="box" x="264" y="336" width="232" height="56" rx="8"/>
+<rect class="box r-mod" x="264" y="336" width="232" height="56" rx="8"/>
 <text class="t n" x="380" y="360" text-anchor="middle">Moderator</text>
 <text class="t q" x="380" y="378" text-anchor="middle">changes the strength of a link</text>
 <text class="t q" x="214" y="136" text-anchor="middle">controlled for</text>
@@ -271,9 +292,9 @@
 <li>Note the expected direction of each arrow: positive (+) or negative (−).</li>
 <li>Remove concepts with no arrows; they do not belong in this model.</li>
 </ol>
-<p><strong>Output:</strong> a draft map with every arrow justified.</p>
+<div class="stepcard output"><span class="lbl">Output</span><p>a draft map with every arrow justified.</p></div>
 <h2 id="step-5-draw-the-model-and-state-hypotheses">Step 5: Draw the model and state hypotheses</h2>
-<p><strong>Goal:</strong> a clean, readable diagram and a matching list of testable statements.</p>
+<div class="stepcard goal"><span class="lbl">Goal</span><p>a clean, readable diagram and a matching list of testable statements.</p></div>
 <p><strong>Drawing conventions:</strong></p>
 <ul>
 <li>Boxes for concepts, one concept per box, with a short label.</li>
@@ -294,9 +315,9 @@
 </ol>
 <p><strong>Template:</strong> H[n]: Among [population], higher [concept A] will be associated with [higher / lower] [concept B]. For a moderator: the relationship between [A] and [B] will be [stronger / weaker] when [moderator] is [high / present].</p>
 <p><strong>Write a short narrative</strong> (one or two paragraphs) that walks the reader through the model left to right, citing the evidence behind each arrow.</p>
-<p><strong>Output:</strong> a labeled diagram, a numbered list of hypotheses and a narrative paragraph.</p>
+<div class="stepcard output"><span class="lbl">Output</span><p>a labeled diagram, a numbered list of hypotheses and a narrative paragraph.</p></div>
 <h2 id="step-6-operationalize-each-concept-into-measures">Step 6: Operationalize each concept into measures</h2>
-<p><strong>Goal:</strong> every box in your model can be measured, so every hypothesis can be tested.</p>
+<div class="stepcard goal"><span class="lbl">Goal</span><p>every box in your model can be measured, so every hypothesis can be tested.</p></div>
 <ol>
 <li>For each concept, write an <strong>operational definition</strong>: exactly how you will observe or measure it in your study.</li>
 <li>Prefer validated instruments (published scales or standard measures) over questions you write yourself. Note their reliability and validity evidence.</li>
@@ -344,9 +365,9 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Output:</strong> a measurement plan covering every concept in the model.</p>
+<div class="stepcard output"><span class="lbl">Output</span><p>a measurement plan covering every concept in the model.</p></div>
 <h2 id="step-7-critique-and-revise">Step 7: Critique and revise</h2>
-<p><strong>Goal:</strong> a model that a skeptical reader would accept as clear, justified and testable.</p>
+<div class="stepcard goal"><span class="lbl">Goal</span><p>a model that a skeptical reader would accept as clear, justified and testable.</p></div>
 <ol>
 <li>Explain your model aloud to a classmate in two minutes without notes. Where you stumble, the model is unclear.</li>
 <li>Ask a peer to review it with the checklist below, then swap.</li>
@@ -396,6 +417,21 @@
     function cur(){var t=root.getAttribute('data-theme'); if(t) return t; return matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';}
     try{var s=localStorage.getItem('mu2sd-theme'); if(s) root.setAttribute('data-theme',s);}catch(e){}
     if(btn) btn.addEventListener('click',function(){var next=cur()==='dark'?'light':'dark'; root.setAttribute('data-theme',next); try{localStorage.setItem('mu2sd-theme',next)}catch(e){}});
+  })();
+</script>
+<script>
+  (function(){
+    var links=[].slice.call(document.querySelectorAll('.stepstrip a'));
+    if(!links.length||!('IntersectionObserver' in window)) return;
+    var byId={}; links.forEach(function(a){byId[a.getAttribute('href').slice(1)]=a;});
+    var heads=Object.keys(byId).map(function(id){return document.getElementById(id);});
+    function mark(id){links.forEach(function(a){a.classList.toggle('on',a===byId[id]);});}
+    function update(){
+      var cur=null;
+      heads.forEach(function(h){if(h.getBoundingClientRect().top<180) cur=h.id;});
+      mark(cur);
+    }
+    window.addEventListener('scroll',update,{passive:true}); update();
   })();
 </script>
 </body>

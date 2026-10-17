@@ -83,6 +83,16 @@ In seven steps you will build a conceptual model: a diagram, with a short narrat
     - **Confounder:** something that affects both exposure and outcome and could create a false link
 5. Group related concepts by level if your theory uses levels (individual, interpersonal, organizational, community, policy).
 
+<div class="rolekey" aria-label="Role colors used in every diagram">
+<span class="role r-exp">Exposure</span>
+<span class="role r-med">Mediator</span>
+<span class="role r-mod">Moderator</span>
+<span class="role r-conf">Confounder</span>
+<span class="role r-out">Outcome</span>
+</div>
+
+These five colors mark the same roles in every diagram on these pages. Use them for your Mural sticky notes too, so a role looks the same on the page and on the board.
+
 **Template: concept table**
 
 | Concept | Conceptual definition | Role in model | Level | Source |
@@ -113,19 +123,19 @@ Most conceptual models are built from the same five roles. The generic model bel
 <path d="M128 232V290H632V232" marker-end="url(#cm-arrow)"/>
 <path d="M380 336V294" marker-end="url(#cm-arrow)"/>
 </g>
-<rect class="box" x="264" y="56" width="232" height="56" rx="8"/>
+<rect class="box r-conf" x="264" y="56" width="232" height="56" rx="8"/>
 <text class="t n" x="380" y="80" text-anchor="middle">Confounder</text>
 <text class="t q" x="380" y="98" text-anchor="middle">affects both; control for it</text>
-<rect class="box" x="36" y="176" width="184" height="56" rx="8"/>
+<rect class="box r-exp" x="36" y="176" width="184" height="56" rx="8"/>
 <text class="t n" x="128" y="200" text-anchor="middle">Exposure</text>
 <text class="t q" x="128" y="218" text-anchor="middle">main factor you study</text>
-<rect class="box" x="288" y="176" width="184" height="56" rx="8"/>
+<rect class="box r-med" x="288" y="176" width="184" height="56" rx="8"/>
 <text class="t n" x="380" y="200" text-anchor="middle">Mediator</text>
 <text class="t q" x="380" y="218" text-anchor="middle">the pathway: how it works</text>
-<rect class="box key" x="540" y="176" width="184" height="56" rx="8"/>
+<rect class="box r-out" x="540" y="176" width="184" height="56" rx="8"/>
 <text class="t n" x="632" y="200" text-anchor="middle">Outcome</text>
 <text class="t" x="632" y="218" text-anchor="middle">what you want to explain</text>
-<rect class="box" x="264" y="336" width="232" height="56" rx="8"/>
+<rect class="box r-mod" x="264" y="336" width="232" height="56" rx="8"/>
 <text class="t n" x="380" y="360" text-anchor="middle">Moderator</text>
 <text class="t q" x="380" y="378" text-anchor="middle">changes the strength of a link</text>
 <text class="t q" x="214" y="136" text-anchor="middle">controlled for</text>

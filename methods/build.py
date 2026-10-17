@@ -35,6 +35,7 @@ PAGES = [
         "eyebrow": "Methods · Tutorial for students",
         "title": "Building a conceptual model",
         "lede": "Seven steps from a focused research question to a model you can test.",
+        "steps": ["Question", "Literature", "Concepts", "Relationships", "Draw", "Measures", "Critique"],
         "description": "A step-by-step tutorial for students on building a conceptual model, with templates and a review checklist.",
     },
     {
@@ -43,6 +44,7 @@ PAGES = [
         "eyebrow": "Methods · Tutorial for project teams",
         "title": "Building a project logic model",
         "lede": "Seven steps from partners and evidence to a one-page plan everyone can act on.",
+        "steps": ["Team", "Problem", "Alignment", "Strategies", "Indicators", "Roles", "Assemble"],
         "description": "A step-by-step tutorial on building a project logic model aligned with community priorities.",
     },
     {
@@ -102,7 +104,46 @@ def render_body(md_text):
     # Task-list items: "- [ ] text" -> a visual checkbox.
     body = re.sub(r"<li>\[ \] ", '<li class="task"><span class="box" aria-hidden="true"></span>', body)
     body = re.sub(r"<ul>(\s*<li class=\"task\">)", r'<ul class="tasks">\1', body)
+    # "**Goal:** ..." and "**Output:** ..." paragraphs become cards.
+    body = re.sub(
+        r"<p><strong>(Goal|Output):</strong>\s*(.*?)</p>",
+        lambda m: f'<div class="stepcard {m.group(1).lower()}"><span class="lbl">{m.group(1)}</span><p>{m.group(2)}</p></div>',
+        body,
+        flags=re.S,
+    )
     return body
+
+
+def step_strip(page, body):
+    """A numbered strip of the page's steps, linked to each step heading."""
+    labels = page.get("steps")
+    if not labels:
+        return ""
+    ids = re.findall(r'<h2 id="(step-\d+[^"]*)"', body)
+    if len(ids) != len(labels):
+        raise SystemExit(f'{page["src"]}: {len(ids)} step headings but {len(labels)} step labels')
+    items = "\n".join(
+        f'    <li><a href="#{sid}"><span class="num">{i}</span><span class="lbl">{html.escape(lab)}</span></a></li>'
+        for i, (sid, lab) in enumerate(zip(ids, labels), start=1)
+    )
+    return f'<nav class="stepstrip" aria-label="Steps on this page">\n  <ol>\n{items}\n  </ol>\n</nav>\n'
+
+
+STRIP_JS = """<script>
+  (function(){
+    var links=[].slice.call(document.querySelectorAll('.stepstrip a'));
+    if(!links.length||!('IntersectionObserver' in window)) return;
+    var byId={}; links.forEach(function(a){byId[a.getAttribute('href').slice(1)]=a;});
+    var heads=Object.keys(byId).map(function(id){return document.getElementById(id);});
+    function mark(id){links.forEach(function(a){a.classList.toggle('on',a===byId[id]);});}
+    function update(){
+      var cur=null;
+      heads.forEach(function(h){if(h.getBoundingClientRect().top<180) cur=h.id;});
+      mark(cur);
+    }
+    window.addEventListener('scroll',update,{passive:true}); update();
+  })();
+</script>"""
 
 
 def track_nav():
@@ -183,6 +224,7 @@ def build_page(i, page):
   </ul>
 </nav>
 
+{step_strip(page, body)}
 <article>
 {body}
 </article>
@@ -197,6 +239,7 @@ def build_page(i, page):
 </div>
 
 {THEME_JS}
+{STRIP_JS if page.get("steps") else ""}
 </body>
 </html>
 """
