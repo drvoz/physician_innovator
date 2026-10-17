@@ -1,0 +1,13 @@
+id,age,hba1c_pct,miles_to_clinic,reliable_car,food_insecure,in_cornerstone_program,cooks_home_4plus_days_wk,self_efficacy_1_10,clinic_visits_12mo
+S01,68,7.1,2,Yes,No,Yes,Yes,8,4
+S02,54,9.4,11,No,Yes,No,No,4,1
+S03,72,7.6,3,Yes,No,Yes,No,7,3
+S04,47,8.9,14,Yes,Yes,No,No,5,2
+S05,61,7.0,1,No,No,Yes,Yes,8,4
+S06,59,10.2,18,No,Yes,No,No,3,1
+S07,75,7.8,6,Yes,Yes,Yes,Yes,7,3
+S08,50,8.4,9,Yes,No,No,No,6,2
+S09,66,7.3,4,Yes,No,Yes,Yes,8,4
+S10,43,9.1,12,No,Yes,No,Yes,5,1
+S11,70,8.0,7,Yes,Yes,Yes,No,6,3
+S12,57,7.4,2,Yes,No,Yes,Yes,7,4
